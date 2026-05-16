@@ -1,0 +1,65 @@
+name: Daily Stock Screen
+
+on:
+  schedule:
+    # 北京时间周一至周五 18:00 (UTC 10:00)，收盘后数据已就绪
+    - cron: '0 10 * * 1-5'
+  # 手动触发
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install akshare pandas numpy pyyaml
+
+      - name: Run daily screen
+        run: |
+          python main.py --cold-start --workers 4 --rate 5 --days 200
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Prepare output for Pages
+        run: |
+          mkdir -p _site
+          # 复制最新 HTML 作为首页
+          cp data/export/screen_result_latest.html _site/index.html
+          # 也复制 CSV 供下载
+          cp data/export/screen_result_latest.csv _site/
+          # 复制带日期的文件（归档）
+          cp data/export/screen_result_*.html _site/ 2>/dev/null || true
+          cp data/export/screen_result_*.csv _site/ 2>/dev/null || true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

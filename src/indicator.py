@@ -123,23 +123,27 @@ def count_yang_lines(adj_df: pd.DataFrame) -> dict:
 
 
 def judge_uptrend_stage(df: pd.DataFrame, lu_start_idx: int) -> dict:
-    """判断拉升阶段（初期/中期/末期）"""
-    pre_data = df.iloc[max(0, lu_start_idx - 20):lu_start_idx]
+    """判断当前拉升阶段（初期/中期/末期），基于最新交易日数据"""
+    last_idx = len(df) - 1
+
+    # 20日涨幅（不含当日）
+    pre_data = df.iloc[max(0, last_idx - 20):last_idx]
     if len(pre_data) < 10:
         return {"trend": "unknown", "stage": "unknown", "meets_criteria": False,
-                "rise_20d_pct": 0.0}
+                "rise_20d_pct": 0.0, "ma60": 0, "ma120": 0,
+                "price_vs_ma60": 0}
 
     start_price = pre_data["close"].iloc[0]
     end_price = pre_data["close"].iloc[-1]
     rise_pct = round((end_price - start_price) / start_price * 100, 2) \
         if start_price > 0 else 0.0
 
-    # MA60/MA120
-    lookback_60 = df.iloc[max(0, lu_start_idx - 60):lu_start_idx]
-    lookback_120 = df.iloc[max(0, lu_start_idx - 120):lu_start_idx]
+    # MA60/MA120（标准SMA，基于最新交易日）
+    lookback_60 = df.iloc[max(0, last_idx - 59):last_idx + 1]
+    lookback_120 = df.iloc[max(0, last_idx - 119):last_idx + 1]
     ma60 = lookback_60["close"].mean() if len(lookback_60) > 0 else 0
     ma120 = lookback_120["close"].mean() if len(lookback_120) > 0 else 0
-    current_price = df.iloc[lu_start_idx]["close"]
+    current_price = df.iloc[last_idx]["close"]
 
     if ma60 > ma120 and current_price > ma60:
         trend = "uptrend"
@@ -157,6 +161,8 @@ def judge_uptrend_stage(df: pd.DataFrame, lu_start_idx: int) -> dict:
         "trend": trend,
         "stage": stage,
         "rise_20d_pct": rise_pct,
+        "ma60": round(ma60, 2),
+        "ma120": round(ma120, 2),
         "price_vs_ma60": round(current_price / ma60, 3) if ma60 > 0 else 0,
         "meets_criteria": stage in ("early", "mid")
     }
@@ -265,6 +271,10 @@ def analyze_one_stock(code: str, df: pd.DataFrame) -> dict | None:
         "adj_min_close": round(adj_df["close"].min(), 2),
         "is_ladder_vol": ladder,
         "uptrend_stage": stage["stage"],
+        "ma60": stage["ma60"],
+        "ma120": stage["ma120"],
+        "vol_shrinking": vol_shrinking,
+        "broke_fib_618": adj_df["close"].iloc[-1] < fib["fib_618"],
         "is_sandwich": sandwich["is_sandwich"],
         "is_above_board": sandwich["is_above_board"],
         "buy_price": buy_price,

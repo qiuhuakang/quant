@@ -68,16 +68,17 @@ def is_ladder(volumes):
     return dec >= len(ma) * 0.6
 
 def judge_stage(df, start_idx):
-    """拉升阶段判定"""
-    pre = df.iloc[max(0, start_idx-20):start_idx]
+    """拉升阶段判定（基于最新交易日）"""
+    last = len(df) - 1
+    pre = df.iloc[max(0, last-20):last]
     if len(pre) < 10:
         return 'unknown', False
     rise = (pre['close'].iloc[-1] - pre['close'].iloc[0]) / pre['close'].iloc[0] * 100
-    lb60 = df.iloc[max(0, start_idx-60):start_idx]
-    lb120 = df.iloc[max(0, start_idx-120):start_idx]
+    lb60 = df.iloc[max(0, last-59):last+1]
+    lb120 = df.iloc[max(0, last-119):last+1]
     ma60 = lb60['close'].mean()
     ma120 = lb120['close'].mean()
-    cur = df.iloc[start_idx]['close']
+    cur = df.iloc[last]['close']
     if ma60 > ma120 and cur > ma60:
         if rise < 25: stage = 'early'
         elif rise < 50: stage = 'mid'

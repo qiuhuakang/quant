@@ -14,6 +14,7 @@ from src.concurrency import fetch_all_candidates
 from src.indicator import analyze_one_stock
 from src.scorer import calc_score
 from src.reporter import print_report, export_csv
+from src.html_reporter import export_html
 
 
 def cold_start(trade_dates: list[str], end_date: str):
@@ -156,17 +157,82 @@ def run_daily_screen(screen_date: str | None = None,
 
     if excluded:
         print(f"\n  基础条件未达标 ({len(excluded)} 只，不纳入结果):")
+        print(f"  {'─' * 85}")
+
+        # 补充字段（兼容旧缓存数据）
         for r in excluded:
-            reasons = []
-            if r["adj_days"] > 5:
-                reasons.append(f"调整{r['adj_days']}天>5")
-            if r["adj_vol_ratio"] >= 1.0:
-                reasons.append(f"量比{r['adj_vol_ratio']}≥1.0，未缩量")
-            if r["uptrend_stage"] not in ("early", "mid"):
-                reasons.append(f"阶段={r['uptrend_stage']}")
-            if r["adj_min_close"] < r["fib_618"]:
-                reasons.append("破618")
-            print(f"    {r['symbol']} {r.get('name','')}: {', '.join(reasons)}")
+            r.setdefault("ma60", 0)
+            r.setdefault("ma120", 0)
+            if "vol_shrinking" not in r:
+                r["vol_shrinking"] = r.get("adj_vol_ratio", 1.0) < 1.0
+            if "broke_fib_618" not in r:
+                # meets_basic 用的是最后一天是否破618，非最低价
+                r["broke_fib_618"] = r.get("adj_min_close", 0) < r.get("fib_618", 0)
+
+        # 按原因组合分类（4维度：阶段 / 量比 / 调整天数 / 破618）
+        from collections import defaultdict
+
+        fail_labels = [
+            "阶段不符",
+            "量比≥1.0、未缩量",
+            "调整天数＞5",
+            "破618",
+        ]
+
+        def get_fail_key(r):
+            return (
+                r["uptrend_stage"] not in ("early", "mid"),
+                not r["vol_shrinking"],           # 用 bool() 避免 numpy.bool_ is False 的坑
+                r["adj_days"] > 5,
+                bool(r["broke_fib_618"]),
+            )
+
+        def make_cat_name(key):
+            parts = [fail_labels[i] for i, v in enumerate(key) if v]
+            if len(parts) == 1:
+                return f"仅{parts[0]}"
+            return " + ".join(parts)
+
+        class_groups: dict[str, list[dict]] = defaultdict(list)
+        for r in excluded:
+            key = get_fail_key(r)
+            class_groups[make_cat_name(key)].append(r)
+
+        # 按失败维度数量排序，同类按名称排
+        cn_num = {"一":1,"二":2,"三":3,"四":4,"五":5,"六":6,"七":7,"八":8,
+                  "九":9,"十":10,"十一":11,"十二":12,"十三":13,"十四":14,"十五":15}
+        cn_labels = list(cn_num.keys())
+        sorted_cats = sorted(class_groups.items(),
+                             key=lambda kv: (sum(get_fail_key(kv[1][0])), kv[0]))
+
+        # 分类汇总
+        print(f"\n  【分类汇总】")
+        for i, (cat_name, stocks) in enumerate(sorted_cats):
+            num_label = cn_labels[i] if i < len(cn_labels) else str(i+1)
+            names = "，".join(
+                f"{r['symbol']} {r.get('name','')[:4]}"
+                for r in stocks
+            )
+            print(f"\n  {num_label}、{cat_name}（{len(stocks)}只）")
+            print(f"  {names}")
+
+        # 详细列表（含MA60/MA120）
+        print(f"\n  {'─' * 85}")
+        print(f"  【详细列表】")
+        print(f"  {'代码':<10} {'名称':<8} {'阶段':<10} {'MA60':<10} {'MA120':<10} {'量比':<8} {'调整天':<7} {'破618':<6}")
+        print(f"  {'─' * 10} {'─' * 8} {'─' * 10} {'─' * 10} {'─' * 10} {'─' * 8} {'─' * 7} {'─' * 6}")
+        for r in sorted(excluded, key=lambda x: x["symbol"]):
+            print(f"  {r['symbol']:<10} {r.get('name','')[:8]:<8} {r['uptrend_stage']:<10} "
+                  f"{r['ma60']:<10.2f} {r['ma120']:<10.2f} "
+                  f"{r['adj_vol_ratio']:<8} {r['adj_days']:<7} "
+                  f"{'Y' if r['broke_fib_618'] else 'N':<6}")
+
+    # ── HTML 图表报告 ──────────────────────────────────────
+    try:
+        html_path = export_html(results, dfs, passed, today)
+        print(f"\n  HTML 图表报告已导出: {html_path}")
+    except Exception as e:
+        print(f"\n  [WARN] HTML 报告生成失败: {e}")
 
     passed.sort(key=lambda x: x["score"], reverse=True)
     save_screen_results(today, passed)
