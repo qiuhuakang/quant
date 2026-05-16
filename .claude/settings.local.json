@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(python main.py --date 2026-05-13 --cold-start --workers 8 --rate 10 --days 200)",
+      "Bash(/c/Users/ding/AppData/Local/Programs/Python/Python312/python.exe *)"
+    ]
+  }
+}

@@ -1,0 +1,2 @@
+﻿rank,symbol,name,score,lu_date_start,lu_date_end,lu_high,lu_low,fib_618,adj_days,adj_vol_ratio,adj_yang_ratio,adj_min_close,is_ladder_vol,uptrend_stage,is_sandwich,is_above_board,buy_price,protect_price,protect_type,sell_price_3pct,sell_price_5pct,meets_criteria,meets_preferred
+1,002930,宏川智慧,57.1,2026-05-07,2026-05-08,16.04,13.04,14.89,5,0.974,0.2,15.15,True,early,False,False,15.15,14.89,board_inside,15.6,15.91,True,1

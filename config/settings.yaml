@@ -1,0 +1,33 @@
+# 二板涨停 N 型战法 — 全局配置
+paths:
+  db: "D:/quant/db/main.db"
+  export: "D:/quant/data/export/"
+  log: "D:/quant/logs/quant.log"
+
+params:
+  # 选股参数
+  lookback_calendar_days: 200    # 历史日线拉取范围（日历日，覆盖120交易日）
+  lookback_board_days: 15        # 连板回顾窗口（交易日）
+  max_adj_days: 5                # 最大调整天数
+  volume_shrink_threshold: 1.0   # 缩量阈值（回调均量/涨停均量，<1即缩量）
+  fib_level: 0.618               # 黄金分割位
+  ladder_vol_tolerance: 0.05     # 阶梯量容忍度
+  limit_up_threshold_main: 9.8   # 主板涨停阈值
+  limit_up_threshold_gem: 19.8   # 创业板涨停阈值
+  entity_body_ratio: 0.6         # 实体占比下限
+
+  # 买卖参数
+  buy_profit_reduce: 0.03        # 3% 减仓
+  buy_profit_exit: 0.05          # 5% 止盈
+  max_hold_days: 5               # 最大持仓天数（交易日）
+
+concurrency:
+  max_workers: 8
+  max_per_second: 10
+  global_timeout: 300            # 秒
+
+risk:
+  max_position_pct: 0.15
+  max_positions: 5
+  max_daily_loss: 0.02
+  max_weekly_loss: 0.05
