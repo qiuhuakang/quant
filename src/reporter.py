@@ -68,7 +68,9 @@ def print_report(results: list[dict], screen_date: str):
 
 
 def export_csv(results: list[dict], screen_date: str,
-               export_dir: str = "D:/quant/data/export/"):
+               export_dir: str = ""):
+    if not export_dir:
+        export_dir = os.path.join(os.getcwd(), "data", "export")
     """导出 CSV 文件"""
     os.makedirs(export_dir, exist_ok=True)
     path = os.path.join(export_dir, f"screen_result_{screen_date}.csv")

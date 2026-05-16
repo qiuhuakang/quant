@@ -6,8 +6,10 @@ from collections import defaultdict
 
 
 def export_html(results: list[dict], dfs: dict, passed: list[dict],
-                screen_date: str, export_dir: str = "D:/quant/data/export/") -> str:
+                screen_date: str, export_dir: str = "") -> str:
     """生成 HTML 图表报告，返回文件路径"""
+    if not export_dir:
+        export_dir = os.path.join(os.getcwd(), "data", "export")
     os.makedirs(export_dir, exist_ok=True)
     html = _build_html(results, dfs, passed, screen_date)
     path = os.path.join(export_dir, f"screen_result_{screen_date}.html")
@@ -611,8 +613,10 @@ window.addEventListener('resize', function() {{
 
 # 兼容 run_analysis_mode 的单股导出
 def export_single_html(code: str, df: pd.DataFrame, analysis: dict,
-                       export_dir: str = "D:/quant/data/export/") -> str:
+                       export_dir: str = "") -> str:
     """单股分析 HTML 导出"""
+    if not export_dir:
+        export_dir = os.path.join(os.getcwd(), "data", "export")
     os.makedirs(export_dir, exist_ok=True)
     cd = _extract_chart_data(df, analysis)
     if cd is None:
