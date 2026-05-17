@@ -6,12 +6,13 @@ from collections import defaultdict
 
 
 def export_html(results: list[dict], dfs: dict, passed: list[dict],
-                screen_date: str, export_dir: str = "") -> str:
+                screen_date: str, multi_results: list[dict] | None = None,
+                export_dir: str = "") -> str:
     """生成 HTML 图表报告，返回文件路径"""
     if not export_dir:
         export_dir = os.path.join(os.getcwd(), "data", "export")
     os.makedirs(export_dir, exist_ok=True)
-    html = _build_html(results, dfs, passed, screen_date)
+    html = _build_html(results, dfs, passed, screen_date, multi_results)
     path = os.path.join(export_dir, f"screen_result_{screen_date}.html")
     with open(path, "w", encoding="utf-8") as f:
         f.write(html)
@@ -123,40 +124,64 @@ def _group_excluded(results: list[dict]) -> dict[str, list[dict]]:
 
 
 def _build_html(results: list[dict], dfs: dict, passed: list[dict],
-                screen_date: str) -> str:
+                screen_date: str, multi_results: list[dict] | None = None) -> str:
     """组装完整 HTML 文档"""
 
-    # ── 准备数据 ──────────────────────────────────────────
+    # ── 准备数据：按 board_type 拆分 ──────────────────────
     excluded = [r for r in results if not r["meets_criteria"]]
     passed_sorted = sorted(passed, key=lambda x: x["score"], reverse=True)
-    excluded_groups = _group_excluded(excluded)
 
-    # 入选股票图表数据
-    passed_charts = {}
-    for r in passed_sorted:
-        code = r["symbol"]
-        if code in dfs:
-            cd = _extract_chart_data(dfs[code], r)
-            if cd:
-                passed_charts[code] = cd
+    # 2板入选 / 2板未达标
+    passed_two = [r for r in passed_sorted if r.get("board_type") != "multi"]
+    excluded_two = [r for r in excluded if r.get("board_type") != "multi"]
+    excluded_two_groups = _group_excluded(excluded_two)
 
-    # 未达标股票图表数据（按分组）
-    excluded_charts: dict[str, list[dict]] = {}
-    for cat_name, stocks in excluded_groups.items():
-        excluded_charts[cat_name] = []
-        for r in stocks:
+    # 多板入选 / 多板未达标
+    multi_results = multi_results or []
+    multi_passed = sorted(
+        [r for r in multi_results if r["meets_criteria"]],
+        key=lambda x: x["score"], reverse=True
+    )
+    multi_excluded = [r for r in multi_results if not r["meets_criteria"]]
+    multi_excluded_groups = _group_excluded(multi_excluded)
+
+    def _build_charts(stock_list):
+        """从结果列表提取图表数据 dict"""
+        charts = {}
+        for r in stock_list:
             code = r["symbol"]
             if code in dfs:
                 cd = _extract_chart_data(dfs[code], r)
                 if cd:
-                    excluded_charts[cat_name].append(cd)
+                    charts[code] = cd
+        return charts
+
+    def _build_group_charts(groups: dict) -> dict[str, list[dict]]:
+        """从分组结果提取图表数据"""
+        result: dict[str, list[dict]] = {}
+        for cat_name, stocks in groups.items():
+            result[cat_name] = []
+            for r in stocks:
+                code = r["symbol"]
+                if code in dfs:
+                    cd = _extract_chart_data(dfs[code], r)
+                    if cd:
+                        result[cat_name].append(cd)
+        return result
+
+    passed_two_charts = _build_charts(passed_two)
+    excluded_two_charts = _build_group_charts(excluded_two_groups)
+    multi_passed_charts = _build_charts(multi_passed)
+    multi_excluded_charts = _build_group_charts(multi_excluded_groups)
 
     # 汇总 JSON
     all_chart_data: dict[str, dict] = {}
-    all_chart_data.update(passed_charts)
-    for charts in excluded_charts.values():
-        for cd in charts:
-            all_chart_data[cd["symbol"]] = cd
+    for charts in [passed_two_charts, multi_passed_charts]:
+        all_chart_data.update(charts)
+    for charts_dict in [excluded_two_charts, multi_excluded_charts]:
+        for charts in charts_dict.values():
+            for cd in charts:
+                all_chart_data[cd["symbol"]] = cd
 
     json_data = json.dumps(all_chart_data, ensure_ascii=False)
 
@@ -164,9 +189,9 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
     cn_num = ["一","二","三","四","五","六","七","八","九","十",
               "十一","十二","十三","十四","十五"]
 
-    # ── 构建入选 HTML ─────────────────────────────────────
-    passed_html = ""
-    for i, r in enumerate(passed_sorted):
+    # ── 构建 2板入选 HTML ────────────────────────────────
+    passed_two_html = ""
+    for i, r in enumerate(passed_two):
         code = r["symbol"]
         name = r.get("name", "")[:6]
         score = r["score"]
@@ -176,7 +201,7 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
         buy = r["buy_price"]
         protect = r["protect_price"]
         chart_id = f"chart_p_{code}"
-        passed_html += f'''
+        passed_two_html += f'''
         <div class="stock-card passed" data-symbol="{code}" data-chart="{chart_id}">
           <div class="card-header" onclick="toggleCard(this)">
             <div class="card-left">
@@ -199,13 +224,13 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
           </div>
         </div>'''
 
-    # ── 构建未达标 HTML ───────────────────────────────────
-    excluded_html = ""
+    # ── 构建 2板未达标 HTML ────────────────────────────────
+    excluded_two_html = ""
     group_idx = 0
-    for cat_name, charts in excluded_charts.items():
+    for cat_name, charts in excluded_two_charts.items():
         group_idx += 1
         cn = cn_num[group_idx - 1] if group_idx - 1 < len(cn_num) else str(group_idx)
-        excluded_html += f'''
+        excluded_two_html += f'''
         <div class="excluded-group">
           <div class="group-header" onclick="toggleGroup(this)">
             <span class="group-title">{cn}、{cat_name}</span>
@@ -220,7 +245,7 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
             adj_days = cd["adj_days"]
             vol_ratio = cd["adj_vol_ratio"]
             chart_id = f"chart_e_{code}"
-            excluded_html += f'''
+            excluded_two_html += f'''
             <div class="stock-card excluded" data-symbol="{code}" data-chart="{chart_id}">
               <div class="card-header" onclick="event.stopPropagation(); toggleCard(this)">
                 <div class="card-left">
@@ -240,7 +265,95 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
                 <div id="{chart_id}" class="chart-container"></div>
               </div>
             </div>'''
-        excluded_html += '''
+        excluded_two_html += '''
+          </div>
+        </div>'''
+
+    # ── 构建多板入选 HTML ────────────────────────────────
+    multi_passed_html = ""
+    for i, r in enumerate(multi_passed):
+        code = r["symbol"]
+        name = r.get("name", "")[:6]
+        score = r["score"]
+        stage = r["uptrend_stage"]
+        bc = r.get("board_count", 3)
+        adj_days = r["adj_days"]
+        vol_ratio = r["adj_vol_ratio"]
+        buy = r["buy_price"]
+        protect = r["protect_price"]
+        chart_id = f"chart_mp_{code}"
+        multi_passed_html += f'''
+        <div class="stock-card multi" data-symbol="{code}" data-chart="{chart_id}">
+          <div class="card-header" onclick="toggleCard(this)">
+            <div class="card-left">
+              <span class="rank">#{i + 1}</span>
+              <span class="symbol">{code}</span>
+              <span class="name">{name}</span>
+              <span class="board-badge">连板{bc}</span>
+              <span class="score-badge">{score}分</span>
+            </div>
+            <div class="card-meta">
+              <span>阶段: <b>{stage}</b></span>
+              <span>调整: {adj_days}天</span>
+              <span>量比: {vol_ratio}</span>
+              <span>买入: ¥{buy}</span>
+              <span>保护: ¥{protect}</span>
+            </div>
+            <span class="expand-icon">▸</span>
+          </div>
+          <div class="card-body">
+            <div id="{chart_id}" class="chart-container"></div>
+          </div>
+        </div>'''
+
+    # ── 构建多板未达标 HTML ────────────────────────────────
+    multi_excluded_html = ""
+    group_idx = 0
+    for cat_name, charts in multi_excluded_charts.items():
+        group_idx += 1
+        cn = cn_num[group_idx - 1] if group_idx - 1 < len(cn_num) else str(group_idx)
+        multi_excluded_html += f'''
+        <div class="excluded-group multi-group">
+          <div class="group-header" onclick="toggleGroup(this)">
+            <span class="group-title">{cn}、{cat_name}</span>
+            <span class="group-count">{len(charts)}只</span>
+            <span class="expand-icon">▸</span>
+          </div>
+          <div class="group-body">'''
+        for cd in charts:
+            code = cd["symbol"]
+            name = cd["name"][:6]
+            stage = cd["uptrend_stage"]
+            adj_days = cd["adj_days"]
+            vol_ratio = cd["adj_vol_ratio"]
+            bc = 2
+            for r in multi_results:
+                if r["symbol"] == code:
+                    bc = r.get("board_count", 3)
+                    break
+            chart_id = f"chart_me_{code}"
+            multi_excluded_html += f'''
+            <div class="stock-card multi-excluded" data-symbol="{code}" data-chart="{chart_id}">
+              <div class="card-header" onclick="event.stopPropagation(); toggleCard(this)">
+                <div class="card-left">
+                  <span class="symbol">{code}</span>
+                  <span class="name">{name}</span>
+                  <span class="board-badge">连板{bc}</span>
+                </div>
+                <div class="card-meta">
+                  <span>阶段: <b>{stage}</b></span>
+                  <span>调整: {adj_days}天</span>
+                  <span>量比: {vol_ratio}</span>
+                  <span>MA60: {cd["ma60"][-1] if cd["ma60"][-1] else "-"}</span>
+                  <span>MA120: {cd["ma120"][-1] if cd["ma120"][-1] else "-"}</span>
+                </div>
+                <span class="expand-icon">▸</span>
+              </div>
+              <div class="card-body">
+                <div id="{chart_id}" class="chart-container"></div>
+              </div>
+            </div>'''
+        multi_excluded_html += '''
           </div>
         </div>'''
 
@@ -266,6 +379,7 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 .summary-card.pass .num {{ color: #27ae60; }}
 .summary-card.fail .num {{ color: #e74c3c; }}
 .summary-card.total .num {{ color: #2c3e50; }}
+.summary-card.multi .num {{ color: #8e44ad; }}
 
 .tabs {{ display: flex; gap: 8px; margin-bottom: 16px; }}
 .tab-btn {{ padding: 10px 24px; border: none; border-radius: 20px; font-size: 15px; cursor: pointer; font-weight: 600; transition: all 0.2s; }}
@@ -273,6 +387,8 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 .tab-btn.pass.active {{ background: #27ae60; color: white; }}
 .tab-btn.fail {{ background: #fdedec; color: #e74c3c; }}
 .tab-btn.fail.active {{ background: #e74c3c; color: white; }}
+.tab-btn.multi {{ background: #f3eef8; color: #8e44ad; }}
+.tab-btn.multi.active {{ background: #8e44ad; color: white; }}
 .tab-content {{ display: none; }}
 .tab-content.active {{ display: block; }}
 
@@ -280,6 +396,8 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 .stock-card:hover {{ box-shadow: 0 2px 12px rgba(0,0,0,0.1); }}
 .stock-card.passed {{ border-left: 4px solid #27ae60; }}
 .stock-card.excluded {{ border-left: 4px solid #e74c3c; }}
+.stock-card.multi {{ border-left: 4px solid #8e44ad; }}
+.stock-card.multi-excluded {{ border-left: 4px solid #c0392b; }}
 
 .card-header {{ display: flex; align-items: center; padding: 12px 16px; cursor: pointer; user-select: none; transition: background 0.15s; gap: 16px; }}
 .card-header:hover {{ background: #f8f9fa; }}
@@ -291,6 +409,7 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 .symbol {{ font-weight: 700; font-size: 14px; color: #2c3e50; }}
 .name {{ font-size: 13px; color: #7f8c8d; }}
 .score-badge {{ background: #27ae60; color: white; padding: 2px 10px; border-radius: 12px; font-size: 13px; font-weight: 600; }}
+.board-badge {{ background: #8e44ad; color: white; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }}
 
 .card-meta {{ display: flex; gap: 16px; flex: 1; font-size: 13px; color: #555; flex-wrap: wrap; }}
 .card-meta b {{ color: #2c3e50; }}
@@ -312,6 +431,9 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 .group-header.expanded .expand-icon {{ transform: rotate(90deg); }}
 .group-body {{ display: none; }}
 .group-body.open {{ display: block; }}
+.multi-group .group-header {{ border-left-color: #8e44ad; }}
+.multi-group .group-header:hover {{ background: #f9f5fc; }}
+.pass-count {{ color: #27ae60 !important; }}
 
 .footer {{ text-align: center; padding: 30px 0 10px; font-size: 12px; color: #bdc3c7; }}
 .footer a {{ color: #bdc3c7; }}
@@ -331,26 +453,44 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
     <div class="label">总分析</div>
   </div>
   <div class="summary-card pass">
-    <div class="num">{len(passed_sorted)}</div>
-    <div class="label">✅ 入选</div>
+    <div class="num">{len(passed_two)}</div>
+    <div class="label">2板入选</div>
   </div>
   <div class="summary-card fail">
-    <div class="num">{len(excluded)}</div>
-    <div class="label">❌ 未达标</div>
+    <div class="num">{len(excluded_two)}</div>
+    <div class="label">2板未达标</div>
+  </div>
+  <div class="summary-card pass">
+    <div class="num">{len(multi_passed)}</div>
+    <div class="label">多板入选</div>
+  </div>
+  <div class="summary-card multi">
+    <div class="num">{len(multi_excluded)}</div>
+    <div class="label">多板未达标</div>
   </div>
 </div>
 
 <div class="tabs">
-  <button class="tab-btn pass active" onclick="switchTab('passed')">✅ 入选 ({len(passed_sorted)})</button>
-  <button class="tab-btn fail" onclick="switchTab('excluded')">❌ 未达标 ({len(excluded)})</button>
+  <button class="tab-btn pass active" onclick="switchTab('passed')">2板入选 ({len(passed_two)})</button>
+  <button class="tab-btn fail" onclick="switchTab('excluded')">2板未达标 ({len(excluded_two)})</button>
+  <button class="tab-btn pass" onclick="switchTab('multi-passed')">多板入选 ({len(multi_passed)})</button>
+  <button class="tab-btn multi" onclick="switchTab('multi-excluded')">多板未达标 ({len(multi_excluded)})</button>
 </div>
 
 <div id="tab-passed" class="tab-content active">
-{passed_html if passed_html else '<div style="padding:20px;text-align:center;color:#bdc3c7;">无入选标的</div>'}
+{passed_two_html if passed_two_html else '<div style="padding:20px;text-align:center;color:#bdc3c7;">无2板入选标的</div>'}
 </div>
 
 <div id="tab-excluded" class="tab-content">
-{excluded_html if excluded_html else '<div style="padding:20px;text-align:center;color:#bdc3c7;">无未达标标的</div>'}
+{excluded_two_html if excluded_two_html else '<div style="padding:20px;text-align:center;color:#bdc3c7;">无2板未达标标的</div>'}
+</div>
+
+<div id="tab-multi-passed" class="tab-content">
+{multi_passed_html if multi_passed_html else '<div style="padding:20px;text-align:center;color:#bdc3c7;">无多板入选标的</div>'}
+</div>
+
+<div id="tab-multi-excluded" class="tab-content">
+{multi_excluded_html if multi_excluded_html else '<div style="padding:20px;text-align:center;color:#bdc3c7;">无多板未达标标的</div>'}
 </div>
 
 <div class="footer">
@@ -368,11 +508,17 @@ function switchTab(tab) {{
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
     if (tab === 'passed') {{
-        document.querySelector('.tab-btn.pass').classList.add('active');
+        document.querySelector('.tabs .tab-btn:nth-child(1)').classList.add('active');
         document.getElementById('tab-passed').classList.add('active');
-    }} else {{
-        document.querySelector('.tab-btn.fail').classList.add('active');
+    }} else if (tab === 'excluded') {{
+        document.querySelector('.tabs .tab-btn:nth-child(2)').classList.add('active');
         document.getElementById('tab-excluded').classList.add('active');
+    }} else if (tab === 'multi-passed') {{
+        document.querySelector('.tabs .tab-btn:nth-child(3)').classList.add('active');
+        document.getElementById('tab-multi-passed').classList.add('active');
+    }} else if (tab === 'multi-excluded') {{
+        document.querySelector('.tabs .tab-btn:nth-child(4)').classList.add('active');
+        document.getElementById('tab-multi-excluded').classList.add('active');
     }}
 }}
 
@@ -409,8 +555,8 @@ function initChart(containerId) {{
         window._charts[containerId].resize();
         return;
     }}
-    // containerId format: "chart_p_CODE" or "chart_e_CODE"
-    const symbol = containerId.replace('chart_p_', '').replace('chart_e_', '');
+    // containerId format: "chart_p_CODE" / "chart_e_CODE" / "chart_mp_CODE" / "chart_me_CODE"
+    const symbol = containerId.replace('chart_p_', '').replace('chart_e_', '').replace('chart_mp_', '').replace('chart_me_', '');
     const data = ALL_DATA[symbol];
     if (!data) return;
 

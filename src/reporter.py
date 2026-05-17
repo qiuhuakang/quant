@@ -88,7 +88,8 @@ def export_csv(results: list[dict], screen_date: str,
         "is_sandwich", "is_above_board",
         "buy_price", "protect_price", "protect_type",
         "sell_price_3pct", "sell_price_5pct",
-        "meets_criteria", "meets_preferred"
+        "meets_criteria", "meets_preferred",
+        "board_type", "board_count"
     ]
 
     rows = []

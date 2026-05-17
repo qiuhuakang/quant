@@ -26,6 +26,15 @@ def init_db():
             PRIMARY KEY (symbol, two_board_date)
         );
 
+        -- 多连板事件记录表（连板数>=3）
+        CREATE TABLE IF NOT EXISTS multi_board_record (
+            symbol           TEXT NOT NULL,
+            multi_board_date TEXT NOT NULL,
+            board_count      INTEGER NOT NULL,
+            name             TEXT,
+            PRIMARY KEY (symbol, multi_board_date)
+        );
+
         -- 日线数据缓存表
         CREATE TABLE IF NOT EXISTS stock_daily (
             symbol      TEXT NOT NULL,
@@ -73,10 +82,21 @@ def init_db():
             sell_price_5pct REAL,
             meets_criteria  INTEGER DEFAULT 0,
             meets_preferred INTEGER DEFAULT 0,
+            board_type      TEXT DEFAULT '2',
+            board_count     INTEGER DEFAULT 2,
             create_time     TEXT DEFAULT (datetime('now','localtime'))
         );
         CREATE INDEX IF NOT EXISTS idx_screen_date ON screen_result(screen_date);
     """)
+    # 迁移旧表：补上 board_type / board_count 列
+    try:
+        conn.execute("ALTER TABLE screen_result ADD COLUMN board_type TEXT DEFAULT '2'")
+    except Exception:
+        pass
+    try:
+        conn.execute("ALTER TABLE screen_result ADD COLUMN board_count INTEGER DEFAULT 2")
+    except Exception:
+        pass
     conn.commit()
     conn.close()
 
@@ -105,6 +125,36 @@ def query_candidates(window_start: str, today_str: str) -> list[dict]:
         "SELECT symbol, name, two_board_date FROM two_board_record "
         "WHERE two_board_date >= ? AND two_board_date <= ? "
         "ORDER BY two_board_date DESC",
+        (window_start, today_str)
+    ).fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
+
+# ─── multi_board_record 操作 ──────────────────────────────
+
+def insert_multi_board(symbol: str, date_str: str, board_count: int, name: str):
+    conn = get_conn()
+    conn.execute("INSERT OR IGNORE INTO multi_board_record VALUES (?, ?, ?, ?)",
+                 (symbol, date_str, board_count, name))
+    conn.commit()
+    conn.close()
+
+
+def delete_multi_board(symbol: str):
+    conn = get_conn()
+    conn.execute("DELETE FROM multi_board_record WHERE symbol=?", (symbol,))
+    conn.commit()
+    conn.close()
+
+
+def query_multi_board_candidates(window_start: str, today_str: str) -> list[dict]:
+    """查询近N个交易日内出现3+连板的股票"""
+    conn = get_conn()
+    rows = conn.execute(
+        "SELECT symbol, name, multi_board_date, board_count FROM multi_board_record "
+        "WHERE multi_board_date >= ? AND multi_board_date <= ? "
+        "ORDER BY multi_board_date DESC",
         (window_start, today_str)
     ).fetchall()
     conn.close()
@@ -163,8 +213,9 @@ def save_screen_results(screen_date: str, results: list[dict]):
              lu_high, lu_low, fib_618, adj_days, adj_vol_ratio, adj_yang_ratio,
              adj_min_close, is_ladder_vol, uptrend_stage, is_sandwich,
              is_above_board, buy_price, protect_price, protect_type,
-             sell_price_3pct, sell_price_5pct, meets_criteria, meets_preferred)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+             sell_price_3pct, sell_price_5pct, meets_criteria, meets_preferred,
+             board_type, board_count)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             screen_date, r["symbol"], r["name"], r["score"], i + 1,
             r.get("lu_date_start"), r.get("lu_date_end"),
@@ -176,7 +227,9 @@ def save_screen_results(screen_date: str, results: list[dict]):
             r.get("protect_price"), r.get("protect_type"),
             r.get("sell_price_3pct"), r.get("sell_price_5pct"),
             int(r.get("meets_criteria", False)),
-            int(r.get("meets_preferred", 0))
+            int(r.get("meets_preferred", 0)),
+            r.get("board_type", "2"),
+            r.get("board_count", 2)
         ))
     conn.commit()
     conn.close()
