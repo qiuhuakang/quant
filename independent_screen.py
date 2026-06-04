@@ -1,3 +1,4 @@
+from __future__ import annotations
 """独立实现：二板涨停N型战法 — 不依赖项目现有代码"""
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')

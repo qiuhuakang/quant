@@ -505,8 +505,9 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 .summary-card.total .num {{ color: #2c3e50; }}
 .summary-card.multi .num {{ color: #8e44ad; }}
 
-.tabs {{ display: flex; gap: 8px; margin-bottom: 16px; }}
-.tab-btn {{ padding: 10px 24px; border: none; border-radius: 20px; font-size: 15px; cursor: pointer; font-weight: 600; transition: all 0.2s; }}
+.tabs-wrapper {{ display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }}
+.tabs {{ display: flex; gap: 8px; flex: 1; }}
+.tab-btn {{ padding: 10px 24px; border: none; border-radius: 20px; font-size: 15px; cursor: pointer; font-weight: 600; transition: all 0.2s; white-space: nowrap; }}
 .tab-btn.pass {{ background: #eafaf1; color: #27ae60; }}
 .tab-btn.pass.active {{ background: #27ae60; color: white; }}
 .tab-btn.fail {{ background: #fdedec; color: #e74c3c; }}
@@ -515,6 +516,31 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 .tab-btn.multi.active {{ background: #8e44ad; color: white; }}
 .tab-content {{ display: none; }}
 .tab-content.active {{ display: block; }}
+
+.search-box {{ position: relative; width: 220px; flex-shrink: 0; }}
+.search-input {{ width: 100%; padding: 8px 14px 8px 34px; border: 1px solid #ddd; border-radius: 20px; font-size: 14px; outline: none; font-family: inherit; transition: border-color 0.2s; background: white; }}
+.search-input:focus {{ border-color: #1a1a2e; box-shadow: 0 0 0 2px rgba(26,26,46,0.1); }}
+.search-input::placeholder {{ color: #bdc3c7; }}
+.search-icon {{ position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #bdc3c7; font-size: 14px; pointer-events: none; }}
+.search-dropdown {{ display: none; position: absolute; top: 100%; left: 0; right: 0; margin-top: 4px; background: white; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); max-height: 320px; overflow-y: auto; z-index: 100; }}
+.search-dropdown.open {{ display: block; }}
+.search-item {{ display: flex; align-items: center; padding: 10px 14px; cursor: pointer; gap: 10px; font-size: 13px; transition: background 0.15s; border-bottom: 1px solid #f0f0f0; }}
+.search-item:last-child {{ border-bottom: none; }}
+.search-item:hover {{ background: #f5f6fa; }}
+.search-item .s-symbol {{ font-weight: 700; color: #2c3e50; min-width: 55px; }}
+.search-item .s-name {{ color: #7f8c8d; flex: 1; }}
+.search-item .s-tab {{ font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; white-space: nowrap; }}
+.search-item .s-tab.pass {{ background: #eafaf1; color: #27ae60; }}
+.search-item .s-tab.fail {{ background: #fdedec; color: #e74c3c; }}
+.search-item .s-tab.multi {{ background: #f3eef8; color: #8e44ad; }}
+.search-item .s-tab.me {{ background: #ffeaea; color: #c0392b; }}
+.search-no-result {{ padding: 16px; text-align: center; color: #bdc3c7; font-size: 13px; }}
+.search-clear {{ display: none; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #bdc3c7; cursor: pointer; font-size: 16px; padding: 0; line-height: 1; }}
+.search-clear.visible {{ display: block; }}
+.search-clear:hover {{ color: #555; }}
+
+.stock-card.highlight {{ animation: highlightPulse 1.5s ease-in-out; }}
+@keyframes highlightPulse {{ 0% {{ box-shadow: 0 0 0 0 rgba(41,128,185,0.5); }} 50% {{ box-shadow: 0 0 0 8px rgba(41,128,185,0); }} 100% {{ box-shadow: 0 1px 4px rgba(0,0,0,0.05); }} }}
 
 .stock-card {{ background: white; border-radius: 8px; margin-bottom: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); overflow: hidden; transition: box-shadow 0.2s; }}
 .stock-card:hover {{ box-shadow: 0 2px 12px rgba(0,0,0,0.1); }}
@@ -704,15 +730,24 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
   </div>
 </div>
 
-<div class="tabs">
+<div class="tabs-wrapper">
+  <div class="tabs">
   <button class="tab-btn pass active" onclick="switchTab('passed')">2板入选 ({len(passed_two) + len(relaxed_two)})</button>
   <button class="tab-btn fail" onclick="switchTab('excluded')">2板未达标 ({len(excluded_two)})</button>
   <button class="tab-btn pass" onclick="switchTab('multi-passed')">多板入选 ({len(multi_passed) + len(relaxed_multi)})</button>
   <button class="tab-btn multi" onclick="switchTab('multi-excluded')">多板未达标 ({len(multi_excluded)})</button>
+  </div>
+  <div class="search-box">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" class="search-input" placeholder="搜索股票名/代码..." autocomplete="off"
+           oninput="searchStock(this.value)" onfocus="searchStock(this.value)" />
+    <button class="search-clear" onclick="clearSearch()">&times;</button>
+    <div class="search-dropdown" id="searchDropdown"></div>
+  </div>
 </div>
 
 <div id="tab-passed" class="tab-content active">
-{passed_two_html if passed_two_html else '<div style="padding:20px;text-align:center;color:#bdc3c7;">无2板入选标的</div>'}
+{passed_two_html}
 {relaxed_two_html}
 </div>
 
@@ -721,7 +756,7 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 </div>
 
 <div id="tab-multi-passed" class="tab-content">
-{multi_passed_html if multi_passed_html else '<div style="padding:20px;text-align:center;color:#bdc3c7;">无多板入选标的</div>'}
+{multi_passed_html}
 {relaxed_multi_html}
 </div>
 
@@ -1013,6 +1048,146 @@ function buildOption(data) {{
 // resize 时刷新所有图表
 window.addEventListener('resize', function() {{
     Object.values(window._charts).forEach(function(c) {{ c.resize(); }});
+}});
+
+// ── 搜索功能 ─────────────────────────────────────────
+const _stockIndex = {{}};
+(function buildIndex() {{
+    const cards = document.querySelectorAll('.stock-card');
+    const tabNames = {{
+        'tab-passed': '2板入选', 'tab-excluded': '2板未达标',
+        'tab-multi-passed': '多板入选', 'tab-multi-excluded': '多板未达标'
+    }};
+    const tabClasses = {{
+        'tab-passed': 'pass', 'tab-excluded': 'fail',
+        'tab-multi-passed': 'multi', 'tab-multi-excluded': 'me'
+    }};
+    cards.forEach(function(card) {{
+        const symbol = card.getAttribute('data-symbol');
+        const nameEl = card.querySelector('.name');
+        const name = nameEl ? nameEl.textContent.trim() : '';
+        const tabContent = card.closest('.tab-content');
+        const tabId = tabContent ? tabContent.id : '';
+        _stockIndex[symbol] = {{
+            symbol: symbol,
+            name: name,
+            tabId: tabId,
+            tabName: tabNames[tabId] || tabId,
+            tabClass: tabClasses[tabId] || '',
+            card: card
+        }};
+    }});
+}})();
+
+function searchStock(query) {{
+    const dropdown = document.getElementById('searchDropdown');
+    const clearBtn = document.querySelector('.search-clear');
+    const q = query.trim().toLowerCase();
+
+    if (!q) {{
+        dropdown.classList.remove('open');
+        dropdown.innerHTML = '';
+        if (clearBtn) clearBtn.classList.remove('visible');
+        return;
+    }}
+
+    if (clearBtn) clearBtn.classList.add('visible');
+
+    const results = [];
+    Object.values(_stockIndex).forEach(function(item) {{
+        if (item.symbol.toLowerCase().indexOf(q) !== -1 ||
+            item.name.toLowerCase().indexOf(q) !== -1) {{
+            results.push(item);
+        }}
+    }});
+
+    // 匹配度排序：完全匹配优先，前缀匹配次之
+    results.sort(function(a, b) {{
+        const aCode = a.symbol.toLowerCase();
+        const bCode = b.symbol.toLowerCase();
+        const aName = a.name.toLowerCase();
+        const bName = b.name.toLowerCase();
+        const aExact = (aCode === q || aName === q) ? 0 : 1;
+        const bExact = (bCode === q || bName === q) ? 0 : 1;
+        if (aExact !== bExact) return aExact - bExact;
+        const aPrefix = (aCode.startsWith(q) || aName.startsWith(q)) ? 0 : 1;
+        const bPrefix = (bCode.startsWith(q) || bName.startsWith(q)) ? 0 : 1;
+        return aPrefix - bPrefix;
+    }});
+
+    if (results.length === 0) {{
+        dropdown.innerHTML = '<div class="search-no-result">无匹配结果</div>';
+    }} else {{
+        dropdown.innerHTML = results.map(function(r, i) {{
+            return '<div class="search-item" data-symbol="' + r.symbol + '" data-tab="' + r.tabId +
+                   '" onclick="locateStock(\\'' + r.symbol + '\\', \\'' + r.tabId + '\\')">' +
+                   '<span class="s-symbol">' + r.symbol + '</span>' +
+                   '<span class="s-name">' + r.name + '</span>' +
+                   '<span class="s-tab ' + r.tabClass + '">' + r.tabName + '</span>' +
+                   '</div>';
+        }}).join('');
+    }}
+    dropdown.classList.add('open');
+}}
+
+function locateStock(symbol, tabId) {{
+    // 关闭搜索下拉
+    const dropdown = document.getElementById('searchDropdown');
+    dropdown.classList.remove('open');
+    const input = document.querySelector('.search-input');
+    if (input) input.blur();
+
+    // 切换到对应 tab
+    switchTab(tabId.replace('tab-', ''));
+
+    // 展开对应的 stock card 并滚动到视图
+    const item = _stockIndex[symbol];
+    if (!item || !item.card) return;
+
+    // 如果卡片在分组内，先展开分组
+    const groupBody = item.card.closest('.group-body');
+    if (groupBody) {{
+        groupBody.classList.add('open');
+        const groupHeader = groupBody.previousElementSibling;
+        if (groupHeader) groupHeader.classList.add('expanded');
+    }}
+
+    // 展开卡片
+    const header = item.card.querySelector('.card-header');
+    const body = item.card.querySelector('.card-body');
+    if (header && body && !body.classList.contains('open')) {{
+        body.classList.add('open');
+        header.classList.add('expanded');
+        const chartDiv = body.querySelector('.chart-container');
+        if (chartDiv && chartDiv.id) {{
+            initChart(chartDiv.id);
+        }}
+    }}
+
+    // 滚动到视图并高亮
+    item.card.scrollIntoView({{ behavior: 'smooth', block: 'center' }});
+    item.card.classList.add('highlight');
+    setTimeout(function() {{ item.card.classList.remove('highlight'); }}, 1600);
+}}
+
+function clearSearch() {{
+    const input = document.querySelector('.search-input');
+    if (input) input.value = '';
+    const dropdown = document.getElementById('searchDropdown');
+    dropdown.classList.remove('open');
+    dropdown.innerHTML = '';
+    const clearBtn = document.querySelector('.search-clear');
+    if (clearBtn) clearBtn.classList.remove('visible');
+    if (input) input.focus();
+}}
+
+// 点击页面其他地方关闭搜索下拉
+document.addEventListener('click', function(e) {{
+    const box = document.querySelector('.search-box');
+    const dropdown = document.getElementById('searchDropdown');
+    if (box && dropdown && !box.contains(e.target)) {{
+        dropdown.classList.remove('open');
+    }}
 }});
 </script>
 

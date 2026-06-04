@@ -1,3 +1,4 @@
+from __future__ import annotations
 """每日盘后自动执行 — Windows Task Scheduler / cron 触发"""
 import sys
 import os

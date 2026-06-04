@@ -1,3 +1,4 @@
+from __future__ import annotations
 """主入口 — 二板涨停 N 型战法选股系统"""
 import sys
 import os
