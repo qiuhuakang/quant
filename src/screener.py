@@ -1,3 +1,4 @@
+from __future__ import annotations
 """选股筛选主模块 — 每日全流程"""
 import time
 import pandas as pd

@@ -1,10 +1,11 @@
+from __future__ import annotations
 """数据持久化模块 — SQLite 建表 + CRUD"""
 import sqlite3
 import os
 from datetime import datetime
 
 
-DB_PATH = "D:/quant/db/main.db"
+DB_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "db", "main.db")
 
 
 def get_conn():

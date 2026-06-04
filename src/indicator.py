@@ -1,3 +1,4 @@
+from __future__ import annotations
 """指标计算模块 — 黄金分割、缩量、阶梯量、阳线、阶段判定"""
 import pandas as pd
 import numpy as np

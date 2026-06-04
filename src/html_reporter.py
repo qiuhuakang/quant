@@ -1,3 +1,4 @@
+from __future__ import annotations
 """HTML 图表报告生成模块 — ECharts K线图 + 均线 + 成交量"""
 import json
 import os
@@ -85,6 +86,32 @@ def _extract_chart_data(df: pd.DataFrame, analysis: dict) -> dict | None:
         return None
 
 
+def _fail_key(r: dict) -> tuple:
+    """返回一支股票的 4 维不达标元组"""
+    return (
+        r.get("uptrend_stage", "") not in ("early", "mid"),
+        not r.get("vol_shrinking", False),
+        r.get("adj_days", 0) > 5,
+        bool(r.get("broke_fib_618", False)),
+    )
+
+
+def _split_relaxed(results: list[dict]) -> tuple[list[dict], list[dict]]:
+    """将未达标结果分为放宽条件入选和剩余未达标"""
+    allowed_keys = {
+        (True, False, False, False),   # 仅阶段不符
+        (False, True, False, False),   # 仅量比≥1.0、未缩量
+        (True, True, False, False),    # 阶段不符 + 量比≥1.0、未缩量
+    }
+    relaxed, remaining = [], []
+    for r in results:
+        if _fail_key(r) in allowed_keys:
+            relaxed.append(r)
+        else:
+            remaining.append(r)
+    return relaxed, remaining
+
+
 def _group_excluded(results: list[dict]) -> dict[str, list[dict]]:
     """按 4 维度不达标原因分组"""
     fail_labels = [
@@ -104,13 +131,7 @@ def _group_excluded(results: list[dict]) -> dict[str, list[dict]]:
 
     groups: dict[str, list[dict]] = defaultdict(list)
     for r in results:
-        key = (
-            r.get("uptrend_stage", "") not in ("early", "mid"),
-            not r.get("vol_shrinking", False),
-            r.get("adj_days", 0) > 5,
-            bool(r.get("broke_fib_618", False)),
-        )
-        groups[make_cat_name(key)].append(r)
+        groups[make_cat_name(_fail_key(r))].append(r)
 
     # 按失败维度数量排序
     def sort_key(item):
@@ -131,18 +152,22 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
     excluded = [r for r in results if not r["meets_criteria"]]
     passed_sorted = sorted(passed, key=lambda x: x["score"], reverse=True)
 
-    # 2板入选 / 2板未达标
+    # 2板
     passed_two = [r for r in passed_sorted if r.get("board_type") != "multi"]
-    excluded_two = [r for r in excluded if r.get("board_type") != "multi"]
+    excluded_two_all = [r for r in excluded if r.get("board_type") != "multi"]
+    relaxed_two, excluded_two = _split_relaxed(excluded_two_all)
+    relaxed_two_groups = _group_excluded(relaxed_two)
     excluded_two_groups = _group_excluded(excluded_two)
 
-    # 多板入选 / 多板未达标
+    # 多板
     multi_results = multi_results or []
     multi_passed = sorted(
         [r for r in multi_results if r["meets_criteria"]],
         key=lambda x: x["score"], reverse=True
     )
-    multi_excluded = [r for r in multi_results if not r["meets_criteria"]]
+    multi_excluded_all = [r for r in multi_results if not r["meets_criteria"]]
+    relaxed_multi, multi_excluded = _split_relaxed(multi_excluded_all)
+    relaxed_multi_groups = _group_excluded(relaxed_multi)
     multi_excluded_groups = _group_excluded(multi_excluded)
 
     def _build_charts(stock_list):
@@ -170,15 +195,18 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
         return result
 
     passed_two_charts = _build_charts(passed_two)
+    relaxed_two_charts = _build_group_charts(relaxed_two_groups)
     excluded_two_charts = _build_group_charts(excluded_two_groups)
     multi_passed_charts = _build_charts(multi_passed)
+    relaxed_multi_charts = _build_group_charts(relaxed_multi_groups)
     multi_excluded_charts = _build_group_charts(multi_excluded_groups)
 
     # 汇总 JSON
     all_chart_data: dict[str, dict] = {}
     for charts in [passed_two_charts, multi_passed_charts]:
         all_chart_data.update(charts)
-    for charts_dict in [excluded_two_charts, multi_excluded_charts]:
+    for charts_dict in [relaxed_two_charts, excluded_two_charts,
+                         relaxed_multi_charts, multi_excluded_charts]:
         for charts in charts_dict.values():
             for cd in charts:
                 all_chart_data[cd["symbol"]] = cd
@@ -221,6 +249,51 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
           </div>
           <div class="card-body">
             <div id="{chart_id}" class="chart-container"></div>
+          </div>
+        </div>'''
+
+    # ── 构建 2板放宽条件入选 HTML ──────────────────────────
+    relaxed_two_html = ""
+    group_idx = 0
+    for cat_name, charts in relaxed_two_charts.items():
+        group_idx += 1
+        cn = cn_num[group_idx - 1] if group_idx - 1 < len(cn_num) else str(group_idx)
+        relaxed_two_html += f'''
+        <div class="relaxed-group">
+          <div class="group-header relaxed-header" onclick="toggleGroup(this)">
+            <span class="group-title">{cn}、{cat_name}</span>
+            <span class="group-count">{len(charts)}只</span>
+            <span class="expand-icon">▸</span>
+          </div>
+          <div class="group-body">'''
+        for cd in charts:
+            code = cd["symbol"]
+            name = cd["name"][:6]
+            stage = cd["uptrend_stage"]
+            adj_days = cd["adj_days"]
+            vol_ratio = cd["adj_vol_ratio"]
+            chart_id = f"chart_r_{code}"
+            relaxed_two_html += f'''
+            <div class="stock-card relaxed" data-symbol="{code}" data-chart="{chart_id}">
+              <div class="card-header" onclick="event.stopPropagation(); toggleCard(this)">
+                <div class="card-left">
+                  <span class="symbol">{code}</span>
+                  <span class="name">{name}</span>
+                </div>
+                <div class="card-meta">
+                  <span>阶段: <b>{stage}</b></span>
+                  <span>调整: {adj_days}天</span>
+                  <span>量比: {vol_ratio}</span>
+                  <span>MA60: {cd["ma60"][-1] if cd["ma60"][-1] else "-"}</span>
+                  <span>MA120: {cd["ma120"][-1] if cd["ma120"][-1] else "-"}</span>
+                </div>
+                <span class="expand-icon">▸</span>
+              </div>
+              <div class="card-body">
+                <div id="{chart_id}" class="chart-container"></div>
+              </div>
+            </div>'''
+        relaxed_two_html += '''
           </div>
         </div>'''
 
@@ -303,6 +376,57 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
           </div>
           <div class="card-body">
             <div id="{chart_id}" class="chart-container"></div>
+          </div>
+        </div>'''
+
+    # ── 构建多板放宽条件入选 HTML ──────────────────────────
+    relaxed_multi_html = ""
+    group_idx = 0
+    for cat_name, charts in relaxed_multi_charts.items():
+        group_idx += 1
+        cn = cn_num[group_idx - 1] if group_idx - 1 < len(cn_num) else str(group_idx)
+        relaxed_multi_html += f'''
+        <div class="relaxed-group multi-relaxed-group">
+          <div class="group-header relaxed-header" onclick="toggleGroup(this)">
+            <span class="group-title">{cn}、{cat_name}</span>
+            <span class="group-count">{len(charts)}只</span>
+            <span class="expand-icon">▸</span>
+          </div>
+          <div class="group-body">'''
+        for cd in charts:
+            code = cd["symbol"]
+            name = cd["name"][:6]
+            stage = cd["uptrend_stage"]
+            adj_days = cd["adj_days"]
+            vol_ratio = cd["adj_vol_ratio"]
+            bc = 2
+            for r in multi_results:
+                if r["symbol"] == code:
+                    bc = r.get("board_count", 3)
+                    break
+            chart_id = f"chart_mr_{code}"
+            relaxed_multi_html += f'''
+            <div class="stock-card multi-relaxed" data-symbol="{code}" data-chart="{chart_id}">
+              <div class="card-header" onclick="event.stopPropagation(); toggleCard(this)">
+                <div class="card-left">
+                  <span class="symbol">{code}</span>
+                  <span class="name">{name}</span>
+                  <span class="board-badge">连板{bc}</span>
+                </div>
+                <div class="card-meta">
+                  <span>阶段: <b>{stage}</b></span>
+                  <span>调整: {adj_days}天</span>
+                  <span>量比: {vol_ratio}</span>
+                  <span>MA60: {cd["ma60"][-1] if cd["ma60"][-1] else "-"}</span>
+                  <span>MA120: {cd["ma120"][-1] if cd["ma120"][-1] else "-"}</span>
+                </div>
+                <span class="expand-icon">▸</span>
+              </div>
+              <div class="card-body">
+                <div id="{chart_id}" class="chart-container"></div>
+              </div>
+            </div>'''
+        relaxed_multi_html += '''
           </div>
         </div>'''
 
@@ -433,10 +557,120 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 .group-body.open {{ display: block; }}
 .multi-group .group-header {{ border-left-color: #8e44ad; }}
 .multi-group .group-header:hover {{ background: #f9f5fc; }}
-.pass-count {{ color: #27ae60 !important; }}
+
+.relaxed-group {{ margin-bottom: 8px; }}
+.relaxed-group .group-header {{ border-left-color: #2980b9; }}
+.relaxed-group .group-header:hover {{ background: #eaf2f8; }}
+.stock-card.relaxed {{ border-left: 4px solid #2980b9; }}
+.stock-card.multi-relaxed {{ border-left: 4px solid #7d3c98; }}
+.multi-relaxed-group .group-header {{ border-left-color: #7d3c98; }}
+.multi-relaxed-group .group-header:hover {{ background: #f3eef8; }}
 
 .footer {{ text-align: center; padding: 30px 0 10px; font-size: 12px; color: #bdc3c7; }}
 .footer a {{ color: #bdc3c7; }}
+
+/* ── Chat Widget ── */
+.chat-toggle {{
+  position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+  width: 56px; height: 56px; border-radius: 50%; border: none;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white; font-size: 24px; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25); transition: transform 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}}
+.chat-toggle:hover {{ transform: scale(1.08); }}
+.chat-toggle .badge {{
+  position: absolute; top: -2px; right: -2px;
+  width: 14px; height: 14px; border-radius: 50%; background: #e74c3c;
+  border: 2px solid white;
+}}
+.chat-toggle .badge.online {{ background: #27ae60; }}
+
+.chat-panel {{
+  position: fixed; bottom: 90px; right: 24px; z-index: 9998;
+  width: 420px; max-height: 600px; height: 520px;
+  background: white; border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  display: none; flex-direction: column; overflow: hidden;
+  transition: opacity 0.2s;
+}}
+.chat-panel.open {{ display: flex; }}
+
+.chat-panel-header {{
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white; padding: 14px 18px; font-size: 15px; font-weight: 600;
+  display: flex; align-items: center; justify-content: space-between;
+}}
+.chat-panel-header .status-dot {{
+  width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px;
+  background: #95a5a6;
+}}
+.chat-panel-header .status-dot.online {{ background: #27ae60; }}
+.chat-panel-header .close-btn {{
+  background: none; border: none; color: #a0aec0; font-size: 20px; cursor: pointer;
+}}
+.chat-panel-header .close-btn:hover {{ color: white; }}
+
+.chat-messages {{
+  flex: 1; overflow-y: auto; padding: 16px;
+  display: flex; flex-direction: column; gap: 10px;
+  background: #f8f9fb;
+}}
+.chat-messages::-webkit-scrollbar {{ width: 5px; }}
+.chat-messages::-webkit-scrollbar-thumb {{ background: #d0d5dd; border-radius: 3px; }}
+
+.chat-bubble {{
+  max-width: 85%; padding: 10px 14px; border-radius: 14px;
+  font-size: 13.5px; line-height: 1.55; word-break: break-word;
+  animation: fadeIn 0.25s;
+}}
+@keyframes fadeIn {{ from {{ opacity: 0; transform: translateY(8px); }} to {{ opacity: 1; transform: translateY(0); }} }}
+.chat-bubble.user {{
+  align-self: flex-end; background: #1a1a2e; color: white;
+  border-bottom-right-radius: 4px;
+}}
+.chat-bubble.assistant {{
+  align-self: flex-start; background: white; color: #2c3e50;
+  border-bottom-left-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}}
+.chat-bubble.thinking {{
+  align-self: flex-start; background: #fff8e1; color: #b7950b;
+  font-size: 12px; font-style: italic; padding: 6px 12px; border-radius: 10px;
+}}
+.chat-bubble.system {{
+  align-self: center; background: #ecf0f1; color: #7f8c8d;
+  font-size: 11px; padding: 5px 12px; border-radius: 10px;
+}}
+.chat-bubble pre {{ background: #2c3e50; color: #ecf0f1; padding: 8px 12px; border-radius: 6px; overflow-x: auto; font-size: 12px; margin: 6px 0; }}
+.chat-bubble code {{ background: #f0f0f0; padding: 1px 5px; border-radius: 3px; font-size: 12px; }}
+.chat-bubble.assistant code {{ background: #e8e8e8; }}
+
+.chat-input-area {{
+  display: flex; padding: 10px 14px; gap: 8px; border-top: 1px solid #eee;
+  background: white;
+}}
+.chat-input-area input {{
+  flex: 1; border: 1px solid #ddd; border-radius: 20px;
+  padding: 10px 16px; font-size: 14px; outline: none;
+  font-family: inherit; transition: border-color 0.2s;
+}}
+.chat-input-area input:focus {{ border-color: #1a1a2e; }}
+.chat-input-area button {{
+  width: 40px; height: 40px; border-radius: 50%; border: none;
+  background: #1a1a2e; color: white; font-size: 18px; cursor: pointer;
+  transition: background 0.2s; flex-shrink: 0;
+}}
+.chat-input-area button:hover {{ background: #2c3e50; }}
+.chat-input-area button:disabled {{ background: #bdc3c7; cursor: not-allowed; }}
+
+.chat-panel-footer {{
+  text-align: center; padding: 6px; font-size: 11px; color: #bdc3c7;
+  background: #f8f9fb; border-top: 1px solid #f0f0f0;
+}}
+
+@media (max-width: 480px) {{
+  .chat-panel {{ width: calc(100vw - 32px); right: 16px; bottom: 80px; height: 450px; }}
+}}
 </style>
 </head>
 <body>
@@ -453,7 +687,7 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
     <div class="label">总分析</div>
   </div>
   <div class="summary-card pass">
-    <div class="num">{len(passed_two)}</div>
+    <div class="num">{len(passed_two) + len(relaxed_two)}</div>
     <div class="label">2板入选</div>
   </div>
   <div class="summary-card fail">
@@ -461,7 +695,7 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
     <div class="label">2板未达标</div>
   </div>
   <div class="summary-card pass">
-    <div class="num">{len(multi_passed)}</div>
+    <div class="num">{len(multi_passed) + len(relaxed_multi)}</div>
     <div class="label">多板入选</div>
   </div>
   <div class="summary-card multi">
@@ -471,14 +705,15 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 </div>
 
 <div class="tabs">
-  <button class="tab-btn pass active" onclick="switchTab('passed')">2板入选 ({len(passed_two)})</button>
+  <button class="tab-btn pass active" onclick="switchTab('passed')">2板入选 ({len(passed_two) + len(relaxed_two)})</button>
   <button class="tab-btn fail" onclick="switchTab('excluded')">2板未达标 ({len(excluded_two)})</button>
-  <button class="tab-btn pass" onclick="switchTab('multi-passed')">多板入选 ({len(multi_passed)})</button>
+  <button class="tab-btn pass" onclick="switchTab('multi-passed')">多板入选 ({len(multi_passed) + len(relaxed_multi)})</button>
   <button class="tab-btn multi" onclick="switchTab('multi-excluded')">多板未达标 ({len(multi_excluded)})</button>
 </div>
 
 <div id="tab-passed" class="tab-content active">
 {passed_two_html if passed_two_html else '<div style="padding:20px;text-align:center;color:#bdc3c7;">无2板入选标的</div>'}
+{relaxed_two_html}
 </div>
 
 <div id="tab-excluded" class="tab-content">
@@ -487,6 +722,7 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 
 <div id="tab-multi-passed" class="tab-content">
 {multi_passed_html if multi_passed_html else '<div style="padding:20px;text-align:center;color:#bdc3c7;">无多板入选标的</div>'}
+{relaxed_multi_html}
 </div>
 
 <div id="tab-multi-excluded" class="tab-content">
@@ -498,6 +734,32 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
   Generated by quant screener · {screen_date}
 </div>
 
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  Chat Widget -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<button class="chat-toggle" id="chatToggle" title="Claude AI 助手">
+  💬
+  <span class="badge" id="chatStatusDot"></span>
+</button>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-panel-header">
+    <span><span class="status-dot" id="chatStatusDot2"></span> Claude 助手</span>
+    <button class="close-btn" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-bubble system">你好！我是 Claude，可以回答关于这份选股报告的任何问题。比如：选股逻辑、技术指标、个股分析等。</div>
+  </div>
+  <div class="chat-panel-footer">
+    <span>基于 Claude · quant 项目上下文</span>
+  </div>
+  <div class="chat-input-area">
+    <input id="chatInput" type="text" placeholder="输入问题... 比如: 分析一下诺德股份"
+           onkeydown="if(event.key==='Enter')sendMessage()" />
+    <button id="chatSendBtn" onclick="sendMessage()">➤</button>
+  </div>
 </div>
 
 <script>
@@ -555,8 +817,8 @@ function initChart(containerId) {{
         window._charts[containerId].resize();
         return;
     }}
-    // containerId format: "chart_p_CODE" / "chart_e_CODE" / "chart_mp_CODE" / "chart_me_CODE"
-    const symbol = containerId.replace('chart_p_', '').replace('chart_e_', '').replace('chart_mp_', '').replace('chart_me_', '');
+    // containerId format: "chart_p_CODE" / "chart_b_CODE" / "chart_e_CODE" / "chart_mp_CODE" / "chart_mb_CODE" / "chart_me_CODE"
+    const symbol = containerId.replace('chart_p_', '').replace('chart_b_', '').replace('chart_e_', '').replace('chart_mp_', '').replace('chart_mb_', '').replace('chart_me_', '').replace('chart_r_', '').replace('chart_mr_', '');
     const data = ALL_DATA[symbol];
     if (!data) return;
 
@@ -752,6 +1014,177 @@ function buildOption(data) {{
 window.addEventListener('resize', function() {{
     Object.values(window._charts).forEach(function(c) {{ c.resize(); }});
 }});
+</script>
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  Chat WebSocket Client
+// ═══════════════════════════════════════════════════════
+(function() {{
+    const WS_HOST = window.location.hostname;
+    const WS_PORT = window.location.port || '80';
+    const WS_URL = 'ws://' + WS_HOST + ':' + WS_PORT + '/ws';
+
+    let ws = null;
+    let connected = false;
+    let currentAssistantBubble = null;
+    let pendingText = '';
+
+    const toggleBtn = document.getElementById('chatToggle');
+    const panel = document.getElementById('chatPanel');
+    const messagesEl = document.getElementById('chatMessages');
+    const inputEl = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('chatSendBtn');
+    const dot1 = document.getElementById('chatStatusDot');
+    const dot2 = document.getElementById('chatStatusDot2');
+
+    function setStatus(state) {{
+        // state: 'offline' | 'connecting' | 'online'
+        dot1.className = 'badge' + (state === 'online' ? ' online' : '');
+        dot2.className = 'status-dot' + (state === 'online' ? ' online' : '');
+        if (state === 'connecting') {{
+            dot1.className = 'badge';
+        }}
+    }}
+
+    function addBubble(text, cls) {{
+        const div = document.createElement('div');
+        div.className = 'chat-bubble ' + cls;
+        div.textContent = text;
+        messagesEl.appendChild(div);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+        return div;
+    }}
+
+    function addHtmlBubble(html, cls) {{
+        const div = document.createElement('div');
+        div.className = 'chat-bubble ' + cls;
+        div.innerHTML = html;
+        messagesEl.appendChild(div);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+        return div;
+    }}
+
+    function simpleMarkdown(text) {{
+        // Convert basic markdown to HTML
+        let html = text
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+            .replace(/```(\\w*)\\n([\\s\\S]*?)```/g, '<pre>$2</pre>')
+            .replace(/`([^`]+)`/g, '<code>$1</code>')
+            .replace(/\\*\\*(.+?)\\*\\*/g, '<b>$1</b>')
+            .replace(/\\*(.+?)\\*/g, '<i>$1</i>')
+            .replace(/\\n/g, '<br>');
+        return html;
+    }}
+
+    function connect() {{
+        if (ws && ws.readyState === WebSocket.OPEN) return;
+        setStatus('connecting');
+        try {{
+            ws = new WebSocket(WS_URL);
+        }} catch(e) {{
+            setStatus('offline');
+            return;
+        }}
+
+        ws.onopen = function() {{
+            connected = true;
+            setStatus('online');
+            console.log('[chat] connected');
+        }};
+
+        ws.onmessage = function(event) {{
+            try {{
+                const data = JSON.parse(event.data);
+                if (data.type === 'text') {{
+                    if (!currentAssistantBubble) {{
+                        currentAssistantBubble = addHtmlBubble('', 'assistant');
+                    }}
+                    pendingText += data.text;
+                    currentAssistantBubble.innerHTML = simpleMarkdown(pendingText);
+                    messagesEl.scrollTop = messagesEl.scrollHeight;
+                }} else if (data.type === 'thinking') {{
+                    addBubble(data.text, 'thinking');
+                }} else if (data.type === 'done') {{
+                    currentAssistantBubble = null;
+                    pendingText = '';
+                    sendBtn.disabled = false;
+                    inputEl.disabled = false;
+                    inputEl.focus();
+                    if (data.is_error) {{
+                        addBubble('(Claude 返回错误)', 'system');
+                    }}
+                }} else if (data.type === 'error') {{
+                    addBubble('Error: ' + data.text, 'system');
+                    sendBtn.disabled = false;
+                    inputEl.disabled = false;
+                }}
+            }} catch(e) {{}}
+        }};
+
+        ws.onclose = function() {{
+            connected = false;
+            setStatus('offline');
+            currentAssistantBubble = null;
+            pendingText = '';
+            sendBtn.disabled = false;
+            inputEl.disabled = false;
+        }};
+
+        ws.onerror = function() {{
+            connected = false;
+            setStatus('offline');
+        }};
+    }}
+
+    window.sendMessage = function() {{
+        const text = inputEl.value.trim();
+        if (!text) return;
+
+        if (!connected || !ws || ws.readyState !== WebSocket.OPEN) {{
+            addBubble('正在连接 Claude...', 'system');
+            connect();
+            // Queue the message - try again shortly
+            setTimeout(function() {{
+                if (connected && ws && ws.readyState === WebSocket.OPEN) {{
+                    _doSend(text);
+                }} else {{
+                    addBubble('无法连接到 Claude 服务。请确保 chat_server.py 正在运行 (端口 ' + WS_PORT + '):<br><code>python3.8 chat_server.py</code>', 'system');
+                    setStatus('offline');
+                }}
+            }}, 1500);
+            return;
+        }}
+
+        _doSend(text);
+    }};
+
+    function _doSend(text) {{
+        addBubble(text, 'user');
+        inputEl.value = '';
+        sendBtn.disabled = true;
+        inputEl.disabled = true;
+        ws.send(JSON.stringify({{ text: text }}));
+    }}
+
+    window.toggleChat = function() {{
+        const open = panel.classList.contains('open');
+        if (open) {{
+            panel.classList.remove('open');
+        }} else {{
+            panel.classList.add('open');
+            inputEl.focus();
+            if (!connected) {{
+                connect();
+            }}
+        }}
+    }};
+
+    // Toggle button click
+    toggleBtn.addEventListener('click', window.toggleChat);
+
+    // Auto-connect after page load (lazy, on first toggle or send)
+}})();
 </script>
 </body>
 </html>'''

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """并发调度 + 限流模块"""
 import time
 import random

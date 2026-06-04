@@ -1,3 +1,4 @@
+from __future__ import annotations
 """结果输出模块 — 控制台 + CSV 导出"""
 import os
 import csv

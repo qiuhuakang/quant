@@ -1,3 +1,4 @@
+from __future__ import annotations
 """数据获取模块 — akshare 封装"""
 import akshare as ak
 import pandas as pd

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """综合评分模块 — 满分100"""
 import math
 
