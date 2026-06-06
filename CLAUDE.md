@@ -64,6 +64,35 @@ pip install -r requirements.txt
 
 Uses **akshare** exclusively. Kline data from Sina (`stock_zh_a_daily`), limit-up pool from Eastmoney (`stock_zt_pool_em`). Free-tier rate limits apply — the `RateLimiter` defaults to 10 req/s. 北交所 (Beijing Stock Exchange) stocks are skipped because Sina doesn't support them.
 
+## Fangtutu stock-analysis workflow
+
+This repository includes a Fangtutu-native analysis layer for agent answers. When the user asks about stocks, A-share indexes, market direction, K-line structure, screening results, buy/sell points, stop loss, position sizing, trend, consolidation, breakout, or trading risk, you must use the Fangtutu workflow before answering.
+
+Before answering market-analysis questions:
+1. Gather relevant quant project facts when available: reports in `data/export/`, SQLite data in `db/main.db`, screening scores, board type/count, K-line analysis, volume, support/protection levels.
+2. Retrieve Fangtutu context internally from the repository root:
+
+```bash
+python tools/fangtutu_context.py --question "<USER_QUESTION>" --format json
+```
+
+3. If the knowledge files are missing, build them first:
+
+```bash
+python tools/build_fangtutu_kb.py
+```
+
+4. Use `docs/fangtutu/prompt_contract.md` and the `fangtutu-stock-analysis` skill as the behavior contract.
+
+Answer in Chinese with conditional analysis:
+- 结论：偏多 / 偏空 / 震荡 / 观察，并说明成立条件。
+- 价格行为：趋势、震荡、突破、失败突破、EMA20、形态、signal bar、follow-through。
+- 方土土框架依据：概括相关原则，能引用来源文件名时列出来源。
+- 交易计划：走强看什么，走弱看什么，无效条件是什么。
+- 风险控制：先定义止损/无效条件，再谈仓位；宽止损要小仓位，不要重仓，不要急着加仓。
+
+Do not give unconditional buy/sell instructions such as "一定涨", "满仓", or "梭哈". Fangtutu context is an interpretation framework, not a replacement for current price data.
+
 ## CI/CD
 
 `.github/workflows/daily-screen.yml` — runs weekdays at 18:00 Beijing time (UTC 10:00). Executes `python main.py --cold-start --workers 4 --rate 5 --days 200`, then deploys results to GitHub Pages (`data/export/` → `_site/`).

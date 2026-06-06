@@ -1,0 +1,726 @@
+{
+  "generated_at": "2026-06-06T22:58:23",
+  "source_dirs": [
+    "价格心理学入门/价格心理学入门",
+    "专题课/专题课"
+  ],
+  "source_file_count": 39,
+  "chunk_count": 413,
+  "files": [
+    {
+      "source": "价格心理学入门/价格心理学入门/transcript_01_20260605_232637.txt",
+      "series": "价格心理学入门",
+      "title": "transcript_01_20260605_232637",
+      "byte_length": 46342,
+      "char_length": 16424,
+      "sha256": "8640132e269515f4e6bd8c67a4ccd1ed7f8ac24a361a65fe6e347efc20c64edc",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "价格心理学入门/价格心理学入门/transcript_02_20260605_232637.txt",
+      "series": "价格心理学入门",
+      "title": "transcript_02_20260605_232637",
+      "byte_length": 31140,
+      "char_length": 11123,
+      "sha256": "a2e15af706ef5ab88e4dd136832371081ac96ed59a904bcaafb9b3363ce0aeb8",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "价格心理学入门/价格心理学入门/transcript_03_20260605_232637.txt",
+      "series": "价格心理学入门",
+      "title": "transcript_03_20260605_232637",
+      "byte_length": 54926,
+      "char_length": 20110,
+      "sha256": "250b85d1f43113dc894346ea785af86cce05fc317fa402ed432c6c1d89e76377",
+      "topics": [
+        "EMA20",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "价格心理学入门/价格心理学入门/transcript_04_20260605_232637.txt",
+      "series": "价格心理学入门",
+      "title": "transcript_04_20260605_232637",
+      "byte_length": 34550,
+      "char_length": 12923,
+      "sha256": "cd80fcb3f191b5241c582f65e07cb14ae86ea8bd8d1b209204b13901b9e2fd48",
+      "topics": [
+        "EMA20",
+        "突破确认",
+        "信号K",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "价格心理学入门/价格心理学入门/transcript_05_20260605_232637.txt",
+      "series": "价格心理学入门",
+      "title": "transcript_05_20260605_232637",
+      "byte_length": 40091,
+      "char_length": 14441,
+      "sha256": "a96f7f0dd47ac97da0cec81a1b4d70f3039ffced086581a111671b54605ad59a",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "价格心理学入门/价格心理学入门/transcript_06_20260605_232637.txt",
+      "series": "价格心理学入门",
+      "title": "transcript_06_20260605_232637",
+      "byte_length": 13014,
+      "char_length": 4790,
+      "sha256": "edaf5369c440a26fb4aecbaf149994c0db2ec3ddec39db84847c37497b2931e1",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "Measure Move",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "价格心理学入门/价格心理学入门/transcript_20260604_235618.txt",
+      "series": "价格心理学入门",
+      "title": "transcript_20260604_235618",
+      "byte_length": 18975,
+      "char_length": 6637,
+      "sha256": "0e1847dd3fd91966f8bfe31d39c2a4182576946124adc2ebec587d9d022621eb",
+      "topics": [
+        "趋势与震荡",
+        "Measure Move",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "价格心理学入门/价格心理学入门/transcript_20260605_000534.txt",
+      "series": "价格心理学入门",
+      "title": "transcript_20260605_000534",
+      "byte_length": 27263,
+      "char_length": 9185,
+      "sha256": "5c847ff82deecbb3e2c37d4e2ab4dfbf98d437914c94636688ef2585fbc8e4da",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "价格心理学入门/价格心理学入门/transcript_20260606_091353.txt",
+      "series": "价格心理学入门",
+      "title": "transcript_20260606_091353",
+      "byte_length": 26640,
+      "char_length": 9416,
+      "sha256": "57207a06d35c3dfdbefb570dc39d4bcc1aa28a88fe39eb97569310711ec148ba",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_01_20260606_120242.txt",
+      "series": "专题课",
+      "title": "transcript_01_20260606_120242",
+      "byte_length": 25071,
+      "char_length": 9051,
+      "sha256": "45b57e886c5e41a7c1d95743541b84ded7f8b485323c714b13e3f93e6ea697b3",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_01_20260606_122408.txt",
+      "series": "专题课",
+      "title": "transcript_01_20260606_122408",
+      "byte_length": 28128,
+      "char_length": 9910,
+      "sha256": "c99161a6a22a68d42bf91bd7407b5bbad1056a14fe6cb4200f92d1e49b10d71d",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_01_20260606_135358.txt",
+      "series": "专题课",
+      "title": "transcript_01_20260606_135358",
+      "byte_length": 19020,
+      "char_length": 6658,
+      "sha256": "819068cefc8d8fa127227ac67c4e9e357e14268406342cf3a606d1047b94852c",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_01_20260606_144708.txt",
+      "series": "专题课",
+      "title": "transcript_01_20260606_144708",
+      "byte_length": 29969,
+      "char_length": 11067,
+      "sha256": "7df41a5c3ed60280dec20a896e287d025eb5b59f5d2e910a1c15723abd48fe32",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_02_20260606_120242.txt",
+      "series": "专题课",
+      "title": "transcript_02_20260606_120242",
+      "byte_length": 15076,
+      "char_length": 5302,
+      "sha256": "fe29bc7dd03fe17d3fbe430436d44f26a0b6cebab65824e72b53fbb062c91454",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_02_20260606_122408.txt",
+      "series": "专题课",
+      "title": "transcript_02_20260606_122408",
+      "byte_length": 26029,
+      "char_length": 9675,
+      "sha256": "1a6ae1c54e29a383c9d719f346ac33e1470a0c12bdb42944998c365bf941450a",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_02_20260606_135358.txt",
+      "series": "专题课",
+      "title": "transcript_02_20260606_135358",
+      "byte_length": 52226,
+      "char_length": 18730,
+      "sha256": "f9234868eb2907c7f5eddcc97fef87699ef11772aaccc5ec05f47aa56bd6d916",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_02_20260606_144708.txt",
+      "series": "专题课",
+      "title": "transcript_02_20260606_144708",
+      "byte_length": 28888,
+      "char_length": 10362,
+      "sha256": "d6baee378b5eb6d21771d38011ded67f34540929addadd4c1eef4eeeb1be1464",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_03_20260606_120242.txt",
+      "series": "专题课",
+      "title": "transcript_03_20260606_120242",
+      "byte_length": 22220,
+      "char_length": 7792,
+      "sha256": "085ede62bed3794cc006f7dc0ad16510d764778bdabd24bae8f6e8cb8f4af930",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_03_20260606_135358.txt",
+      "series": "专题课",
+      "title": "transcript_03_20260606_135358",
+      "byte_length": 17678,
+      "char_length": 6454,
+      "sha256": "ab286643a804ff42b5f3b8c48179231dd5449fc27178648d6c979953c34bc0fe",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_03_20260606_144708.txt",
+      "series": "专题课",
+      "title": "transcript_03_20260606_144708",
+      "byte_length": 78846,
+      "char_length": 29230,
+      "sha256": "0d930c55f4949c100ebe3dd0deeaf8ccfcbe2f30fecbecba0e403bab9b2cef38",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_04_20260606_120242.txt",
+      "series": "专题课",
+      "title": "transcript_04_20260606_120242",
+      "byte_length": 14555,
+      "char_length": 4947,
+      "sha256": "318e75858969e4bede810b6c5b20ca5cb1c06dbf35d66ac3a42edf289016fc25",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_04_20260606_122408.txt",
+      "series": "专题课",
+      "title": "transcript_04_20260606_122408",
+      "byte_length": 26888,
+      "char_length": 9740,
+      "sha256": "79ff31784540275a44624cb2dbc6ed315cf7742be41af7b6b6c887df2e7cbdf4",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_04_20260606_135358.txt",
+      "series": "专题课",
+      "title": "transcript_04_20260606_135358",
+      "byte_length": 18277,
+      "char_length": 6765,
+      "sha256": "1459778415784ad6ccabdd0b0d7efe956e3d0fcd3ab1cc8db985586094e2bae5",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_05_20260606_120242.txt",
+      "series": "专题课",
+      "title": "transcript_05_20260606_120242",
+      "byte_length": 14142,
+      "char_length": 5022,
+      "sha256": "7513e761f8ca45e95ea34530bd0b9dcf483087d68bc0e5e5917048670b461401",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_06_20260606_120242.txt",
+      "series": "专题课",
+      "title": "transcript_06_20260606_120242",
+      "byte_length": 24079,
+      "char_length": 8667,
+      "sha256": "5025e4067de9ec445dc588c8fd24d44f466dfd51822e8813b94dae564b8ace74",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_06_20260606_122408.txt",
+      "series": "专题课",
+      "title": "transcript_06_20260606_122408",
+      "byte_length": 43385,
+      "char_length": 15777,
+      "sha256": "609e3841ca60fbeb232243769e274a59a31819fd56c0500601391f53675b429c",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_07_20260606_120242.txt",
+      "series": "专题课",
+      "title": "transcript_07_20260606_120242",
+      "byte_length": 15013,
+      "char_length": 5425,
+      "sha256": "a5955baf93d9e4fbfb4578f9e167d4dfb26b5d709119b85e7d687c0e49f03067",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_07_20260606_122408.txt",
+      "series": "专题课",
+      "title": "transcript_07_20260606_122408",
+      "byte_length": 36179,
+      "char_length": 12705,
+      "sha256": "3cdf275bd6d221ef8b9500bec586a69cab7fb109a4dc3f1aefd6f0def951dbe7",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_07_20260606_135358.txt",
+      "series": "专题课",
+      "title": "transcript_07_20260606_135358",
+      "byte_length": 21583,
+      "char_length": 7817,
+      "sha256": "d8abcb4d6c82920290c0b95e13f5a4a1b3ada458f235de0b9ab4da54eebd5370",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "双顶双底",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_08_20260606_120242.txt",
+      "series": "专题课",
+      "title": "transcript_08_20260606_120242",
+      "byte_length": 18842,
+      "char_length": 6604,
+      "sha256": "691e80084dd480b95e7a25a921a0ad4c65295d3f7d62c594d004ce1b576c1a67",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_08_20260606_122408.txt",
+      "series": "专题课",
+      "title": "transcript_08_20260606_122408",
+      "byte_length": 30472,
+      "char_length": 15328,
+      "sha256": "f0453cf6b4fbc1b63dff6c74bd194c1276aa5509879ff72f49f7de18ff7f1b56",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_08_20260606_135358.txt",
+      "series": "专题课",
+      "title": "transcript_08_20260606_135358",
+      "byte_length": 12096,
+      "char_length": 4417,
+      "sha256": "ba174062693542c6a1da80c52620722de4a04f5ca0d45641a8c43d6cf92c7216",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_09_20260606_120242.txt",
+      "series": "专题课",
+      "title": "transcript_09_20260606_120242",
+      "byte_length": 32741,
+      "char_length": 11629,
+      "sha256": "39a3730a1be1969ba891054709dbedb4e60da615cce7f79cf8328ce70c406d62",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_09_20260606_135358.txt",
+      "series": "专题课",
+      "title": "transcript_09_20260606_135358",
+      "byte_length": 14732,
+      "char_length": 5316,
+      "sha256": "31fc65b9b517a9f046a7e398106779c032ca123ddf4eaeaa958823b10fe477d9",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_10_20260606_120242.txt",
+      "series": "专题课",
+      "title": "transcript_10_20260606_120242",
+      "byte_length": 26506,
+      "char_length": 9496,
+      "sha256": "6758b285e48ea64d9ecd006a05e79af14343d307b6b843fae8b5078a601d6cde",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_10_20260606_122408.txt",
+      "series": "专题课",
+      "title": "transcript_10_20260606_122408",
+      "byte_length": 22566,
+      "char_length": 8536,
+      "sha256": "06a7344bbccdd576d79346e5ad4975731f041cb2a91772f9acb535eadd722d3f",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_11_20260606_120242.txt",
+      "series": "专题课",
+      "title": "transcript_11_20260606_120242",
+      "byte_length": 24215,
+      "char_length": 8743,
+      "sha256": "cd6de689b5f3b394d88d3b1cf1b8599fcfcaa09bc88d9b63124bd1da42ee088b",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_11_20260606_135358.txt",
+      "series": "专题课",
+      "title": "transcript_11_20260606_135358",
+      "byte_length": 18001,
+      "char_length": 6507,
+      "sha256": "6808c16a41416871086228c140cdf887f81583bbb3b8ae7fbba9548cf46e6dff",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "双顶双底",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "专题课/专题课/transcript_12_20260606_120242.txt",
+      "series": "专题课",
+      "title": "transcript_12_20260606_120242",
+      "byte_length": 27187,
+      "char_length": 9553,
+      "sha256": "aab0e5836534c524b69308ba158f527761164d4d7087d825231fe30dcb43f20f",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    }
+  ]
+}
