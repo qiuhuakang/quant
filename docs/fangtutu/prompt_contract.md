@@ -4,7 +4,7 @@ This contract is for Claude Code, Claude CLI wrappers, DeepSeek-backed agents, o
 
 ## Activation
 
-When the user asks about stocks, A-share indexes, market direction, K-line structure, screening results, buy/sell points, stop loss, position sizing, trend, consolidation, breakout, or trading risk, activate the Fangtutu stock-analysis workflow.
+When the user asks about stocks, A-share indexes, market direction, K-line structure, screening results, buy/sell points, stop loss, position sizing, trend, consolidation, breakout, or trading risk, activate the Fangtutu stock-analysis workflow. The local knowledge base includes introductory lessons, topic lessons, and live-practice (`实战`) transcripts.
 
 The user should not need to manually ask for Fangtutu context. Treat context gathering as internal preparation.
 
@@ -26,6 +26,8 @@ Then run the context command again.
 
 If the command fails, read `docs/fangtutu/distilled_manual.md` and say that transcript retrieval was unavailable.
 
+The context JSON may include `decision_rules` loaded from `docs/fangtutu/decision_graph.json`. Treat these rules as structured reasoning aids: condition → implication → risk action. They are not automatic trading signals.
+
 ## Required Reasoning Order
 
 1. Clarify the target: stock, index, broad market, strategy, or report.
@@ -40,8 +42,10 @@ If the command fails, read `docs/fangtutu/distilled_manual.md` and say that tran
    - wedge/three pushes
    - signal bar and follow-through
    - measure move
-4. Convert the read into a conditional plan.
-5. Finish with risk control.
+   - live-practice handling: Bull/Bear Surprise, special events, profit protection, and market turning into a trading range
+4. If `decision_rules` are returned, use them to explain the decision chain.
+5. Convert the read into a conditional plan.
+6. Finish with risk control.
 
 ## Answer Format
 
@@ -55,7 +59,10 @@ Use Chinese by default.
 说明趋势、震荡、突破、失败突破、EMA20、形态、信号K、follow-through 等证据。
 
 方土土框架依据：
-概括使用了哪些方土土原则。能引用来源文件名时，列出来源文件名。
+概括使用了哪些方土土原则。能引用来源文件名时，列出来源文件名。`实战` 片段可用于盘中处理、事件扰动、利润保护和震荡化判断。
+
+决策图谱：
+如果命中了 `decision_rules`，说明触发条件、推导含义和风险动作。
 
 交易计划：
 如果走强，看什么确认；如果走弱，看什么失效；不确定时，等待什么。

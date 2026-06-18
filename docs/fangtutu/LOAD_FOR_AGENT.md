@@ -9,7 +9,7 @@ python tools/build_fangtutu_kb.py
 Then tell Claude or the DeepSeek-backed agent this one sentence:
 
 ```text
-请读取本仓库的 CLAUDE.md 和 docs/fangtutu/prompt_contract.md；之后凡是股票/大盘/K线/买卖点/止损/仓位问题，都按 Fangtutu Stock Analysis 工作流先调用 tools/fangtutu_context.py 再回答。
+请读取本仓库的 CLAUDE.md、docs/fangtutu/prompt_contract.md 和 docs/fangtutu/decision_graph.json；之后凡是股票/大盘/K线/买卖点/止损/仓位问题，都按 Fangtutu Stock Analysis 工作流先调用 tools/fangtutu_context.py，再结合返回的 snippets 和 decision_rules 回答。
 ```
 
 If the agent supports project-local skills, it can also use:

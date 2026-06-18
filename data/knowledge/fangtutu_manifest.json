@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-06-06T22:58:23",
+  "generated_at": "2026-06-18T20:47:59",
   "source_dirs": [
     "价格心理学入门/价格心理学入门",
-    "专题课/专题课"
+    "专题课/专题课",
+    "实战"
   ],
-  "source_file_count": 39,
-  "chunk_count": 413,
+  "source_file_count": 76,
+  "chunk_count": 657,
   "files": [
     {
       "source": "价格心理学入门/价格心理学入门/transcript_01_20260605_232637.txt",
@@ -41,7 +42,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -91,7 +93,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -107,7 +110,8 @@
         "Measure Move",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -122,7 +126,8 @@
         "Measure Move",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -154,7 +159,8 @@
         "突破确认",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -174,7 +180,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -194,7 +201,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -232,7 +240,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -267,7 +276,8 @@
         "Measure Move",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -287,7 +297,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -307,7 +318,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -325,7 +337,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -344,7 +357,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -362,7 +376,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -401,7 +416,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -436,7 +452,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -455,7 +472,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -493,7 +511,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -513,7 +532,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -551,7 +571,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -569,7 +590,8 @@
         "Measure Move",
         "信号K",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -586,7 +608,8 @@
         "Measure Move",
         "信号K",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -606,7 +629,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -642,7 +666,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -661,7 +686,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -681,7 +707,8 @@
         "信号K",
         "仓位管理",
         "风险控制",
-        "交易心理"
+        "交易心理",
+        "实战复盘"
       ]
     },
     {
@@ -719,7 +746,718 @@
         "信号K",
         "仓位管理",
         "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/-r7E6dsi6_E.txt",
+      "series": "实战",
+      "title": "-r7E6dsi6_E",
+      "byte_length": 26444,
+      "char_length": 9879,
+      "sha256": "3f0f6ca86cb603bf018a8dd1366213e91eea2257c51c328424a36ba4c8add2ec",
+      "topics": [
+        "趋势与震荡",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/5rDTfseBNMU.txt",
+      "series": "实战",
+      "title": "5rDTfseBNMU",
+      "byte_length": 9471,
+      "char_length": 3435,
+      "sha256": "14ec78e956c5138b9f05523c87b1f740bd6c4f806a1312e7c626bacc4666a893",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/65vMspZElCg.txt",
+      "series": "实战",
+      "title": "65vMspZElCg",
+      "byte_length": 12783,
+      "char_length": 4591,
+      "sha256": "4b3ff20ed4cab7b08bbc1346ff8637b5d11cc127b9c25a4dc5c6ce2745c6a878",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/Cn6yAnTlke4.txt",
+      "series": "实战",
+      "title": "Cn6yAnTlke4",
+      "byte_length": 18400,
+      "char_length": 6584,
+      "sha256": "bff256c910859bb0cadd2cde331d9a94fe704d8fe1f47295935c7c5b8065ea34",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/E0y_eF3iD7k.txt",
+      "series": "实战",
+      "title": "E0y_eF3iD7k",
+      "byte_length": 19743,
+      "char_length": 7448,
+      "sha256": "af6bb5aed26e90057e8801a8879dbbc31179af7d43c269a315159bc8a2743c69",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/e4bSaceDRGo.txt",
+      "series": "实战",
+      "title": "e4bSaceDRGo",
+      "byte_length": 8496,
+      "char_length": 3062,
+      "sha256": "fbf09845cff1abd619804c1fd0acf79e56846f4a1b368ccf83d17a5a5bc81cf3",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/fNcx3lGoIK4.txt",
+      "series": "实战",
+      "title": "fNcx3lGoIK4",
+      "byte_length": 12393,
+      "char_length": 4295,
+      "sha256": "5355b7f69fdd5c6ae705b68e6a0fd75ff9e0bdf3a7fd70d6b85815554e013b61",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
         "交易心理"
+      ]
+    },
+    {
+      "source": "实战/FOaPOP1GO_Q.txt",
+      "series": "实战",
+      "title": "FOaPOP1GO_Q",
+      "byte_length": 10714,
+      "char_length": 4038,
+      "sha256": "b26f3c799005efde7579f6041360481b0325ce1da4f78a302206ff174d29603d",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/h1XzfIbhoMg.txt",
+      "series": "实战",
+      "title": "h1XzfIbhoMg",
+      "byte_length": 14172,
+      "char_length": 4922,
+      "sha256": "5dfab8e2f271f722ef7c62cd55e81a8c1eb55d9eae64f67e33b98a2e9e845ace",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/HKEzBklE0a8.txt",
+      "series": "实战",
+      "title": "HKEzBklE0a8",
+      "byte_length": 10720,
+      "char_length": 3886,
+      "sha256": "1e75cf86f20dfd948b3625d9545d8c251f5674be0bfb2881039724462a7818d4",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/KGDpYMOMcOo.txt",
+      "series": "实战",
+      "title": "KGDpYMOMcOo",
+      "byte_length": 15712,
+      "char_length": 5724,
+      "sha256": "2f05c9ec24e4f8230798fa428969b69972c09ccbf7c398444202efd151a520e4",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/l9hJNWp8hzE.txt",
+      "series": "实战",
+      "title": "l9hJNWp8hzE",
+      "byte_length": 2140,
+      "char_length": 772,
+      "sha256": "d2963ca6f62484976f8ef6937adad5f813d582d59c97ec66f9e4f3aaa8abe2b5",
+      "topics": [
+        "趋势与震荡",
+        "仓位管理",
+        "风险控制",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/M4dwPhNK5X8.txt",
+      "series": "实战",
+      "title": "M4dwPhNK5X8",
+      "byte_length": 12883,
+      "char_length": 4765,
+      "sha256": "15c33ac3f1a56658e1857333efad583f6fe2d8da769b2bc0202fcd2d2517d635",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "实战/Mtjvam8lQUY.txt",
+      "series": "实战",
+      "title": "Mtjvam8lQUY",
+      "byte_length": 27800,
+      "char_length": 10224,
+      "sha256": "e90fd0cce45da6d72a24450f2afdd829480cbdba5ee981f59d99f8634ab84f69",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/RM3kESaXpEE.txt",
+      "series": "实战",
+      "title": "RM3kESaXpEE",
+      "byte_length": 12525,
+      "char_length": 4613,
+      "sha256": "2ca268734f10531d454974c9271eb7c80dc5a1855180a85f4a25990047a15804",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/T_Wib-suBsQ.txt",
+      "series": "实战",
+      "title": "T_Wib-suBsQ",
+      "byte_length": 22951,
+      "char_length": 7885,
+      "sha256": "d6d3d7e55c448fc131021d87a5cb1215103d2d920eaaba4ac82cfe9187d5835e",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "实战/transcript_01_20260611_225224.txt",
+      "series": "实战",
+      "title": "transcript_01_20260611_225224",
+      "byte_length": 17172,
+      "char_length": 6096,
+      "sha256": "6f2383f0ccb0ae6464da83f19822aa150a8bf7f06fb9f527f680b6aec16fc64d",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_01_20260611_230851.txt",
+      "series": "实战",
+      "title": "transcript_01_20260611_230851",
+      "byte_length": 16114,
+      "char_length": 5964,
+      "sha256": "9b8798cec26847a5d4b2e09d2401fe3b00a45b8e54c8599f24053c67c4e09497",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_02_20260611_225224.txt",
+      "series": "实战",
+      "title": "transcript_02_20260611_225224",
+      "byte_length": 16553,
+      "char_length": 5883,
+      "sha256": "53814a9735dd1d9cfea5fe4f2d7932a0ef8de2c5618f9c7e7c3d9eaf26e70a2a",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_02_20260611_230851.txt",
+      "series": "实战",
+      "title": "transcript_02_20260611_230851",
+      "byte_length": 17112,
+      "char_length": 6124,
+      "sha256": "324f680faab1404d894dafa1da2a265d6746182117333e16b58d5f42ac13253d",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_02_20260611_231426.txt",
+      "series": "实战",
+      "title": "transcript_02_20260611_231426",
+      "byte_length": 10679,
+      "char_length": 3911,
+      "sha256": "6cb63c804cdedcefd2ff044b7f5cd8d68294b489e3ad128992ad2128565f1c92",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_03_20260611_225224.txt",
+      "series": "实战",
+      "title": "transcript_03_20260611_225224",
+      "byte_length": 21706,
+      "char_length": 8070,
+      "sha256": "65fa7c01c8ed70f2788193c68873c082d4d430eb9eba33f499b852b3bc32d0c2",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_04_20260611_225224.txt",
+      "series": "实战",
+      "title": "transcript_04_20260611_225224",
+      "byte_length": 19859,
+      "char_length": 7391,
+      "sha256": "7e9da761ede174242fd5df9894a823c4f17734a52c0b18f9a12a421fd9aa17df",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_04_20260611_231426.txt",
+      "series": "实战",
+      "title": "transcript_04_20260611_231426",
+      "byte_length": 10672,
+      "char_length": 3672,
+      "sha256": "9a2a0d29986a6ad85c4a88b6f40c359ce37359e43c025d6dc9ea2f02279a5200",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "实战/transcript_05_20260611_225224.txt",
+      "series": "实战",
+      "title": "transcript_05_20260611_225224",
+      "byte_length": 24697,
+      "char_length": 9063,
+      "sha256": "01694a5c052b00cb77b455fc92b5782186e1da031a2dc0cebbcc5bff4059bc60",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_05_20260611_231426.txt",
+      "series": "实战",
+      "title": "transcript_05_20260611_231426",
+      "byte_length": 21137,
+      "char_length": 7713,
+      "sha256": "4adf13d2bca74756d2876d96b69f4c453889496fac98f74a8a4c4afb4941531b",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "双顶双底",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_06_20260611_225224.txt",
+      "series": "实战",
+      "title": "transcript_06_20260611_225224",
+      "byte_length": 28743,
+      "char_length": 10321,
+      "sha256": "55abf03764d378387de7947355303f58e13f5b4fd9e813fbf6386f1353f7a37b",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_06_20260611_231426.txt",
+      "series": "实战",
+      "title": "transcript_06_20260611_231426",
+      "byte_length": 15031,
+      "char_length": 5175,
+      "sha256": "8af6bedd077a9465fdebb07d1aceb0e59dc50d79631d3a0363b013ac4385afe4",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "双顶双底",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_08_20260611_225224.txt",
+      "series": "实战",
+      "title": "transcript_08_20260611_225224",
+      "byte_length": 17016,
+      "char_length": 6100,
+      "sha256": "ec756ed4a0bd2da98f06e2fb14f80afbb90446687db7881b5945f10482712a4c",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_09_20260611_231426.txt",
+      "series": "实战",
+      "title": "transcript_09_20260611_231426",
+      "byte_length": 16840,
+      "char_length": 6278,
+      "sha256": "d1e386b7be7e547647123991f8480c9a729d46bb503a219dad43242e83814f7e",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_10_20260611_225224.txt",
+      "series": "实战",
+      "title": "transcript_10_20260611_225224",
+      "byte_length": 22925,
+      "char_length": 8195,
+      "sha256": "f81ed5808e2349a33795e534610352db5d0bf2762297e5b9aad3fbebedb71d90",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/transcript_20260613_110424.txt",
+      "series": "实战",
+      "title": "transcript_20260613_110424",
+      "byte_length": 33523,
+      "char_length": 11783,
+      "sha256": "f7595a8303493b28f935259dc631eb5111ad7a8b49b36608fdb32f1f52c17314",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/u9TlDjS-oNI.txt",
+      "series": "实战",
+      "title": "u9TlDjS-oNI",
+      "byte_length": 17390,
+      "char_length": 6112,
+      "sha256": "846a212b70bc2f66b8972974369cac593dc3ed8794ef6e20b5fcb526585e2dfb",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "实战/WvimVpMUPa8.txt",
+      "series": "实战",
+      "title": "WvimVpMUPa8",
+      "byte_length": 7962,
+      "char_length": 2882,
+      "sha256": "ce3bc75d8ba0bafd602e874da83073e6c8f5506f038e954d414836b64e066e53",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "信号K",
+        "风险控制",
+        "交易心理"
+      ]
+    },
+    {
+      "source": "实战/Ww6uKevLp04.txt",
+      "series": "实战",
+      "title": "Ww6uKevLp04",
+      "byte_length": 21868,
+      "char_length": 7484,
+      "sha256": "900d474438f2524b9ef8f0d848f2e8b36254789847e021f1c9b490bcfb3ca810",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/x-FQC9I_i5U.txt",
+      "series": "实战",
+      "title": "x-FQC9I_i5U",
+      "byte_length": 19519,
+      "char_length": 7177,
+      "sha256": "132c210c474d6145abcadb21c7194388a53a813689b622f015b81abecccafce9",
+      "topics": [
+        "趋势与震荡",
+        "突破确认",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
+      ]
+    },
+    {
+      "source": "实战/Z3qWF7Am7yc.txt",
+      "series": "实战",
+      "title": "Z3qWF7Am7yc",
+      "byte_length": 14268,
+      "char_length": 5050,
+      "sha256": "110b63011cd5c722d15b4b7e083a94901138e06cd00f91cbd7a708ff74274bfc",
+      "topics": [
+        "趋势与震荡",
+        "EMA20",
+        "突破确认",
+        "双顶双底",
+        "楔形",
+        "Measure Move",
+        "信号K",
+        "仓位管理",
+        "风险控制",
+        "交易心理",
+        "实战复盘"
       ]
     }
   ]
