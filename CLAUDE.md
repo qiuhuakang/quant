@@ -96,6 +96,55 @@ Answer in Chinese with conditional analysis:
 
 Do not give unconditional buy/sell instructions such as "一定涨", "满仓", or "梭哈". Fangtutu context is an interpretation framework, not a replacement for current price data.
 
+## Theme Logic Master workflow
+
+This repository also includes a Theme Logic Master workflow for A-share theme and sector validation. Use it when the user asks whether a stock belongs to a current hot theme, which themes/sectors/industry chains deserve attention, whether a stock is a leader/front-row/catch-up/back-row concept name, or whether current theme logic supports a stock.
+
+Theme Logic Master is a DeepSeek web-research delegation workflow, not a local market-data pipeline. Do not pretend the repository can locally verify current theme heat unless the user provides current data. For current theme validation, ask DeepSeek or Claude Code web search to verify dated sources.
+
+Use these files as the behavior contract:
+
+- `.claude/skills/theme-logic-master/SKILL.md`
+- `docs/theme_logic/prompt_contract.md`
+- `docs/theme_logic/decision_graph.json`
+- `docs/theme_logic/LOAD_FOR_AGENT.md`
+
+Required behavior:
+
+1. Confirm the current date, nearest trading day, target stock/sector, and timeframe.
+2. Use web research through DeepSeek or Claude Code to check current A-share hot themes, sector movers, limit-up clusters, consecutive-board structure, catalysts, target-stock concepts, and same-theme peers.
+3. Cross-check important facts with dated sources when possible.
+4. Separate facts from inference.
+5. If search is unavailable, delayed, contradictory, or insufficient, say `证据不足，暂无法验证`; do not fabricate current hot themes.
+6. Use `docs/theme_logic/decision_graph.json` as a lightweight rule vocabulary, not a trading signal.
+
+Answer in Chinese with:
+
+- 题材结论
+- 所属方向
+- 个股地位
+- 当前值得关注
+- 验证依据
+- 风险
+- 与方土土合并
+
+Specialist split:
+
+- Theme Logic Master decides whether the stock has current market logic: hot theme, sector mainline, catalyst, and position inside the theme.
+- Fangtutu Stock Analysis decides whether the K-line location, pattern, invalidation level, and risk plan are acceptable.
+- The main agent combines them only after both relevant views are available.
+
+Combined decision matrix:
+
+| Theme Logic | Fangtutu K-line | Final stance |
+|---|---|---|
+| Strong | Strong | Priority watch, define invalidation and position size first |
+| Strong | Weak | Wait for pattern repair, signal bar, or follow-through |
+| Weak | Strong | Lower expectation; treat as technical rebound |
+| Weak | Weak | Ignore or observe only |
+| Unknown | Strong | Watch only after theme evidence improves |
+| Strong | Unknown | Research candidate; do not force a trade conclusion |
+
 ## CI/CD
 
 `.github/workflows/daily-screen.yml` — runs weekdays at 18:00 Beijing time (UTC 10:00). Executes `python main.py --cold-start --workers 4 --rate 5 --days 200`, then deploys results to GitHub Pages (`data/export/` → `_site/`).
