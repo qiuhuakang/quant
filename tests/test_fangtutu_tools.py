@@ -31,6 +31,13 @@ class FangtutuToolTests(unittest.TestCase):
             encoding="utf-8",
         )
         (special_dir / "empty.txt").write_text("", encoding="utf-8")
+        live_dir = self.project_root / "实战"
+        live_dir.mkdir(parents=True)
+        (live_dir / "live_trade.txt").write_text(
+            "实战交易中出现 Bear Surprise 大阴线时，先离场保护利润。"
+            "大跌大涨之后通常更像震荡行情，后面要降低预期，不要急着追单。",
+            encoding="utf-8",
+        )
 
     def tearDown(self) -> None:
         self.tmp.cleanup()
@@ -38,8 +45,8 @@ class FangtutuToolTests(unittest.TestCase):
     def test_build_kb_skips_empty_files_and_writes_portable_outputs(self) -> None:
         result = build_kb(project_root=self.project_root)
 
-        self.assertEqual(result["source_file_count"], 2)
-        self.assertEqual(result["chunk_count"], 2)
+        self.assertEqual(result["source_file_count"], 3)
+        self.assertEqual(result["chunk_count"], 3)
         self.assertTrue((self.project_root / "data" / "knowledge" / "fangtutu_manifest.json").exists())
         self.assertTrue((self.project_root / "data" / "knowledge" / "fangtutu_chunks.jsonl").exists())
         self.assertTrue((self.project_root / "docs" / "fangtutu" / "distilled_manual.md").exists())
@@ -52,6 +59,7 @@ class FangtutuToolTests(unittest.TestCase):
         self.assertTrue(all(not Path(source).is_absolute() for source in sources))
         self.assertTrue(any("价格心理学入门" in source for source in sources))
         self.assertTrue(any("专题课" in source for source in sources))
+        self.assertTrue(any("实战" in source for source in sources))
 
     def test_get_context_returns_ema_and_breakout_guidance(self) -> None:
         build_kb(project_root=self.project_root)
@@ -75,6 +83,16 @@ class FangtutuToolTests(unittest.TestCase):
         self.assertIn("仓位", joined)
         self.assertTrue(any(topic in context["matched_topics"] for topic in ["仓位管理", "风险控制"]))
         self.assertTrue(any("止损" in item or "仓位" in item for item in context["answer_guidance"]))
+
+    def test_get_context_returns_live_trade_guidance(self) -> None:
+        build_kb(project_root=self.project_root)
+
+        context = get_context("实盘里出现 Bear Surprise 以后怎么处理", project_root=self.project_root, top_k=3)
+
+        self.assertGreaterEqual(len(context["snippets"]), 1)
+        joined = " ".join(snippet["summary"] + " " + snippet["quote"] for snippet in context["snippets"])
+        self.assertIn("Bear Surprise", joined)
+        self.assertTrue(any(topic in context["matched_topics"] for topic in ["实战复盘", "风险控制", "趋势与震荡"]))
 
 
 if __name__ == "__main__":

@@ -13,6 +13,7 @@ Use this skill whenever the user asks about:
 - Existing quant screening reports or candidates
 - Buy points, sell points, stop loss, protection price, position sizing, or adding positions
 - Trend, consolidation, breakout, failed breakout, EMA20, double top/bottom, wedge, measure move, signal bar, or follow-through
+- Live-practice (`实战`) handling such as Bull/Bear Surprise, special events, profit protection, and trading-range transitions
 
 ## Required Workflow
 
@@ -41,7 +42,7 @@ Use this skill whenever the user asks about:
 
 Always reason in this order:
 
-1. Market state: trend, trading range, breakout, failed breakout, pullback to EMA20, climax, or unclear.
+1. Market state: trend, trading range, breakout, failed breakout, pullback to EMA20, climax, special-event disturbance, or unclear.
 2. Pattern evidence: signal bar, follow-through, double top/bottom, wedge/three pushes, measure move, support/resistance.
 3. Quant project facts: screen score, board type/count, volume, MA/fib/protection levels, if available.
 4. Conditional plan: what confirms the bullish case, what confirms the bearish case, and what invalidates the setup.
@@ -59,7 +60,7 @@ Use Chinese. Prefer this structure unless the user's question is very small:
 趋势、震荡、突破、失败突破、EMA20、形态和 follow-through。
 
 方土土框架依据：
-概括检索到的相关原则，必要时列出来源文件名。
+概括检索到的相关原则，必要时列出来源文件名。`实战` 来源可用于解释盘中处理、事件扰动、利润保护和震荡化判断。
 
 交易计划：
 走强看什么；走弱看什么；无效条件是什么。

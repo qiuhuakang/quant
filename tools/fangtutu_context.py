@@ -140,6 +140,7 @@ def answer_guidance(matched_topics: list[str]) -> list[str]:
         "风险控制": "入场前先定义止损位置和这笔交易错了的条件。",
         "楔形": "三推/楔形后的第一次反转在强趋势中可能失败，需要确认。",
         "Measure Move": "目标位只是参考，达到过程中的反向信号需要重新评估。",
+        "实战复盘": "实战片段优先用于盘中处理：突然的 Bull/Bear Surprise、特殊事件、利润保护和震荡化判断。",
     }
     for topic in matched_topics:
         item = topic_guidance.get(topic)
