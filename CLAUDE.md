@@ -76,6 +76,8 @@ Before answering market-analysis questions:
 python tools/fangtutu_context.py --question "<USER_QUESTION>" --format json
 ```
 
+The returned context can include `decision_rules` from `docs/fangtutu/decision_graph.json`. Use these rules to stabilize reasoning from pattern → implication → risk action. They are not mechanical trade signals.
+
 3. If the knowledge files are missing, build them first:
 
 ```bash
@@ -88,6 +90,7 @@ Answer in Chinese with conditional analysis:
 - 结论：偏多 / 偏空 / 震荡 / 观察，并说明成立条件。
 - 价格行为：趋势、震荡、突破、失败突破、EMA20、形态、signal bar、follow-through。
 - 方土土框架依据：概括相关原则，能引用来源文件名时列出来源；`实战` 片段可用于盘中处理、事件扰动、利润保护和震荡化判断。
+- 决策图谱：若 `decision_rules` 命中，说明触发条件、推导含义和风险动作。
 - 交易计划：走强看什么，走弱看什么，无效条件是什么。
 - 风险控制：先定义止损/无效条件，再谈仓位；宽止损要小仓位，不要重仓，不要急着加仓。
 

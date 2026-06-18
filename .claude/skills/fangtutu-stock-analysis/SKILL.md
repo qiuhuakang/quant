@@ -28,6 +28,8 @@ Use this skill whenever the user asks about:
    python tools/fangtutu_context.py --question "<USER_QUESTION>" --format json
    ```
 
+   The JSON may include `decision_rules` from `docs/fangtutu/decision_graph.json`. Use them as structured reasoning aids, not as automatic trade signals.
+
 4. If `data/knowledge/fangtutu_chunks.jsonl` is missing, run:
 
    ```bash
@@ -45,8 +47,9 @@ Always reason in this order:
 1. Market state: trend, trading range, breakout, failed breakout, pullback to EMA20, climax, special-event disturbance, or unclear.
 2. Pattern evidence: signal bar, follow-through, double top/bottom, wedge/three pushes, measure move, support/resistance.
 3. Quant project facts: screen score, board type/count, volume, MA/fib/protection levels, if available.
-4. Conditional plan: what confirms the bullish case, what confirms the bearish case, and what invalidates the setup.
-5. Risk control: stop/invalidation, small size, wide-stop position reduction, avoid urgent adding, avoid heavy-position language.
+4. Decision graph: if `decision_rules` match, explain condition → implication → risk action.
+5. Conditional plan: what confirms the bullish case, what confirms the bearish case, and what invalidates the setup.
+6. Risk control: stop/invalidation, small size, wide-stop position reduction, avoid urgent adding, avoid heavy-position language.
 
 ## Answer Shape
 
@@ -61,6 +64,9 @@ Use Chinese. Prefer this structure unless the user's question is very small:
 
 方土土框架依据：
 概括检索到的相关原则，必要时列出来源文件名。`实战` 来源可用于解释盘中处理、事件扰动、利润保护和震荡化判断。
+
+决策图谱：
+若命中规则，说明触发条件、推导含义和风险动作。
 
 交易计划：
 走强看什么；走弱看什么；无效条件是什么。

@@ -27,6 +27,9 @@ except ModuleNotFoundError:  # Allows direct execution from the tools directory.
     )
 
 
+DECISION_GRAPH_PATH = Path("docs") / "fangtutu" / "decision_graph.json"
+
+
 def load_chunks(chunks_path: Path) -> list[dict]:
     chunks = []
     if not chunks_path.exists():
@@ -37,6 +40,15 @@ def load_chunks(chunks_path: Path) -> list[dict]:
             if line:
                 chunks.append(json.loads(line))
     return chunks
+
+
+def load_decision_graph(project_root: Path) -> list[dict]:
+    graph_path = project_root / DECISION_GRAPH_PATH
+    if not graph_path.exists():
+        return []
+    graph = json.loads(graph_path.read_text(encoding="utf-8"))
+    rules = graph.get("rules", [])
+    return rules if isinstance(rules, list) else []
 
 
 def load_manual_summary(project_root: Path) -> str:
@@ -75,6 +87,58 @@ def query_terms(question: str) -> list[str]:
             seen.add(key)
             deduped.append(term)
     return deduped
+
+
+def score_rule(rule: dict, question: str, matched_topics: list[str], snippets: list[dict]) -> float:
+    question_text = question.lower()
+    snippet_text = " ".join(snippet.get("summary", "") + " " + snippet.get("quote", "") for snippet in snippets).lower()
+    score = 0.0
+
+    for trigger in rule.get("triggers", []):
+        trigger_text = str(trigger).lower()
+        if trigger_text in question_text:
+            score += 8.0
+        elif trigger_text in snippet_text:
+            score += 2.0
+
+    for topic in rule.get("topics", []):
+        if topic in matched_topics:
+            score += 2.5
+
+    for source_tag in rule.get("source_tags", []):
+        source_text = str(source_tag).lower()
+        if source_text in question_text:
+            score += 1.5
+        elif source_text in snippet_text:
+            score += 0.5
+
+    return score
+
+
+def match_decision_rules(
+    project_root: Path,
+    question: str,
+    matched_topics: list[str],
+    snippets: list[dict],
+    top_k: int = 4,
+) -> list[dict]:
+    scored = []
+    for rule in load_decision_graph(project_root):
+        score = score_rule(rule, question, matched_topics, snippets)
+        if score > 0:
+            cleaned = {
+                "id": rule.get("id", ""),
+                "title": rule.get("title", ""),
+                "condition": rule.get("condition", ""),
+                "implies": rule.get("implies", []),
+                "risk_actions": rule.get("risk_actions", []),
+                "source_tags": rule.get("source_tags", []),
+                "relevance": round(score, 3),
+            }
+            scored.append((score, cleaned))
+
+    scored.sort(key=lambda item: item[0], reverse=True)
+    return [rule for _score, rule in scored[:top_k]]
 
 
 def detect_query_topics(question: str) -> list[str]:
@@ -197,11 +261,14 @@ def get_context(question: str, project_root: Path | None = None, top_k: int = 6)
         for chunk in selected
     ]
 
+    decision_rules = match_decision_rules(root, question, matched_topics, snippets)
+
     return {
         "question": question,
         "manual_summary": load_manual_summary(root),
         "matched_topics": matched_topics,
         "snippets": snippets,
+        "decision_rules": decision_rules,
         "answer_guidance": answer_guidance(matched_topics),
         "usage": "Agent should use this context internally, then answer naturally in Chinese.",
     }
@@ -228,6 +295,16 @@ def format_markdown(context: dict) -> str:
                 f"  Topics: {', '.join(snippet['topics'])}",
                 f"  Summary: {snippet['summary']}",
                 f"  Quote: {snippet['quote']}",
+            ]
+        )
+    lines.extend(["", "## Decision Rules"])
+    for rule in context.get("decision_rules", []):
+        lines.extend(
+            [
+                f"- `{rule['id']}`: {rule['title']}",
+                f"  Condition: {rule['condition']}",
+                f"  Implies: {'; '.join(rule['implies'])}",
+                f"  Risk Actions: {'; '.join(rule['risk_actions'])}",
             ]
         )
     lines.extend(["", "## Answer Guidance"])

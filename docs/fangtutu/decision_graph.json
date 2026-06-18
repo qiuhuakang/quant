@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "description": "Lightweight Fangtutu decision graph. Rules are not trade signals; they stabilize agent reasoning after RAG retrieval.",
+  "rules": [
+    {
+      "id": "bear_surprise_profit_protection",
+      "title": "Bear Surprise 后先保护利润",
+      "triggers": ["Bear Surprise", "大阴线", "保护利润", "市价离场", "快速下跌"],
+      "topics": ["实战复盘", "风险控制"],
+      "condition": "已有利润后突然出现 Bear Surprise、快速大阴线或特殊事件扰动。",
+      "implies": ["优先保护利润", "降低趋势延续信心", "观察是否转入震荡", "重新评估多头前提"],
+      "risk_actions": ["市价离场或收紧止损", "不要急着追单", "如果大跌大涨反复出现，按震荡处理"],
+      "source_tags": ["实战", "风险控制"]
+    },
+    {
+      "id": "bull_surprise_requires_followthrough",
+      "title": "Bull Surprise 需要后续跟随",
+      "triggers": ["Bull Surprise", "大阳线", "收在高位", "跟随", "follow through"],
+      "topics": ["实战复盘", "突破确认", "信号K"],
+      "condition": "出现强多头惊喜K线或大阳线后，需要后续K线继续支持方向。",
+      "implies": ["有机会形成趋势", "没有跟随则趋势质量下降", "可能转成震荡上行"],
+      "risk_actions": ["不要只凭单根大阳线重仓追入", "观察下一根或几根K线是否继续收强"],
+      "source_tags": ["实战", "价格行为"]
+    },
+    {
+      "id": "breakout_without_followthrough",
+      "title": "突破没有跟随后防失败突破",
+      "triggers": ["突破", "follow through", "没有跟随", "失败突破", "假突破", "回到区间"],
+      "topics": ["突破确认", "趋势与震荡"],
+      "condition": "突破后没有持续 follow-through，或很快回到原震荡区间。",
+      "implies": ["可能是假突破", "可能回到震荡区间", "趋势概率下降"],
+      "risk_actions": ["不要追单", "等待再次确认", "已有仓位要考虑保护利润或减小风险"],
+      "source_tags": ["专题课", "价格行为"]
+    },
+    {
+      "id": "ema20_pullback_needs_signal_bar",
+      "title": "EMA20 回踩需要信号K和背景支持",
+      "triggers": ["EMA20", "EMA", "回踩", "反弹到EMA", "信号K"],
+      "topics": ["EMA20", "信号K", "趋势与震荡"],
+      "condition": "价格回踩或反弹到 EMA20 附近。",
+      "implies": ["EMA20 是决策区不是自动买卖点", "要结合趋势背景、信号K和跟随确认"],
+      "risk_actions": ["信号K差或背景不支持时不要勉强入场", "跌破/突破后无跟随要降低确定性"],
+      "source_tags": ["专题课", "价格心理学入门"]
+    },
+    {
+      "id": "wide_stop_requires_small_size",
+      "title": "宽止损必须小仓位",
+      "triggers": ["宽止损", "仓位", "加仓", "I don't care size", "重仓"],
+      "topics": ["仓位管理", "风险控制"],
+      "condition": "止损距离较宽，或计划后续加仓。",
+      "implies": ["初始仓位必须更小", "总风险不能因为加仓失控", "仓位过大会扭曲判断"],
+      "risk_actions": ["使用 I don't care size", "先定义最大亏损", "不要因为想赚回亏损而急着加仓"],
+      "source_tags": ["价格心理学入门", "风险控制"]
+    },
+    {
+      "id": "wedge_first_reversal_can_fail",
+      "title": "强趋势中的楔形第一次反转容易失败",
+      "triggers": ["楔形", "歇型", "wedge", "三推", "第一次反转", "强趋势"],
+      "topics": ["楔形", "趋势与震荡", "信号K"],
+      "condition": "强趋势背景中出现楔形或三推反转形态。",
+      "implies": ["第一次反转可能失败", "需要二次入场、额外顶部/底部结构或更强信号确认"],
+      "risk_actions": ["反转单要小心追求高盈亏比", "信号K弱时不要强做逆势"],
+      "source_tags": ["专题课", "价格行为"]
+    },
+    {
+      "id": "trading_range_after_big_up_big_down",
+      "title": "大涨大跌后优先按震荡处理",
+      "triggers": ["大涨大跌", "大跌大涨", "震荡", "trading range", "高抛低吸", "scalp"],
+      "topics": ["趋势与震荡", "实战复盘"],
+      "condition": "市场连续出现大涨大跌或大跌大涨，多空双方都不顺。",
+      "implies": ["市场更可能进入震荡", "趋势交易胜率下降", "交易者更倾向高抛低吸"],
+      "risk_actions": ["降低趋势目标", "不要在区间中部追单", "等靠近区间边缘或新趋势形成"],
+      "source_tags": ["实战", "专题课"]
+    },
+    {
+      "id": "measure_move_is_reference_not_anchor",
+      "title": "Measure Move 是参考不是死拿理由",
+      "triggers": ["measure move", "MM", "目标位", "翻一倍", "死拿", "止盈"],
+      "topics": ["Measure Move", "风险控制"],
+      "condition": "价格朝 measure move 目标运行，但过程中出现反向信号、深回撤或震荡化。",
+      "implies": ["目标位只是概率参考", "过程中的反向信号会改变计划", "可以分批止盈或重新入场"],
+      "risk_actions": ["不要因为目标位没到就拒绝保护利润", "有利润时根据新价格行为调整"],
+      "source_tags": ["专题课", "实战"]
+    }
+  ]
+}
