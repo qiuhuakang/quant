@@ -1,0 +1,85 @@
+{
+  "name": "theme_logic_master_decision_graph",
+  "version": 1,
+  "description": "Lightweight reasoning rules for A-share theme heat, stock position inside a theme, and risk actions. This is not a trading signal or a full knowledge graph.",
+  "rules": [
+    {
+      "id": "hot_theme_front_row",
+      "name": "热门题材前排",
+      "conditions": [
+        "The theme has fresh policy, industry, news, or event catalysts.",
+        "Multiple same-theme stocks show strong price response, such as limit-up clusters, sector ranking strength, or consecutive-board leadership.",
+        "The target stock is among the strongest or most recognized names in the theme."
+      ],
+      "implication": "The stock has both theme heat and relative position. It can be placed on a priority watch list, then checked by Fangtutu K-line location before any trade plan.",
+      "risk_action": "Avoid chasing after climax acceleration. Require invalidation level, position control, and follow-through confirmation."
+    },
+    {
+      "id": "hot_theme_back_row",
+      "name": "热门题材后排",
+      "conditions": [
+        "The theme is currently hot.",
+        "Same-theme leaders or front-row stocks are clearly stronger than the target.",
+        "The target reacts late, weakly, or mainly follows the sector without independent recognition."
+      ],
+      "implication": "Theme heat exists, but the target's position is weak. Treat it as a secondary candidate rather than the preferred expression of the theme.",
+      "risk_action": "Do not upgrade the conclusion only because the concept is hot. Prefer front-row peers or wait for stronger confirmation."
+    },
+    {
+      "id": "theme_fading",
+      "name": "题材退潮",
+      "conditions": [
+        "Previous leaders diverge, fail to continue, or show large drawdowns.",
+        "Limit-up density falls or late followers start to weaken.",
+        "Market discussion shifts from expansion to risk, correction, or rotation."
+      ],
+      "implication": "The theme may be leaving its high-probability window. Strong K-lines in back-row stocks deserve skepticism.",
+      "risk_action": "Lower expectation, avoid late chasing, and require stricter Fangtutu invalidation rules."
+    },
+    {
+      "id": "concept_only",
+      "name": "仅有概念标签",
+      "conditions": [
+        "The stock has a concept label in databases or media lists.",
+        "There is no current catalyst, no same-theme spread, or no meaningful price response.",
+        "Sources cannot prove that market funds are currently trading this stock for that theme."
+      ],
+      "implication": "The stock should not be treated as a current hot-theme candidate just because it has a static concept label.",
+      "risk_action": "Classify as concept-only or unverified. Do not combine it with Fangtutu as a strong theme case."
+    },
+    {
+      "id": "policy_catalyst_confirmed",
+      "name": "政策或产业催化被市场确认",
+      "conditions": [
+        "A current policy, industry, earnings, event, or news catalyst is found from dated sources.",
+        "The catalyst has visible market spread across sector peers or industry-chain nodes.",
+        "The catalyst is connected to the target stock by business exposure, announcement, or recognized market narrative."
+      ],
+      "implication": "The theme logic is more credible because both narrative and market response are present.",
+      "risk_action": "Still separate fact from inference. Watch whether front-row names continue and whether the target keeps relative strength."
+    },
+    {
+      "id": "news_without_market_response",
+      "name": "有消息但无市场响应",
+      "conditions": [
+        "A news item or catalyst exists.",
+        "Sector peers, limit-up structure, or the target stock show weak or no response.",
+        "The catalyst has not become a current market mainline or visible branch theme."
+      ],
+      "implication": "The narrative exists but has not been confirmed by market behavior.",
+      "risk_action": "Do not call it a hot theme. Mark it as watch-only until market response appears."
+    },
+    {
+      "id": "unknown_due_to_search_gap",
+      "name": "联网证据不足",
+      "conditions": [
+        "Web search is unavailable, delayed, contradictory, or insufficient.",
+        "Important claims cannot be cross-checked with dated sources.",
+        "The target's theme membership or current heat cannot be verified."
+      ],
+      "implication": "The current theme conclusion is unknown rather than bullish or bearish.",
+      "risk_action": "Say the evidence is insufficient, do not fabricate current hot themes, and avoid a confident trade conclusion."
+    }
+  ]
+}
+
