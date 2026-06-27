@@ -1,0 +1,3 @@
+﻿rank,symbol,name,score,lu_date_start,lu_date_end,lu_high,lu_low,fib_618,adj_days,adj_vol_ratio,adj_yang_ratio,adj_min_close,is_ladder_vol,uptrend_stage,ma60,ma120,vol_shrinking,broke_fib_618,is_sandwich,is_above_board,buy_price,protect_price,protect_type,sell_price_3pct,sell_price_5pct,meets_criteria,meets_preferred,board_type,board_count
+1,603002,宏昌电子,55.3,2026-06-09,2026-06-10,18.23,15.63,17.24,2,0.852,0.0,17.43,False,early,13.83,11.35,True,False,False,False,17.43,17.24,board_inside,17.95,18.3,True,0,2,2
+2,003043,华亚智能,48.6,2026-06-09,2026-06-10,80.62,67.2,75.49,2,0.94,0.0,81.59,False,mid,58.47,54.44,True,False,False,False,81.59,80.62,board_above,84.04,85.67,True,0,2,2

@@ -1,11 +1,10 @@
-from __future__ import annotations
-
 """Retrieve Fangtutu context for agent-internal stock analysis prompts."""
 
 import argparse
 import json
 import re
 from pathlib import Path
+from typing import Optional
 
 try:
     from tools.build_fangtutu_kb import (
@@ -240,7 +239,7 @@ def ensure_kb(project_root: Path) -> None:
         build_kb(project_root=project_root)
 
 
-def get_context(question: str, project_root: Path | None = None, top_k: int = 6) -> dict:
+def get_context(question: str, project_root: Optional[Path] = None, top_k: int = 6) -> dict:
     root = resolve_project_root(project_root)
     ensure_kb(root)
 

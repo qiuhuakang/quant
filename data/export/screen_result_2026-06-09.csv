@@ -1,0 +1,2 @@
+﻿rank,symbol,name,score,lu_date_start,lu_date_end,lu_high,lu_low,fib_618,adj_days,adj_vol_ratio,adj_yang_ratio,adj_min_close,is_ladder_vol,uptrend_stage,ma60,ma120,vol_shrinking,broke_fib_618,is_sandwich,is_above_board,buy_price,protect_price,protect_type,sell_price_3pct,sell_price_5pct,meets_criteria,meets_preferred,board_type,board_count
+1,002951,金时科技,50.8,2026-06-01,2026-06-02,21.34,17.01,19.69,4,0.662,0.25,20.08,False,mid,16.33,15.48,True,False,False,False,20.08,19.69,board_inside,20.68,21.08,True,0,2,2

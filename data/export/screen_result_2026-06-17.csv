@@ -1,0 +1,4 @@
+﻿rank,symbol,name,score,lu_date_start,lu_date_end,lu_high,lu_low,fib_618,adj_days,adj_vol_ratio,adj_yang_ratio,adj_min_close,is_ladder_vol,uptrend_stage,ma60,ma120,vol_shrinking,broke_fib_618,is_sandwich,is_above_board,buy_price,protect_price,protect_type,sell_price_3pct,sell_price_5pct,meets_criteria,meets_preferred,board_type,board_count
+1,001359,平安电工,64.3,2026-06-12,2026-06-15,117.85,98.11,110.31,2,0.905,0.5,121.4,False,early,89.53,82.31,True,False,False,True,129.15,117.85,board_above,133.02,135.61,True,2,2,2
+2,002409,雅克科技,53.6,2026-06-10,2026-06-11,134.81,107.1,124.22,4,0.994,0.75,132.99,False,early,99.45,93.34,True,False,False,False,147.92,134.81,board_above,152.36,155.32,True,1,2,2
+3,003043,华亚智能,46.7,2026-06-09,2026-06-10,80.62,67.2,75.49,5,0.815,0.4,80.99,False,mid,60.22,55.33,True,False,False,False,80.99,80.62,board_above,83.42,85.04,True,0,2,2

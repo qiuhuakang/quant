@@ -1,0 +1,2 @@
+﻿rank,symbol,name,score,lu_date_start,lu_date_end,lu_high,lu_low,fib_618,adj_days,adj_vol_ratio,adj_yang_ratio,adj_min_close,is_ladder_vol,uptrend_stage,ma60,ma120,vol_shrinking,broke_fib_618,is_sandwich,is_above_board,buy_price,protect_price,protect_type,sell_price_3pct,sell_price_5pct,meets_criteria,meets_preferred,board_type,board_count
+1,600110,诺德股份,53.1,2026-05-28,2026-05-29,12.66,10.48,11.83,3,0.977,0.333,11.84,False,early,9.72,8.48,True,False,False,False,12.04,11.83,board_inside,12.4,12.64,True,0,2,2

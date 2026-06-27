@@ -1,0 +1,4 @@
+﻿rank,symbol,name,score,lu_date_start,lu_date_end,lu_high,lu_low,fib_618,adj_days,adj_vol_ratio,adj_yang_ratio,adj_min_close,is_ladder_vol,uptrend_stage,ma60,ma120,vol_shrinking,broke_fib_618,is_sandwich,is_above_board,buy_price,protect_price,protect_type,sell_price_3pct,sell_price_5pct,meets_criteria,meets_preferred,board_type,board_count
+1,605289,罗曼股份,59.6,2026-06-15,2026-06-16,130.42,108.0,121.86,2,0.886,0.5,133.2,False,mid,99.63,81.36,True,False,False,True,138.51,130.42,board_above,142.67,145.44,True,2,2,2
+2,001359,平安电工,59.5,2026-06-12,2026-06-15,117.85,98.11,110.31,3,0.831,0.667,121.4,False,mid,90.54,82.88,True,False,False,True,132.2,117.85,board_above,136.17,138.81,True,2,2,2
+3,002409,雅克科技,57.6,2026-06-10,2026-06-11,134.81,107.1,124.22,5,0.935,0.8,132.99,True,mid,100.57,94.0,True,False,False,False,150.16,134.81,board_above,154.66,157.67,True,2,2,2
