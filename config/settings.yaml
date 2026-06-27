@@ -9,7 +9,7 @@ params:
   lookback_calendar_days: 200    # 历史日线拉取范围（日历日，覆盖120交易日）
   lookback_board_days: 15        # 连板回顾窗口（交易日）
   max_adj_days: 5                # 最大调整天数
-  volume_shrink_threshold: 1.0   # 缩量阈值（回调均量/涨停均量，<1即缩量）
+  volume_shrink_threshold: 1.0   # 缩量阈值（二板后首日量/第二板量，<1即缩量）
   fib_level: 0.618               # 黄金分割位
   ladder_vol_tolerance: 0.05     # 阶梯量容忍度
   limit_up_threshold_main: 9.8   # 主板涨停阈值
