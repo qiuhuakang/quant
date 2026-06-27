@@ -105,6 +105,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC"
 .relaxed-group .group-header:hover { background: #eaf2f8; }
 .stock-card.relaxed { border-left: 4px solid #2980b9; }
 .stock-card.multi-relaxed { border-left: 4px solid #7d3c98; }
+.card-header > .doji-tag { margin-left: auto; }
+.doji-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 2px 7px; border-radius: 5px; font-size: 12px; line-height: 1.3; font-weight: 700; white-space: nowrap; border: 1px solid transparent; }
+.doji-tag.first-shrink { color: #1f8f4d; background: #e8f7ee; border-color: #bfe8cf; }
+.doji-tag.third-day { color: #2563eb; background: #e8f0ff; border-color: #c7d7ff; }
+.doji-tag.fib-lower { color: #b45309; background: #fff4df; border-color: #ffd69a; }
+.doji-tag.normal { color: #52616f; background: #edf1f5; border-color: #d7dee6; }
 .multi-relaxed-group .group-header { border-left-color: #7d3c98; }
 .multi-relaxed-group .group-header:hover { background: #f3eef8; }
 
@@ -279,6 +285,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC"
               <span>买入: ¥72.46</span>
               <span>保护: ¥68.89</span>
             </div>
+            <span class="doji-tag first-shrink">二板后第一天缩量十字星</span>
             <span class="expand-icon">▸</span>
           </div>
           <div class="card-body">
@@ -949,6 +956,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC"
                   <span>MA60: 63.62</span>
                   <span>MA120: 57.21</span>
                 </div>
+                <span class="doji-tag fib-lower">回踩0.618附近长下影十字星</span>
                 <span class="expand-icon">▸</span>
               </div>
               <div class="card-body">
@@ -968,6 +976,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC"
                   <span>MA60: 22.35</span>
                   <span>MA120: 17.59</span>
                 </div>
+                <span class="doji-tag third-day">二板后第三天十字星</span>
                 <span class="expand-icon">▸</span>
               </div>
               <div class="card-body">
@@ -2460,6 +2469,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC"
                   <span>MA60: 26.86</span>
                   <span>MA120: 22.36</span>
                 </div>
+                <span class="doji-tag first-shrink">二板后第一天缩量十字星</span>
                 <span class="expand-icon">▸</span>
               </div>
               <div class="card-body">
@@ -2578,6 +2588,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC"
                   <span>MA60: 15.34</span>
                   <span>MA120: 14.17</span>
                 </div>
+                <span class="doji-tag third-day">二板后第三天十字星</span>
                 <span class="expand-icon">▸</span>
               </div>
               <div class="card-body">
@@ -2731,6 +2742,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC"
                   <span>MA60: 11.8</span>
                   <span>MA120: 11.3</span>
                 </div>
+                <span class="doji-tag normal">普通十字星</span>
                 <span class="expand-icon">▸</span>
               </div>
               <div class="card-body">

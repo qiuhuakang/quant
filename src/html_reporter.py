@@ -14,44 +14,15 @@ _DOJI_CLASS_MAP = {
     "normal_doji": "normal",
 }
 
-_DOJI_VOLUME_CLASS_MAP = {
-    "连续缩量": "shrink",
-    "扩量": "expand",
-    "持平": "flat",
-}
-
-
 def _render_doji_row(item: dict) -> str:
-    """Render the optional doji classification row for a stock card."""
+    """Render the optional doji classification tag for a stock card header."""
     label = str(item.get("doji_label") or "")
     if not label:
         return ""
 
     doji_type = str(item.get("doji_type") or "")
     tag_class = _DOJI_CLASS_MAP.get(doji_type, "normal")
-    note = str(item.get("doji_note") or "")
-    volume_state = str(item.get("doji_volume_state") or "")
-    volume_class = _DOJI_VOLUME_CLASS_MAP.get(volume_state, "flat")
-    volume_html = (
-        f'<span class="doji-volume {volume_class}">量能状态：{escape(volume_state)}</span>'
-        if volume_state
-        else ""
-    )
-    note_html = (
-        f'<span class="doji-note">{escape(note)}</span>'
-        if note
-        else ""
-    )
-
-    return f'''
-                <div class="doji-row">
-                  <span class="doji-label">十字星分类</span>
-                  <div class="doji-tags">
-                    <span class="doji-tag {tag_class}">{escape(label)}</span>
-                    {volume_html}
-                    {note_html}
-                  </div>
-                </div>'''
+    return f'<span class="doji-tag {tag_class}">{escape(label)}</span>'
 
 
 def export_html(results: list[dict], dfs: dict, passed: list[dict],
@@ -617,7 +588,7 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 .stock-card.multi {{ border-left: 4px solid #8e44ad; }}
 .stock-card.multi-excluded {{ border-left: 4px solid #c0392b; }}
 
-.card-header {{ display: flex; align-items: center; flex-wrap: wrap; padding: 12px 16px; cursor: pointer; user-select: none; transition: background 0.15s; gap: 16px; }}
+.card-header {{ display: flex; align-items: center; padding: 12px 16px; cursor: pointer; user-select: none; transition: background 0.15s; gap: 16px; }}
 .card-header:hover {{ background: #f8f9fa; }}
 .passed .card-header:hover {{ background: #f0faf3; }}
 .excluded .card-header:hover {{ background: #fef5f5; }}
@@ -657,19 +628,12 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 .relaxed-group .group-header:hover {{ background: #eaf2f8; }}
 .stock-card.relaxed {{ border-left: 4px solid #2980b9; }}
 .stock-card.multi-relaxed {{ border-left: 4px solid #7d3c98; }}
-.doji-row {{ display: flex; flex: 0 0 100%; width: 100%; align-items: flex-start; gap: 8px; padding: 8px 12px 0 12px; margin-top: 2px; border-top: 1px dashed #e5e9f0; color: #5d6d7e; font-size: 12px; }}
-.doji-row .doji-label {{ flex: 0 0 auto; color: #7f8c8d; padding-top: 3px; }}
-.doji-tags {{ display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }}
-.doji-tag {{ display: inline-flex; align-items: center; min-height: 24px; padding: 3px 8px; border-radius: 5px; font-weight: 700; border: 1px solid transparent; }}
+.card-header > .doji-tag {{ margin-left: auto; }}
+.doji-tag {{ display: inline-flex; align-items: center; min-height: 22px; padding: 2px 7px; border-radius: 5px; font-size: 12px; line-height: 1.3; font-weight: 700; white-space: nowrap; border: 1px solid transparent; }}
 .doji-tag.first-shrink {{ color: #1f8f4d; background: #e8f7ee; border-color: #bfe8cf; }}
 .doji-tag.third-day {{ color: #2563eb; background: #e8f0ff; border-color: #c7d7ff; }}
 .doji-tag.fib-lower {{ color: #b45309; background: #fff4df; border-color: #ffd69a; }}
 .doji-tag.normal {{ color: #52616f; background: #edf1f5; border-color: #d7dee6; }}
-.doji-volume {{ display: inline-flex; align-items: center; min-height: 22px; padding: 2px 7px; border-radius: 5px; font-weight: 700; border: 1px solid transparent; }}
-.doji-volume.shrink {{ color: #1f8f4d; background: #e8f7ee; border-color: #bfe8cf; }}
-.doji-volume.expand {{ color: #b42318; background: #fdecea; border-color: #fac9c4; }}
-.doji-volume.flat {{ color: #52616f; background: #edf1f5; border-color: #d7dee6; }}
-.doji-note {{ color: #7f8c8d; }}
 .multi-relaxed-group .group-header {{ border-left-color: #7d3c98; }}
 .multi-relaxed-group .group-header:hover {{ background: #f3eef8; }}
 
