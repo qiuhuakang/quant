@@ -104,6 +104,164 @@ def is_ladder_volume(volumes: pd.Series) -> bool:
     return dec_cnt >= len(ma_vol) * 0.6
 
 
+def _empty_doji_result() -> dict:
+    return {
+        "doji_type": "none",
+        "doji_label": "",
+        "doji_day": 0,
+        "doji_volume_state": "",
+        "doji_note": "",
+        "doji_body_ratio": 0.0,
+        "doji_lower_upper_ratio": 0.0,
+        "doji_fib_distance_pct": 0.0,
+    }
+
+
+def _doji_metrics(row: pd.Series, fib_618: float = 0.0) -> dict:
+    open_ = float(row.get("open", 0) or 0)
+    high = float(row.get("high", 0) or 0)
+    low = float(row.get("low", 0) or 0)
+    close = float(row.get("close", 0) or 0)
+
+    candle_range = high - low
+    body = abs(close - open_)
+    upper_shadow = high - max(open_, close)
+    lower_shadow = min(open_, close) - low
+    body_ratio = body / candle_range if candle_range > 0 else 1.0
+    amplitude = candle_range / close if close > 0 else 0.0
+    body_close_ratio = body / close if close > 0 else 1.0
+    lower_upper_ratio = (
+        lower_shadow / upper_shadow
+        if upper_shadow > 0
+        else (99.0 if lower_shadow > 0 else 0.0)
+    )
+    fib_distance_pct = (
+        abs(low - fib_618) / fib_618 * 100
+        if fib_618 > 0
+        else 0.0
+    )
+
+    return {
+        "body_ratio": body_ratio,
+        "amplitude": amplitude,
+        "body_close_ratio": body_close_ratio,
+        "upper_shadow": upper_shadow,
+        "lower_shadow": lower_shadow,
+        "lower_upper_ratio": lower_upper_ratio,
+        "fib_distance_pct": fib_distance_pct,
+        "is_doji": (
+            candle_range > 0
+            and body_ratio <= 0.15
+            and body_close_ratio <= 0.01
+            and amplitude >= 0.015
+        ),
+        "is_long_lower": (
+            candle_range > 0
+            and lower_shadow / candle_range >= 0.35
+            and lower_shadow >= upper_shadow * 1.5
+        ),
+        "is_near_fib": fib_618 > 0 and fib_distance_pct <= 2.0,
+    }
+
+
+def _third_day_volume_state(adj_df: pd.DataFrame) -> str:
+    if len(adj_df) < 3:
+        return ""
+    v1, v2, v3 = [float(v) for v in adj_df["volume"].iloc[:3]]
+    if v1 > v2 > v3:
+        return "连续缩量"
+    if v3 > v2:
+        return "扩量"
+    return "持平"
+
+
+def _build_doji_result(
+    doji_type: str,
+    label: str,
+    day: int,
+    metrics: dict,
+    note: str,
+    volume_state: str = "",
+) -> dict:
+    result = _empty_doji_result()
+    result.update({
+        "doji_type": doji_type,
+        "doji_label": label,
+        "doji_day": day,
+        "doji_volume_state": volume_state,
+        "doji_note": note,
+        "doji_body_ratio": round(float(metrics["body_ratio"]), 3),
+        "doji_lower_upper_ratio": round(float(metrics["lower_upper_ratio"]), 2),
+        "doji_fib_distance_pct": round(float(metrics["fib_distance_pct"]), 2),
+    })
+    return result
+
+
+def classify_doji_pattern(
+    adj_df: pd.DataFrame,
+    fib_result: dict,
+    second_board_vol: float,
+) -> dict:
+    """识别二板后调整期的十字星分类和附加量能状态。"""
+    if adj_df is None or len(adj_df) == 0:
+        return _empty_doji_result()
+
+    fib_618 = float(fib_result.get("fib_618", 0) or 0)
+    metrics_by_idx = [
+        _doji_metrics(row, fib_618)
+        for _, row in adj_df.reset_index(drop=True).iterrows()
+    ]
+
+    first_metrics = metrics_by_idx[0]
+    first_volume = float(adj_df["volume"].iloc[0])
+    if (
+        first_metrics["is_doji"]
+        and second_board_vol > 0
+        and first_volume < second_board_vol
+    ):
+        ratio = round(first_volume / second_board_vol, 3)
+        return _build_doji_result(
+            "first_day_shrink_doji",
+            "二板后第一天缩量十字星",
+            1,
+            first_metrics,
+            f"首日量/第二板量 {ratio}，二板后分歧未放大。",
+        )
+
+    if len(metrics_by_idx) >= 3 and metrics_by_idx[2]["is_doji"]:
+        volume_state = _third_day_volume_state(adj_df)
+        return _build_doji_result(
+            "third_day_doji",
+            "二板后第三天十字星",
+            3,
+            metrics_by_idx[2],
+            "分类只看第三天十字星，量能状态单独展示。",
+            volume_state,
+        )
+
+    for idx, metrics in enumerate(metrics_by_idx):
+        if metrics["is_doji"] and metrics["is_near_fib"] and metrics["is_long_lower"]:
+            return _build_doji_result(
+                "fib_lower_shadow_doji",
+                "回踩0.618附近长下影十字星",
+                idx + 1,
+                metrics,
+                f"距0.618约{round(float(metrics['fib_distance_pct']), 2)}%，关键位有承接。",
+            )
+
+    for idx, metrics in enumerate(metrics_by_idx):
+        if metrics["is_doji"]:
+            return _build_doji_result(
+                "normal_doji",
+                "普通十字星",
+                idx + 1,
+                metrics,
+                "实体较小但不在首日、第三天或0.618特殊位置，仅提示分歧。",
+            )
+
+    return _empty_doji_result()
+
+
 def count_yang_lines(adj_df: pd.DataFrame) -> dict:
     """统计回调期间阳线（含假阳线）"""
     if len(adj_df) == 0:
@@ -233,6 +391,9 @@ def analyze_one_stock(code: str, df: pd.DataFrame) -> dict | None:
     # Step 5: 阶梯量（优选）
     ladder = is_ladder_volume(adj_df["volume"])
 
+    # Step 5.5: 十字星分类（提示信息，不改变基础入选条件）
+    doji = classify_doji_pattern(adj_df, fib, df.iloc[lu_end]["volume"])
+
     # Step 6: 阳线计数（优选）
     yang = count_yang_lines(adj_df)
 
@@ -279,6 +440,14 @@ def analyze_one_stock(code: str, df: pd.DataFrame) -> dict | None:
         "ma60": stage["ma60"],
         "ma120": stage["ma120"],
         "vol_shrinking": vol_shrinking,
+        "doji_type": doji["doji_type"],
+        "doji_label": doji["doji_label"],
+        "doji_day": doji["doji_day"],
+        "doji_volume_state": doji["doji_volume_state"],
+        "doji_note": doji["doji_note"],
+        "doji_body_ratio": doji["doji_body_ratio"],
+        "doji_lower_upper_ratio": doji["doji_lower_upper_ratio"],
+        "doji_fib_distance_pct": doji["doji_fib_distance_pct"],
         "broke_fib_618": adj_df["close"].iloc[-1] < fib["fib_618"],
         "is_sandwich": sandwich["is_sandwich"],
         "is_above_board": sandwich["is_above_board"],
