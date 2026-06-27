@@ -172,10 +172,10 @@ for code, info in candidates.items():
     # 黄金分割
     fib = calc_fib(df, lu_start, lu_end)
 
-    # 缩量
-    lu_vol = df.iloc[lu_start:lu_end+1]['volume'].mean()
-    adj_vol = adj_df['volume'].mean()
-    vol_ratio = round(adj_vol / lu_vol, 3) if lu_vol > 0 else 1.0
+    # 缩量：二板后首日成交量 / 第二板成交量
+    second_board_vol = df.iloc[lu_end]['volume']
+    first_adj_vol = adj_df['volume'].iloc[0]
+    vol_ratio = round(first_adj_vol / second_board_vol, 3) if second_board_vol > 0 else 1.0
     vol_shrink = vol_ratio < 1.0
 
     # 阶梯量

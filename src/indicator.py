@@ -75,13 +75,17 @@ def calc_consolidation(df: pd.DataFrame, lu_end_idx: int) -> dict | None:
 def is_volume_shrinking(df: pd.DataFrame, lu_start_idx: int,
                         lu_end_idx: int, adj_df: pd.DataFrame,
                         threshold: float = 1.0) -> tuple[bool, float]:
-    """回调缩量判定: 回调均量 / 涨停期间均量 < threshold（默认1.0，即小于即可）"""
-    lu_vol = df.iloc[lu_start_idx:lu_end_idx + 1]["volume"].mean()
-    if lu_vol == 0:
+    """回调缩量判定: 二板后首日成交量 / 第二板成交量 < threshold。"""
+    if len(adj_df) == 0:
         return False, 1.0
-    adj_vol = adj_df["volume"].mean() if len(adj_df) > 0 else lu_vol
-    ratio = adj_vol / lu_vol
-    return ratio < threshold, round(ratio, 3)
+
+    second_board_vol = df.iloc[lu_end_idx]["volume"]
+    if second_board_vol == 0:
+        return False, 1.0
+
+    first_adj_vol = adj_df["volume"].iloc[0]
+    ratio = first_adj_vol / second_board_vol
+    return bool(ratio < threshold), round(float(ratio), 3)
 
 
 def is_ladder_volume(volumes: pd.Series) -> bool:

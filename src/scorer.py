@@ -16,7 +16,7 @@ def calc_score(result: dict) -> float:
     adj_days = result["adj_days"]
     score += max(0, 15 - (adj_days - 1) * 2.5)
 
-    # 回调量比 (越小越好, 0.2→20分, 1.0→5分)
+    # 二板后首日量比 (首日量/第二板量，越小越好, 0.2→20分, 1.0→5分)
     vol_ratio = result["adj_vol_ratio"]
     score += max(5, 20 - (vol_ratio - 0.2) * 18.75)
 
