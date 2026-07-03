@@ -1,0 +1,7 @@
+﻿rank,symbol,name,score,lu_date_start,lu_date_end,lu_high,lu_low,fib_618,adj_days,adj_vol_ratio,adj_yang_ratio,adj_min_close,is_ladder_vol,uptrend_stage,ma60,ma120,vol_shrinking,broke_fib_618,is_sandwich,is_above_board,buy_price,protect_price,protect_type,sell_price_3pct,sell_price_5pct,meets_criteria,meets_preferred,board_type,board_count
+1,002025,航天电器,60.3,2026-06-24,2026-06-25,73.27,61.8,68.89,3,0.592,0.333,71.75,False,early,70.31,62.98,True,False,False,False,76.22,73.27,board_above,78.51,80.03,True,0,2,2
+2,603163,圣晖集成,51.7,2026-06-26,2026-06-29,149.14,120.55,138.22,1,0.911,0.0,146.5,False,mid,109.04,106.06,True,False,False,False,146.5,138.22,board_inside,150.9,153.83,True,0,2,2
+3,002631,德尔未来,51.3,2026-06-23,2026-06-24,9.89,8.1,9.21,4,0.85,0.75,9.77,False,mid,7.82,7.02,True,False,False,False,11.29,9.89,board_above,11.63,11.85,True,1,2,2
+4,002068,黑猫股份,45.1,2026-06-22,2026-06-23,12.65,10.45,11.81,5,0.982,0.6,13.48,False,mid,9.98,9.59,True,False,False,False,15.03,12.65,board_above,15.48,15.78,True,1,multi,3
+5,601869,长飞光纤,45.0,2026-06-22,2026-06-23,570.58,490.1,539.84,5,0.821,0.2,527.1,True,mid,413.49,298.02,True,False,False,False,545.9,539.84,board_inside,562.28,573.2,True,1,2,2
+6,600379,宝光股份,43.0,2026-06-23,2026-06-24,15.1,12.59,14.14,4,0.815,0.25,13.7,False,early,13.72,13.14,True,False,False,False,15.07,14.14,board_inside,15.52,15.82,True,0,2,2

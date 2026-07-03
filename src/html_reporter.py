@@ -303,12 +303,14 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
             vol_ratio = cd["adj_vol_ratio"]
             chart_id = f"chart_r_{code}"
             doji_html = _render_doji_row(cd)
+            score = cd["score"]
             relaxed_two_html += f'''
             <div class="stock-card relaxed" data-symbol="{code}" data-chart="{chart_id}">
               <div class="card-header" onclick="event.stopPropagation(); toggleCard(this)">
                 <div class="card-left">
                   <span class="symbol">{code}</span>
                   <span class="name">{name}</span>
+                  <span class="score-badge">{score}分</span>
                 </div>
                 <div class="card-meta">
                   <span>阶段: <b>{stage}</b></span>
@@ -396,7 +398,6 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
               <span class="rank">#{i + 1}</span>
               <span class="symbol">{code}</span>
               <span class="name">{name}</span>
-              <span class="board-badge">连板{bc}</span>
               <span class="score-badge">{score}分</span>
             </div>
             <div class="card-meta">
@@ -434,11 +435,7 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
             stage = cd["uptrend_stage"]
             adj_days = cd["adj_days"]
             vol_ratio = cd["adj_vol_ratio"]
-            bc = 2
-            for r in multi_results:
-                if r["symbol"] == code:
-                    bc = r.get("board_count", 3)
-                    break
+            score = cd["score"]
             chart_id = f"chart_mr_{code}"
             doji_html = _render_doji_row(cd)
             relaxed_multi_html += f'''
@@ -447,7 +444,7 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
                 <div class="card-left">
                   <span class="symbol">{code}</span>
                   <span class="name">{name}</span>
-                  <span class="board-badge">连板{bc}</span>
+                  <span class="score-badge">{score}分</span>
                 </div>
                 <div class="card-meta">
                   <span>阶段: <b>{stage}</b></span>
@@ -487,11 +484,6 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
             stage = cd["uptrend_stage"]
             adj_days = cd["adj_days"]
             vol_ratio = cd["adj_vol_ratio"]
-            bc = 2
-            for r in multi_results:
-                if r["symbol"] == code:
-                    bc = r.get("board_count", 3)
-                    break
             chart_id = f"chart_me_{code}"
             doji_html = _render_doji_row(cd)
             multi_excluded_html += f'''
@@ -500,7 +492,6 @@ def _build_html(results: list[dict], dfs: dict, passed: list[dict],
                 <div class="card-left">
                   <span class="symbol">{code}</span>
                   <span class="name">{name}</span>
-                  <span class="board-badge">连板{bc}</span>
                 </div>
                 <div class="card-meta">
                   <span>阶段: <b>{stage}</b></span>

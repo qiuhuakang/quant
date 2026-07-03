@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Retrieve Fangtutu context for agent-internal stock analysis prompts."""
 
 import argparse

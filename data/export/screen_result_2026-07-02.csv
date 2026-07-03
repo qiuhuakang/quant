@@ -1,0 +1,5 @@
+﻿rank,symbol,name,score,lu_date_start,lu_date_end,lu_high,lu_low,fib_618,adj_days,adj_vol_ratio,adj_yang_ratio,adj_min_close,is_ladder_vol,uptrend_stage,ma60,ma120,vol_shrinking,broke_fib_618,is_sandwich,is_above_board,buy_price,protect_price,protect_type,sell_price_3pct,sell_price_5pct,meets_criteria,meets_preferred,board_type,board_count
+1,002025,航天电器,57.4,2026-06-24,2026-06-25,73.27,61.8,68.89,5,0.592,0.6,71.75,False,early,70.93,63.52,True,False,False,False,83.1,73.27,board_above,85.59,87.26,True,1,2,2
+2,002929,润建股份,57.2,2026-06-30,2026-07-01,73.57,60.2,68.46,1,0.883,0.0,69.65,False,early,67.27,57.45,True,False,False,False,69.65,68.46,board_inside,71.74,73.13,True,0,2,2
+3,603991,领先股份,55.0,2026-06-30,2026-07-01,155.27,124.13,143.37,1,0.731,0.0,151.1,False,mid,117.94,104.18,True,False,False,False,151.1,143.37,board_inside,155.63,158.66,True,0,2,2
+4,002628,成都路桥,52.8,2026-06-29,2026-06-30,5.35,4.36,4.97,2,0.983,0.0,5.41,False,early,5.28,5.04,True,False,False,False,5.41,5.35,board_above,5.57,5.68,True,0,2,2

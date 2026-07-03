@@ -1,4 +1,4 @@
 ﻿rank,symbol,name,score,lu_date_start,lu_date_end,lu_high,lu_low,fib_618,adj_days,adj_vol_ratio,adj_yang_ratio,adj_min_close,is_ladder_vol,uptrend_stage,ma60,ma120,vol_shrinking,broke_fib_618,is_sandwich,is_above_board,buy_price,protect_price,protect_type,sell_price_3pct,sell_price_5pct,meets_criteria,meets_preferred,board_type,board_count
-1,002025,航天电器,56.2,2026-06-24,2026-06-25,73.27,61.8,68.89,1,0.935,0.0,72.46,False,early,70.0,62.53,True,False,False,False,72.46,68.89,board_inside,74.63,76.08,True,0,2,2
-2,002631,德尔未来,53.6,2026-06-23,2026-06-24,9.89,8.1,9.21,2,0.886,0.5,9.77,False,mid,7.69,6.94,True,False,False,False,9.89,9.21,board_inside,10.19,10.38,True,1,2,2
-3,600379,宝光股份,53.6,2026-06-23,2026-06-24,15.1,12.59,14.14,2,0.943,0.0,14.52,False,early,13.63,13.1,True,False,False,False,14.52,14.14,board_inside,14.96,15.25,True,0,2,2
+1,002025,航天电器,62.6,2026-06-24,2026-06-25,73.27,61.8,68.89,1,0.592,0.0,72.46,False,early,70.0,62.53,True,False,False,False,72.46,68.89,board_inside,74.63,76.08,True,0,2,2
+2,600379,宝光股份,56.0,2026-06-23,2026-06-24,15.1,12.59,14.14,2,0.815,0.0,14.52,False,early,13.63,13.1,True,False,False,False,14.52,14.14,board_inside,14.96,15.25,True,0,2,2
+3,002631,德尔未来,54.3,2026-06-23,2026-06-24,9.89,8.1,9.21,2,0.85,0.5,9.77,False,mid,7.69,6.94,True,False,False,False,9.89,9.21,board_inside,10.19,10.38,True,1,2,2

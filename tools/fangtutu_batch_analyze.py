@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
 from __future__ import annotations
+#!/usr/bin/env python3
 """
 方土土批量分析脚本
 每晚9点对两板入选和多板入选的股票进行方土土框架分析，

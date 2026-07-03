@@ -1,0 +1,4 @@
+﻿rank,symbol,name,score,lu_date_start,lu_date_end,lu_high,lu_low,fib_618,adj_days,adj_vol_ratio,adj_yang_ratio,adj_min_close,is_ladder_vol,uptrend_stage,ma60,ma120,vol_shrinking,broke_fib_618,is_sandwich,is_above_board,buy_price,protect_price,protect_type,sell_price_3pct,sell_price_5pct,meets_criteria,meets_preferred,board_type,board_count
+1,002025,航天电器,60.1,2026-06-24,2026-06-25,73.27,61.8,68.89,2,0.592,0.0,71.75,False,early,70.09,62.75,True,False,False,False,71.75,68.89,board_inside,73.9,75.34,True,0,2,2
+2,605366,宏柏新材,55.0,2026-06-25,2026-06-26,14.38,13.07,13.88,1,0.733,0.0,13.98,False,mid,12.0,10.14,True,False,False,False,13.98,13.88,board_inside,14.4,14.68,True,0,multi,3
+3,002631,德尔未来,53.1,2026-06-23,2026-06-24,9.89,8.1,9.21,3,0.85,0.667,9.77,False,mid,7.74,6.98,True,False,False,False,10.26,9.89,board_above,10.57,10.77,True,1,2,2
