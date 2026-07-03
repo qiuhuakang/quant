@@ -165,6 +165,35 @@ class HtmlReporterDojiTests(unittest.TestCase):
         self.assertIn("card.appendChild(body);", html)
         self.assertIn("containerId.startsWith('chart_doji_')", html)
 
+    def test_report_has_mobile_layout_guards(self):
+        result = _sample_result()
+
+        html = _build_html(
+            results=[result],
+            dfs={"000001": _sample_df()},
+            passed=[result],
+            screen_date="2026-06-26",
+        )
+
+        snippets = [
+            "@media (max-width: 768px)",
+            ".tabs-wrapper { flex-direction: column; align-items: stretch; }",
+            ".tabs { width: 100%; overflow-x: auto;",
+            ".tab-btn { flex: 0 0 auto;",
+            ".search-box { width: 100%; }",
+            ".card-header { align-items: flex-start; flex-wrap: wrap;",
+            ".card-left { min-width: 0; width: 100%; flex-wrap: wrap;",
+            ".card-meta { width: 100%; flex: 0 0 100%;",
+            ".card-header > .doji-tag, .doji-list-card .card-header > .doji-tag { margin-left: 0;",
+            ".doji-tab-toolbar { flex-direction: column; align-items: stretch;",
+            ".chart-container { height: clamp(320px, 70vh, 520px);",
+            "function resizeVisibleCharts()",
+            "setTimeout(resizeVisibleCharts, 60);",
+            "window.addEventListener('resize', resizeVisibleCharts);",
+        ]
+        for snippet in snippets:
+            self.assertIn(snippet, html)
+
 
 if __name__ == "__main__":
     unittest.main()

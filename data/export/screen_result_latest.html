@@ -138,6 +138,46 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC"
 .multi-relaxed-group .group-header { border-left-color: #7d3c98; }
 .multi-relaxed-group .group-header:hover { background: #f3eef8; }
 
+@media (max-width: 768px) {
+  body { padding-bottom: 24px; overflow-x: hidden; }
+  .container { width: 100%; max-width: 100%; padding: 10px; overflow-x: hidden; }
+  .header { padding: 16px 18px; border-radius: 8px; margin-bottom: 12px; }
+  .header h1 { font-size: 19px; line-height: 1.35; }
+  .summary { gap: 8px; margin-bottom: 12px; }
+  .summary-card { min-width: calc(50% - 4px); padding: 12px 10px; border-radius: 8px; }
+  .summary-card .num { font-size: 24px; }
+  .tabs-wrapper { flex-direction: column; align-items: stretch; }
+  .tabs { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 2px; gap: 6px; flex: 0 0 auto; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab-btn { flex: 0 0 auto; padding: 8px 14px; font-size: 13px; border-radius: 16px; }
+  .search-box { width: 100%; }
+  .search-input { padding-top: 9px; padding-bottom: 9px; }
+  .stock-card, .doji-list-card { width: 100%; margin-bottom: 8px; border-radius: 8px; }
+  .card-header { align-items: flex-start; flex-wrap: wrap; gap: 8px; padding: 11px 12px; }
+  .card-left { min-width: 0; width: 100%; flex-wrap: wrap; gap: 8px; }
+  .doji-list-card .card-left { min-width: 0; }
+  .rank { width: auto; min-width: 28px; }
+  .card-meta { width: 100%; flex: 0 0 100%; gap: 8px 12px; font-size: 12px; }
+  .card-meta span { white-space: nowrap; }
+  .card-header > .doji-tag, .doji-list-card .card-header > .doji-tag { margin-left: 0; max-width: calc(100% - 34px); white-space: normal; }
+  .doji-source-badge { margin-left: 0; }
+  .expand-icon { margin-left: auto; }
+  .card-body { padding: 0 4px 8px; }
+  .chart-container { height: clamp(320px, 70vh, 520px); min-height: 320px; max-width: 100%; }
+  .group-header { padding: 10px 12px; }
+  .group-title { font-size: 13px; line-height: 1.4; }
+  .doji-tab-toolbar { flex-direction: column; align-items: stretch; gap: 10px; padding: 11px 12px; }
+  .doji-tab-title { white-space: normal; }
+  .doji-source-chips { justify-content: flex-start; }
+}
+
+@media (max-width: 420px) {
+  .summary-card { min-width: calc(50% - 4px); }
+  .card-meta { gap: 6px 10px; }
+  .score-badge, .board-badge { font-size: 11px; padding: 2px 7px; }
+  .doji-tag, .doji-source-badge { font-size: 11px; }
+}
+
 .footer { text-align: center; padding: 30px 0 10px; font-size: 12px; color: #bdc3c7; }
 .footer a { color: #bdc3c7; }
 
@@ -4094,6 +4134,7 @@ function switchTab(tab) {
     if (target) {
         document.querySelector('.tabs .tab-btn:nth-child(' + target.btn + ')').classList.add('active');
         document.getElementById(target.content).classList.add('active');
+        setTimeout(resizeVisibleCharts, 60);
     }
 }
 
@@ -4109,6 +4150,7 @@ function toggleCard(header) {
         const chartDiv = body.querySelector('.chart-container');
         if (chartDiv && chartDiv.id) {
             initChart(chartDiv.id);
+            setTimeout(resizeVisibleCharts, 60);
         }
     }
 }
@@ -4145,6 +4187,16 @@ function initChart(containerId) {
     const chart = echarts.init(dom);
     chart.setOption(buildOption(data));
     window._charts[containerId] = chart;
+}
+
+function resizeVisibleCharts() {
+    Object.values(window._charts).forEach(function(c) {
+        if (!c || !c.getDom) return;
+        const dom = c.getDom();
+        if (dom && dom.offsetParent !== null) {
+            c.resize();
+        }
+    });
 }
 
 function buildOption(data) {
@@ -4329,9 +4381,7 @@ function buildOption(data) {
 }
 
 // resize 时刷新所有图表
-window.addEventListener('resize', function() {
-    Object.values(window._charts).forEach(function(c) { c.resize(); });
-});
+window.addEventListener('resize', resizeVisibleCharts);
 
 // ── 十字星汇总 Tab ───────────────────────────────────
 function buildDojiTab() {
@@ -4556,6 +4606,7 @@ function locateStock(symbol, tabId) {
         const chartDiv = body.querySelector('.chart-container');
         if (chartDiv && chartDiv.id) {
             initChart(chartDiv.id);
+            setTimeout(resizeVisibleCharts, 60);
         }
     }
 
