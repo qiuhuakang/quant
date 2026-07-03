@@ -157,7 +157,13 @@ class HtmlReporterDojiTests(unittest.TestCase):
         self.assertIn("{ selector: '#tab-multi-passed .stock-card.multi-relaxed', tabId: 'tab-multi-passed', label: '三板放宽', accent: 'three-relaxed' }", html)
         self.assertNotIn("#tab-excluded .stock-card", html)
         self.assertNotIn("#tab-multi-excluded .stock-card", html)
-        self.assertIn("card.onclick = function() { locateStock(symbol, item.source.tabId); };", html)
+        self.assertNotIn("card.onclick = function() { locateStock(symbol, item.source.tabId); };", html)
+        self.assertIn("header.onclick = function() { toggleCard(header); };", html)
+        self.assertIn("const dojiChartId = 'chart_doji_' + symbol + '_' + item.chartId;", html)
+        self.assertIn("body.className = 'card-body';", html)
+        self.assertIn("chart.className = 'chart-container';", html)
+        self.assertIn("card.appendChild(body);", html)
+        self.assertIn("containerId.startsWith('chart_doji_')", html)
 
 
 if __name__ == "__main__":

@@ -926,7 +926,12 @@ function initChart(containerId) {{
         return;
     }}
     // containerId format: "chart_p_CODE" / "chart_b_CODE" / "chart_e_CODE" / "chart_mp_CODE" / "chart_mb_CODE" / "chart_me_CODE"
-    const symbol = containerId.replace('chart_p_', '').replace('chart_b_', '').replace('chart_e_', '').replace('chart_mp_', '').replace('chart_mb_', '').replace('chart_me_', '').replace('chart_r_', '').replace('chart_mr_', '');
+    let symbol;
+    if (containerId.startsWith('chart_doji_')) {{
+        symbol = containerId.replace('chart_doji_', '').split('_')[0];
+    }} else {{
+        symbol = containerId.replace('chart_p_', '').replace('chart_b_', '').replace('chart_e_', '').replace('chart_mp_', '').replace('chart_mb_', '').replace('chart_me_', '').replace('chart_r_', '').replace('chart_mr_', '');
+    }}
     const data = ALL_DATA[symbol];
     if (!data) return;
 
@@ -1148,7 +1153,7 @@ function buildDojiTab() {{
             if (seen.has(key)) return;
             seen.add(key);
 
-            items.push({{ card: card, source: source, symbol: symbol, dojiTag: dojiTag }});
+            items.push({{ card: card, source: source, symbol: symbol, chartId: chartId, dojiTag: dojiTag }});
         }});
     }});
 
@@ -1163,10 +1168,10 @@ function buildDojiTab() {{
 
         const card = document.createElement('div');
         card.className = 'doji-list-card ' + item.source.accent;
-        card.onclick = function() {{ locateStock(symbol, item.source.tabId); }};
 
         const header = document.createElement('div');
         header.className = 'card-header';
+        header.onclick = function() {{ toggleCard(header); }};
 
         const left = document.createElement('div');
         left.className = 'card-left';
@@ -1205,7 +1210,22 @@ function buildDojiTab() {{
         header.appendChild(meta);
         header.appendChild(sourceBadge);
         header.appendChild(item.dojiTag.cloneNode(true));
+        const expand = document.createElement('span');
+        expand.className = 'expand-icon';
+        expand.textContent = '▸';
+        header.appendChild(expand);
+
+        const body = document.createElement('div');
+        body.className = 'card-body';
+
+        const chart = document.createElement('div');
+        const dojiChartId = 'chart_doji_' + symbol + '_' + item.chartId;
+        chart.id = dojiChartId;
+        chart.className = 'chart-container';
+        body.appendChild(chart);
+
         card.appendChild(header);
+        card.appendChild(body);
         list.appendChild(card);
     }});
 
