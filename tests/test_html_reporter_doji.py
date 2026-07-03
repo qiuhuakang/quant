@@ -49,6 +49,28 @@ def _sample_result() -> dict:
     }
 
 
+def _result(symbol: str, name: str, *, meets_criteria: bool, doji_label: str = THIRD_DAY_DOJI,
+            board_type: str = "two", vol_shrinking: bool = True,
+            uptrend_stage: str = "early", adj_days: int = 2,
+            broke_fib_618: bool = False) -> dict:
+    return {
+        "symbol": symbol,
+        "name": name,
+        "meets_criteria": meets_criteria,
+        "score": 60.0,
+        "uptrend_stage": uptrend_stage,
+        "adj_days": adj_days,
+        "adj_vol_ratio": 0.8 if vol_shrinking else 1.2,
+        "vol_shrinking": vol_shrinking,
+        "broke_fib_618": broke_fib_618,
+        "buy_price": 11.2,
+        "protect_price": 10.7,
+        "doji_type": "third_day_doji" if doji_label else "none",
+        "doji_label": doji_label,
+        "board_type": board_type,
+    }
+
+
 class HtmlReporterDojiTests(unittest.TestCase):
     def test_renders_only_the_doji_tag_without_extra_words(self):
         html = _render_doji_row(_sample_result())
@@ -85,6 +107,57 @@ class HtmlReporterDojiTests(unittest.TestCase):
 
     def test_returns_empty_html_without_doji_label(self):
         self.assertEqual(_render_doji_row({"doji_type": "none"}), "")
+
+    def test_builds_standalone_doji_tab_from_passed_and_relaxed_only(self):
+        two_passed = _result("000001", "\u4e8c\u677f\u5165\u9009", meets_criteria=True)
+        two_relaxed = _result(
+            "000002",
+            "\u4e8c\u677f\u653e\u5bbd",
+            meets_criteria=False,
+            vol_shrinking=False,
+        )
+        two_excluded = _result(
+            "000003",
+            "\u4e8c\u677f\u672a\u8fbe\u6807",
+            meets_criteria=False,
+            uptrend_stage="late",
+            vol_shrinking=False,
+            adj_days=8,
+        )
+        multi_relaxed = _result(
+            "000004",
+            "\u4e09\u677f\u653e\u5bbd",
+            meets_criteria=False,
+            board_type="multi",
+            vol_shrinking=False,
+        )
+        multi_excluded = _result(
+            "000005",
+            "\u4e09\u677f\u672a\u8fbe\u6807",
+            meets_criteria=False,
+            board_type="multi",
+            uptrend_stage="late",
+            vol_shrinking=False,
+            adj_days=8,
+        )
+
+        html = _build_html(
+            results=[two_passed, two_relaxed, two_excluded],
+            dfs={r["symbol"]: _sample_df() for r in [two_passed, two_relaxed, two_excluded, multi_relaxed, multi_excluded]},
+            passed=[two_passed],
+            screen_date="2026-06-26",
+            multi_results=[multi_relaxed, multi_excluded],
+        )
+
+        self.assertIn('class="tab-btn doji" onclick="switchTab(\'doji\')"', html)
+        self.assertIn('<div id="tab-doji" class="tab-content">', html)
+        self.assertIn("function buildDojiTab()", html)
+        self.assertIn("{ selector: '#tab-passed > .stock-card.passed', tabId: 'tab-passed', label: '2板入选', accent: 'two-pass' }", html)
+        self.assertIn("{ selector: '#tab-passed .stock-card.relaxed', tabId: 'tab-passed', label: '2板放宽', accent: 'two-relaxed' }", html)
+        self.assertIn("{ selector: '#tab-multi-passed .stock-card.multi-relaxed', tabId: 'tab-multi-passed', label: '三板放宽', accent: 'three-relaxed' }", html)
+        self.assertNotIn("#tab-excluded .stock-card", html)
+        self.assertNotIn("#tab-multi-excluded .stock-card", html)
+        self.assertIn("card.onclick = function() { locateStock(symbol, item.source.tabId); };", html)
 
 
 if __name__ == "__main__":
