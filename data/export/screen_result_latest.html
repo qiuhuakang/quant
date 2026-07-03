@@ -318,11 +318,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC"
 
 <div class="tabs-wrapper">
   <div class="tabs">
+  <button class="tab-btn doji" onclick="switchTab('doji')">十字星 (<span id="dojiTabCount">0</span>)</button>
   <button class="tab-btn pass active" onclick="switchTab('passed')">2板入选 (36)</button>
   <button class="tab-btn fail" onclick="switchTab('excluded')">2板未达标 (93)</button>
   <button class="tab-btn pass" onclick="switchTab('multi-passed')">多板入选 (8)</button>
   <button class="tab-btn multi" onclick="switchTab('multi-excluded')">多板未达标 (34)</button>
-  <button class="tab-btn doji" onclick="switchTab('doji')">十字星 (<span id="dojiTabCount">0</span>)</button>
   </div>
   <div class="search-box">
     <span class="search-icon">&#128269;</span>
@@ -4124,11 +4124,11 @@ function switchTab(tab) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
     const tabMap = {
-        'passed': { btn: 1, content: 'tab-passed' },
-        'excluded': { btn: 2, content: 'tab-excluded' },
-        'multi-passed': { btn: 3, content: 'tab-multi-passed' },
-        'multi-excluded': { btn: 4, content: 'tab-multi-excluded' },
-        'doji': { btn: 5, content: 'tab-doji' }
+        'doji': { btn: 1, content: 'tab-doji' },
+        'passed': { btn: 2, content: 'tab-passed' },
+        'excluded': { btn: 3, content: 'tab-excluded' },
+        'multi-passed': { btn: 4, content: 'tab-multi-passed' },
+        'multi-excluded': { btn: 5, content: 'tab-multi-excluded' }
     };
     const target = tabMap[tab];
     if (target) {

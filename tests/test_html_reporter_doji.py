@@ -165,6 +165,26 @@ class HtmlReporterDojiTests(unittest.TestCase):
         self.assertIn("card.appendChild(body);", html)
         self.assertIn("containerId.startsWith('chart_doji_')", html)
 
+    def test_doji_tab_button_is_leftmost(self):
+        result = _sample_result()
+        html = _build_html(
+            results=[result],
+            dfs={"000001": _sample_df()},
+            passed=[result],
+            screen_date="2026-06-26",
+        )
+
+        tabs_start = html.index('<div class="tabs">')
+        tabs_end = html.index('</div>', tabs_start)
+        tabs_html = html[tabs_start:tabs_end]
+
+        self.assertLess(
+            tabs_html.index("switchTab('doji')"),
+            tabs_html.index("switchTab('passed')"),
+        )
+        self.assertIn("'doji': { btn: 1, content: 'tab-doji' }", html)
+        self.assertIn("'passed': { btn: 2, content: 'tab-passed' }", html)
+
     def test_report_has_mobile_layout_guards(self):
         result = _sample_result()
 
