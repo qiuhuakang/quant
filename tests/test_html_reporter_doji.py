@@ -243,9 +243,49 @@ class HtmlReporterDojiTests(unittest.TestCase):
         self.assertNotIn("{ selector: '#tab-multi-excluded .stock-card.multi-excluded', label:", html)
         self.assertIn("const checkIdx = boardIdx + 2;", html)
         self.assertIn("if (boardClose == null || checkClose == null || checkClose < boardClose) return;", html)
+        hold_js = html[html.index("function buildHoldSecondTab()"):html.index("function buildDojiTab()")]
+        self.assertNotIn("const sourceMeta = sourceCard.querySelector('.card-meta');", hold_js)
+        self.assertNotIn("if (sourceMeta) meta.innerHTML = sourceMeta.innerHTML;", hold_js)
+        self.assertNotIn("item.checkDate ? '<span>", hold_js)
         self.assertIn("containerId.startsWith('chart_hold_')", html)
         self.assertIn("buildHoldSecondTab();", html)
         self.assertIn("'hold-second': { btn: 2, content: 'tab-hold-second' }", html)
+
+    def test_report_uses_readable_stock_name_and_normal_hold_styles(self):
+        result = _sample_result()
+        html = _build_html(
+            results=[result],
+            dfs={"000001": _sample_df()},
+            passed=[result],
+            screen_date="2026-06-26",
+        )
+
+        snippets = [
+            ".stock-card .symbol, .doji-list-card .symbol, .hold-list-card .symbol { color: #1f2d3d; font-size: 15px; font-weight: 900; letter-spacing: 0; }",
+            ".stock-card .name, .doji-list-card .name, .hold-list-card .name { color: #2c3e50; font-size: 14px; font-weight: 800; }",
+            ".tab-btn.hold { background: #f5f6fa; color: #2c3e50; }",
+            ".tab-btn.hold.active { background: #2c3e50; color: white; }",
+            ".hold-tab-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: white; border-left: 4px solid #27ae60;",
+            ".hold-tab-title b { color: #27ae60; font-size: 18px; }",
+            ".hold-list-card { background: white; border-left: 4px solid #27ae60; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); overflow: hidden; transition: box-shadow 0.2s; }",
+            ".hold-list-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.1); }",
+            ".hold-list-card .card-header:hover { background: #f8f9fa; }",
+            ".hold-list-card .card-left { min-width: 240px; }",
+            ".hold-badge, .hold-source-badge { display: inline-flex; align-items: center; min-height: 22px; padding: 2px 8px; border-radius: 5px; font-size: 12px; line-height: 1.3; font-weight: 700; white-space: nowrap; color: #52616f; background: #edf1f5; border: 1px solid #d7dee6; }",
+            ".hold-metric b { color: #2c3e50; }",
+        ]
+        for snippet in snippets:
+            self.assertIn(snippet, html)
+
+        old_hold_snippets = [
+            ".hold-list-card .card-header { cursor: pointer; background: linear-gradient(90deg, #f1fbf8 0%, #ffffff 62%); }",
+            ".hold-list-card .rank { color: #117864;",
+            ".hold-list-card .score-badge {",
+            ".hold-list-card .hold-badge, .hold-list-card .hold-source-badge { font-size: 12px; padding: 3px 8px; }",
+            "rgba(17,120,100",
+        ]
+        for snippet in old_hold_snippets:
+            self.assertNotIn(snippet, html)
 
     def test_tab_order_places_multi_passed_before_two_board_excluded(self):
         result = _sample_result()
