@@ -546,6 +546,8 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 .tab-btn.multi.active {{ background: #8e44ad; color: white; }}
 .tab-btn.doji {{ background: #fff4df; color: #b45309; }}
 .tab-btn.doji.active {{ background: #b45309; color: white; }}
+.tab-btn.hold {{ background: #e8f6f3; color: #117864; }}
+.tab-btn.hold.active {{ background: #117864; color: white; }}
 .tab-content {{ display: none; }}
 .tab-content.active {{ display: block; }}
 
@@ -649,6 +651,19 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 .doji-list-card .card-left {{ min-width: 260px; }}
 .doji-source-badge {{ display: inline-flex; align-items: center; min-height: 22px; padding: 2px 8px; border-radius: 5px; font-size: 12px; line-height: 1.3; font-weight: 700; white-space: nowrap; border: 1px solid transparent; }}
 .doji-empty {{ background: white; border-radius: 8px; padding: 24px 16px; color: #95a5a6; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }}
+.hold-tab-toolbar {{ display: flex; align-items: center; justify-content: space-between; gap: 16px; background: white; border-left: 4px solid #117864; border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }}
+.hold-tab-title {{ font-size: 14px; font-weight: 700; color: #2c3e50; white-space: nowrap; }}
+.hold-tab-title b {{ color: #117864; font-size: 18px; }}
+.hold-tab-note {{ font-size: 12px; color: #7f8c8d; line-height: 1.5; text-align: right; }}
+.hold-tab-list {{ display: grid; gap: 8px; }}
+.hold-list-card {{ background: white; border-left: 4px solid #117864; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }}
+.hold-list-card:hover {{ box-shadow: 0 2px 12px rgba(0,0,0,0.1); transform: translateY(-1px); }}
+.hold-list-card .card-header {{ cursor: pointer; }}
+.hold-list-card .card-left {{ min-width: 260px; }}
+.hold-badge {{ display: inline-flex; align-items: center; min-height: 22px; padding: 2px 8px; border-radius: 5px; font-size: 12px; line-height: 1.3; font-weight: 700; white-space: nowrap; color: #117864; background: #e8f6f3; border: 1px solid #bfe5da; }}
+.hold-source-badge {{ display: inline-flex; align-items: center; min-height: 22px; padding: 2px 8px; border-radius: 5px; font-size: 12px; line-height: 1.3; font-weight: 700; white-space: nowrap; color: #117864; background: #eefaf6; border: 1px solid #ccefe4; }}
+.hold-metric b {{ color: #117864; }}
+.hold-empty {{ background: white; border-radius: 8px; padding: 24px 16px; color: #95a5a6; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }}
 .multi-relaxed-group .group-header {{ border-left-color: #7d3c98; }}
 .multi-relaxed-group .group-header:hover {{ background: #f3eef8; }}
 
@@ -666,10 +681,11 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
   .tab-btn {{ flex: 0 0 auto; padding: 8px 14px; font-size: 13px; border-radius: 16px; }}
   .search-box {{ width: 100%; }}
   .search-input {{ padding-top: 9px; padding-bottom: 9px; }}
-  .stock-card, .doji-list-card {{ width: 100%; margin-bottom: 8px; border-radius: 8px; }}
+  .stock-card, .doji-list-card, .hold-list-card {{ width: 100%; margin-bottom: 8px; border-radius: 8px; }}
   .card-header {{ align-items: flex-start; flex-wrap: wrap; gap: 8px; padding: 11px 12px; }}
   .card-left {{ min-width: 0; width: 100%; flex-wrap: wrap; gap: 8px; }}
   .doji-list-card .card-left {{ min-width: 0; }}
+  .hold-list-card .card-left {{ min-width: 0; }}
   .rank {{ width: auto; min-width: 28px; }}
   .card-meta {{ width: 100%; flex: 0 0 100%; gap: 8px 12px; font-size: 12px; }}
   .card-meta span {{ white-space: nowrap; }}
@@ -681,7 +697,10 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
   .group-header {{ padding: 10px 12px; }}
   .group-title {{ font-size: 13px; line-height: 1.4; }}
   .doji-tab-toolbar {{ flex-direction: column; align-items: stretch; gap: 10px; padding: 11px 12px; }}
+  .hold-tab-toolbar {{ flex-direction: column; align-items: stretch; gap: 10px; padding: 11px 12px; }}
   .doji-tab-title {{ white-space: normal; }}
+  .hold-tab-title {{ white-space: normal; }}
+  .hold-tab-note {{ text-align: left; }}
   .doji-source-chips {{ justify-content: flex-start; }}
 }}
 
@@ -689,7 +708,7 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
   .summary-card {{ min-width: calc(50% - 4px); }}
   .card-meta {{ gap: 6px 10px; }}
   .score-badge, .board-badge {{ font-size: 11px; padding: 2px 7px; }}
-  .doji-tag, .doji-source-badge {{ font-size: 11px; }}
+  .doji-tag, .doji-source-badge, .hold-badge, .hold-source-badge {{ font-size: 11px; }}
 }}
 
 .footer {{ text-align: center; padding: 30px 0 10px; font-size: 12px; color: #bdc3c7; }}
@@ -833,9 +852,10 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 <div class="tabs-wrapper">
   <div class="tabs">
   <button class="tab-btn doji" onclick="switchTab('doji')">十字星 (<span id="dojiTabCount">0</span>)</button>
+  <button class="tab-btn hold" onclick="switchTab('hold-second')">二板后第2天不破 (<span id="holdSecondTabCount">0</span>)</button>
   <button class="tab-btn pass active" onclick="switchTab('passed')">2板入选 ({len(passed_two) + len(relaxed_two)})</button>
-  <button class="tab-btn fail" onclick="switchTab('excluded')">2板未达标 ({len(excluded_two)})</button>
   <button class="tab-btn pass" onclick="switchTab('multi-passed')">多板入选 ({len(multi_passed) + len(relaxed_multi)})</button>
+  <button class="tab-btn fail" onclick="switchTab('excluded')">2板未达标 ({len(excluded_two)})</button>
   <button class="tab-btn multi" onclick="switchTab('multi-excluded')">多板未达标 ({len(multi_excluded)})</button>
   </div>
   <div class="search-box">
@@ -863,6 +883,14 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC
 
 <div id="tab-multi-excluded" class="tab-content">
 {multi_excluded_html if multi_excluded_html else '<div style="padding:20px;text-align:center;color:#bdc3c7;">无多板未达标标的</div>'}
+</div>
+
+<div id="tab-hold-second" class="tab-content">
+  <div class="hold-tab-toolbar">
+    <div class="hold-tab-title">共 <b id="holdSecondPanelCount">0</b> 只</div>
+    <div class="hold-tab-note">二板后第二天收盘价 >= 第二个板收盘价</div>
+  </div>
+  <div id="holdSecondTabList" class="hold-tab-list"></div>
 </div>
 
 <div id="tab-doji" class="tab-content">
@@ -920,10 +948,11 @@ function switchTab(tab) {{
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
     const tabMap = {{
         'doji': {{ btn: 1, content: 'tab-doji' }},
-        'passed': {{ btn: 2, content: 'tab-passed' }},
-        'excluded': {{ btn: 3, content: 'tab-excluded' }},
+        'hold-second': {{ btn: 2, content: 'tab-hold-second' }},
+        'passed': {{ btn: 3, content: 'tab-passed' }},
         'multi-passed': {{ btn: 4, content: 'tab-multi-passed' }},
-        'multi-excluded': {{ btn: 5, content: 'tab-multi-excluded' }}
+        'excluded': {{ btn: 5, content: 'tab-excluded' }},
+        'multi-excluded': {{ btn: 6, content: 'tab-multi-excluded' }}
     }};
     const target = tabMap[tab];
     if (target) {{
@@ -971,6 +1000,8 @@ function initChart(containerId) {{
     let symbol;
     if (containerId.startsWith('chart_doji_')) {{
         symbol = containerId.replace('chart_doji_', '').split('_')[0];
+    }} else if (containerId.startsWith('chart_hold_')) {{
+        symbol = containerId.replace('chart_hold_', '').split('_')[0];
     }} else {{
         symbol = containerId.replace('chart_p_', '').replace('chart_b_', '').replace('chart_e_', '').replace('chart_mp_', '').replace('chart_mb_', '').replace('chart_me_', '').replace('chart_r_', '').replace('chart_mr_', '');
     }}
@@ -1179,6 +1210,149 @@ function buildOption(data) {{
 window.addEventListener('resize', resizeVisibleCharts);
 
 // ── 十字星汇总 Tab ───────────────────────────────────
+function getCloseAt(data, index) {{
+    if (!data || !data.ohlc || index == null || index < 0 || index >= data.ohlc.length) return null;
+    const row = data.ohlc[index];
+    if (!row || row.length < 2) return null;
+    const close = Number(row[1]);
+    return Number.isFinite(close) ? close : null;
+}}
+
+function buildHoldSecondTab() {{
+    const list = document.getElementById('holdSecondTabList');
+    if (!list) return;
+
+    const sources = [
+        {{ selector: '#tab-passed > .stock-card.passed', label: '2板入选' }},
+        {{ selector: '#tab-passed .stock-card.relaxed', label: '2板放宽' }},
+        {{ selector: '#tab-multi-passed > .stock-card.multi', label: '多板入选' }},
+        {{ selector: '#tab-multi-passed .stock-card.multi-relaxed', label: '多板放宽' }}
+    ];
+
+    const items = [];
+    const seen = new Set();
+    sources.forEach(function(source) {{
+        document.querySelectorAll(source.selector).forEach(function(card) {{
+            const symbol = card.getAttribute('data-symbol') || '';
+            const chartId = card.getAttribute('data-chart') || '';
+            const data = ALL_DATA[symbol];
+            if (!data || data.lu_end_idx == null) return;
+
+            const boardIdx = Number(data.lu_end_idx);
+            const checkIdx = boardIdx + 2;
+            const boardClose = getCloseAt(data, boardIdx);
+            const checkClose = getCloseAt(data, checkIdx);
+            if (boardClose == null || checkClose == null || checkClose < boardClose) return;
+
+            const key = source.label + ':' + symbol + ':' + chartId;
+            if (seen.has(key)) return;
+            seen.add(key);
+
+            items.push({{
+                card: card,
+                source: source,
+                symbol: symbol,
+                chartId: chartId,
+                boardClose: boardClose,
+                checkClose: checkClose,
+                checkDate: data.dates && data.dates[checkIdx] ? data.dates[checkIdx] : ''
+            }});
+        }});
+    }});
+
+    list.innerHTML = '';
+    items.forEach(function(item, index) {{
+        const sourceCard = item.card;
+        const sourceLeft = sourceCard.querySelector('.card-left');
+        const sourceMeta = sourceCard.querySelector('.card-meta');
+        const symbol = item.symbol;
+        const nameElFromSource = sourceLeft ? sourceLeft.querySelector('.name') : null;
+        const name = nameElFromSource ? nameElFromSource.textContent.trim() : '';
+        const pct = ((item.checkClose / item.boardClose - 1) * 100).toFixed(2);
+        const pctText = (pct >= 0 ? '+' : '') + pct + '%';
+
+        const card = document.createElement('div');
+        card.className = 'hold-list-card';
+
+        const header = document.createElement('div');
+        header.className = 'card-header';
+        header.onclick = function() {{ toggleCard(header); }};
+
+        const left = document.createElement('div');
+        left.className = 'card-left';
+
+        const rank = document.createElement('span');
+        rank.className = 'rank';
+        rank.textContent = '#' + (index + 1);
+        left.appendChild(rank);
+
+        const symbolEl = document.createElement('span');
+        symbolEl.className = 'symbol';
+        symbolEl.textContent = symbol;
+        left.appendChild(symbolEl);
+
+        const nameEl = document.createElement('span');
+        nameEl.className = 'name';
+        nameEl.textContent = name;
+        left.appendChild(nameEl);
+
+        if (sourceLeft) {{
+            ['score-badge', 'board-badge'].forEach(function(cls) {{
+                const badge = sourceLeft.querySelector('.' + cls);
+                if (badge) left.appendChild(badge.cloneNode(true));
+            }});
+        }}
+
+        const meta = document.createElement('div');
+        meta.className = 'card-meta';
+        if (sourceMeta) meta.innerHTML = sourceMeta.innerHTML;
+        meta.insertAdjacentHTML('beforeend',
+            '<span class="hold-metric">二板收: <b>¥' + item.boardClose.toFixed(2) + '</b></span>' +
+            '<span class="hold-metric">第2天收: <b>¥' + item.checkClose.toFixed(2) + '</b></span>' +
+            '<span class="hold-metric">幅度: <b>' + pctText + '</b></span>' +
+            (item.checkDate ? '<span>日期: ' + item.checkDate + '</span>' : '')
+        );
+
+        const sourceBadge = document.createElement('span');
+        sourceBadge.className = 'hold-source-badge';
+        sourceBadge.textContent = item.source.label;
+
+        const holdBadge = document.createElement('span');
+        holdBadge.className = 'hold-badge';
+        holdBadge.textContent = '第2天不破';
+
+        header.appendChild(left);
+        header.appendChild(meta);
+        header.appendChild(sourceBadge);
+        header.appendChild(holdBadge);
+        const expand = document.createElement('span');
+        expand.className = 'expand-icon';
+        expand.textContent = '▸';
+        header.appendChild(expand);
+
+        const body = document.createElement('div');
+        body.className = 'card-body';
+
+        const chart = document.createElement('div');
+        chart.id = 'chart_hold_' + symbol + '_' + item.chartId;
+        chart.className = 'chart-container';
+        body.appendChild(chart);
+
+        card.appendChild(header);
+        card.appendChild(body);
+        list.appendChild(card);
+    }});
+
+    if (items.length === 0) {{
+        list.innerHTML = '<div class="hold-empty">暂无数据</div>';
+    }}
+
+    const tabCount = document.getElementById('holdSecondTabCount');
+    const panelCount = document.getElementById('holdSecondPanelCount');
+    if (tabCount) tabCount.textContent = items.length;
+    if (panelCount) panelCount.textContent = items.length;
+}}
+
 function buildDojiTab() {{
     const list = document.getElementById('dojiTabList');
     if (!list) return;
@@ -1289,6 +1463,7 @@ function buildDojiTab() {{
     if (panelCount) panelCount.textContent = items.length;
 }}
 
+buildHoldSecondTab();
 buildDojiTab();
 
 // ── 搜索功能 ─────────────────────────────────────────

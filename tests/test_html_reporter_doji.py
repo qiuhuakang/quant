@@ -183,7 +183,95 @@ class HtmlReporterDojiTests(unittest.TestCase):
             tabs_html.index("switchTab('passed')"),
         )
         self.assertIn("'doji': { btn: 1, content: 'tab-doji' }", html)
-        self.assertIn("'passed': { btn: 2, content: 'tab-passed' }", html)
+        self.assertIn("'passed': { btn: 3, content: 'tab-passed' }", html)
+
+    def test_builds_hold_second_tab_from_selected_and_relaxed_only(self):
+        two_passed = _result("000001", "\u4e8c\u677f\u5165\u9009", meets_criteria=True)
+        two_relaxed = _result(
+            "000002",
+            "\u4e8c\u677f\u653e\u5bbd",
+            meets_criteria=False,
+            vol_shrinking=False,
+        )
+        two_excluded = _result(
+            "000003",
+            "\u4e8c\u677f\u672a\u8fbe\u6807",
+            meets_criteria=False,
+            uptrend_stage="late",
+            vol_shrinking=False,
+            adj_days=8,
+        )
+        multi_passed = _result(
+            "000004",
+            "\u591a\u677f\u5165\u9009",
+            meets_criteria=True,
+            board_type="multi",
+        )
+        multi_relaxed = _result(
+            "000005",
+            "\u591a\u677f\u653e\u5bbd",
+            meets_criteria=False,
+            board_type="multi",
+            vol_shrinking=False,
+        )
+        multi_excluded = _result(
+            "000006",
+            "\u591a\u677f\u672a\u8fbe\u6807",
+            meets_criteria=False,
+            board_type="multi",
+            uptrend_stage="late",
+            vol_shrinking=False,
+            adj_days=8,
+        )
+
+        html = _build_html(
+            results=[two_passed, two_relaxed, two_excluded],
+            dfs={r["symbol"]: _sample_df() for r in [two_passed, two_relaxed, two_excluded, multi_passed, multi_relaxed, multi_excluded]},
+            passed=[two_passed],
+            screen_date="2026-06-26",
+            multi_results=[multi_passed, multi_relaxed, multi_excluded],
+        )
+
+        self.assertIn('class="tab-btn hold" onclick="switchTab(\'hold-second\')"', html)
+        self.assertIn('<div id="tab-hold-second" class="tab-content">', html)
+        self.assertIn("function buildHoldSecondTab()", html)
+        self.assertIn("{ selector: '#tab-passed > .stock-card.passed', label:", html)
+        self.assertIn("{ selector: '#tab-passed .stock-card.relaxed', label:", html)
+        self.assertIn("{ selector: '#tab-multi-passed > .stock-card.multi', label:", html)
+        self.assertIn("{ selector: '#tab-multi-passed .stock-card.multi-relaxed', label:", html)
+        self.assertNotIn("{ selector: '#tab-excluded .stock-card.excluded', label:", html)
+        self.assertNotIn("{ selector: '#tab-multi-excluded .stock-card.multi-excluded', label:", html)
+        self.assertIn("const checkIdx = boardIdx + 2;", html)
+        self.assertIn("if (boardClose == null || checkClose == null || checkClose < boardClose) return;", html)
+        self.assertIn("containerId.startsWith('chart_hold_')", html)
+        self.assertIn("buildHoldSecondTab();", html)
+        self.assertIn("'hold-second': { btn: 2, content: 'tab-hold-second' }", html)
+
+    def test_tab_order_places_multi_passed_before_two_board_excluded(self):
+        result = _sample_result()
+        html = _build_html(
+            results=[result],
+            dfs={"000001": _sample_df()},
+            passed=[result],
+            screen_date="2026-06-26",
+        )
+
+        tabs_start = html.index('<div class="tabs">')
+        tabs_end = html.index('</div>', tabs_start)
+        tabs_html = html[tabs_start:tabs_end]
+        expected_order = [
+            "switchTab('doji')",
+            "switchTab('hold-second')",
+            "switchTab('passed')",
+            "switchTab('multi-passed')",
+            "switchTab('excluded')",
+            "switchTab('multi-excluded')",
+        ]
+
+        positions = [tabs_html.index(item) for item in expected_order]
+        self.assertEqual(positions, sorted(positions))
+        self.assertIn("'multi-passed': { btn: 4, content: 'tab-multi-passed' }", html)
+        self.assertIn("'excluded': { btn: 5, content: 'tab-excluded' }", html)
 
     def test_report_has_mobile_layout_guards(self):
         result = _sample_result()
@@ -206,6 +294,7 @@ class HtmlReporterDojiTests(unittest.TestCase):
             ".card-meta { width: 100%; flex: 0 0 100%;",
             ".card-header > .doji-tag, .doji-list-card .card-header > .doji-tag { margin-left: 0;",
             ".doji-tab-toolbar { flex-direction: column; align-items: stretch;",
+            ".hold-tab-toolbar { flex-direction: column; align-items: stretch;",
             ".chart-container { height: clamp(320px, 70vh, 520px);",
             "function resizeVisibleCharts()",
             "setTimeout(resizeVisibleCharts, 60);",
